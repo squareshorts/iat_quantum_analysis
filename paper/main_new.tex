@@ -99,10 +99,10 @@ and the working profiled posterior
 \[
 p(\theta)\propto \mathrm{RSS}(\theta)^{-n/2},
 \]
-which is the same functional form up to smoothly varying design-determinant and degrees-of-freedom constants on our fixed binning grid. We profile $\theta$ on $[0^\circ,180^\circ]$ in $0.25^\circ$ steps and refine near the mode. Posterior summaries and HDIs were computed directly from the discretized profiled posterior.
+which is the same functional form up to design-determinant terms that vary smoothly with $\theta$ and a degrees-of-freedom exponent fixed by the binning scheme. We profile $\theta$ on $[0^\circ,180^\circ]$ in $0.25^\circ$ steps and refine near the mode. Posterior summaries and HDIs were computed directly from the discretized profiled posterior.
 
 \subsection{Predictive model comparison}
-We evaluate six comparators under \emph{temporal} hold-out per participant (highest-$x$ $\approx20\%$ of bins as test; remainder as train, requiring training bins $\ge$ regressors):
+We evaluate six comparators under \emph{temporal} hold-out per participant (highest-$x$ $\approx20\%$ of bins as test; remainder as train, requiring training bins $\ge$ regressors; for the three-parameter models this means at least 3 training bins):
 (i) full interference; (ii) cosine-only; (iii) sine-only; (iv) polynomial baseline $a+d_1x+d_2x^2$; (v) exponential $a+d e^{-kx}$ (grid on $k$); and (vi) power law $a+d x^p$ (grid on $p$). All fits use closed-form OLS with ridge $10^{-5}$. Performance is measured primarily as leak-free hold-out RMSE, complemented where feasible by approximate information-criteria-based comparisons (WAIC). All evaluations use leak-free standardization and are repeated for 4, 6, and 8 bins to assess robustness to binning resolution.
 
 \subsection{Recovery and falsification analyses}
@@ -392,7 +392,7 @@ Recovery failure at low angles is the central limitation of this framework (Fig.
 
 Bootstrap and sample-size analyses alone do not address low-angle recovery bias, but combined with explicit recovery and null simulations they explain why the empirical estimate can still be credible. Bootstrap resampling reproduces the pooled angle almost exactly (Fig.~\ref{fig:theta-bootstrap}). In the recovery-versus-$N$ analysis, small and moderate samples remain biased upward and often miss nominal coverage, whereas the empirical dataset at $N=141{,}329$ lies in a regime where the recovered MAP coincides with the observed estimate and the HDI covers the target angle (Fig.~\ref{fig:n-scaling}).
 
-The null diagnostics are mixed rather than uniformly favorable (Fig.~\ref{fig:null-diagnostics}; Table~\ref{tab:null-summary}). Relative to the quadratic null family, the empirical posterior is more sharply concentrated and centered at a lower angle. The within-curve permutation control is weak and non-decisive: permutation MAPs are widely dispersed (mean $109.65^\circ$, SD $67.79^\circ$) and still often concentrated, boundary-seeking posteriors appear, so posterior concentration alone is not a sufficient falsification criterion. We therefore do not treat the permutation null as strong confirming evidence.
+The null diagnostics are mixed rather than uniformly favorable (Fig.~\ref{fig:null-diagnostics}; Table~\ref{tab:null-summary}). Relative to the quadratic null family, the empirical posterior is more sharply concentrated and centered at a lower angle. The within-curve permutation control is weak and non-decisive: permutation MAPs are widely dispersed (mean $109.65^\circ$, SD $67.79^\circ$), yet concentrated, boundary-seeking posteriors still often appear, so posterior concentration alone is not a sufficient falsification criterion. We therefore do not treat the permutation null as strong confirming evidence.
 
 \begin{figure}[htbp]
 \centering
