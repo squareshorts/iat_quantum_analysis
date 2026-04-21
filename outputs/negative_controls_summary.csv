@@ -1,0 +1,3 @@
+control,observed_metric,null_mean_metric,null_mean_aux,p_value
+Within-curve x permutation,0.48244164773998516,8.25289619907603,24.25,0.3333333333333333
+Block-label shuffle (phase dispersion),0.0021612630712235514,7.636050376058633e-06,,0.047619047619047616

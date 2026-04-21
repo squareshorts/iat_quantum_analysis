@@ -1,0 +1,14 @@
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+arviz
+pymc
+xarray
+netcdf4
+pyarrow
+scikit-learn
+statsmodels
+tqdm
+jinja2

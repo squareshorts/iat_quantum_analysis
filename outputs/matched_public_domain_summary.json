@@ -1,0 +1,35 @@
+{
+  "domains": [
+    {
+      "domain": "Gender-Science",
+      "year": 2019,
+      "n_curves": 138955,
+      "theta_mean": 17.294393592678645,
+      "theta_sd": 0.48779035324622466,
+      "theta_map": 17.25,
+      "hdi_low": 16.5,
+      "hdi_high": 18.25
+    },
+    {
+      "domain": "Sexuality",
+      "year": 2019,
+      "n_curves": 207366,
+      "theta_mean": 19.11939236009905,
+      "theta_sd": 0.531809911133042,
+      "theta_map": 19.0,
+      "hdi_low": 18.25,
+      "hdi_high": 20.0
+    }
+  ],
+  "theta_difference": {
+    "contrast": "Sexuality - Gender-Science",
+    "delta_mean": 1.8249987674204067,
+    "delta_sd": 0.7216378664533969,
+    "delta_map": 1.75,
+    "hdi_low": 0.5,
+    "hdi_high": 3.0,
+    "prob_gt_zero": 0.9911756557918764
+  },
+  "elapsed_minutes": 11.4332528313001,
+  "holdout_fraction": 0.2
+}

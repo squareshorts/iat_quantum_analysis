@@ -1,0 +1,3 @@
+Null type,n replicates,MAP mean,MAP SD,SD mean,HDI width mean,Entropy mean
+Permutation,500,109.65,67.79,7.716,24.12,1.3169
+Quadratic,300,42.25,13.59,11.591,41.7,5.2003

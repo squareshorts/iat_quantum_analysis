@@ -1,0 +1,2 @@
+,mean,sd,hdi_3%,hdi_97%,mcse_mean,mcse_sd,ess_bulk,ess_tail,r_hat
+theta,94.104,5.571,84.57,106.42,3.745,1.01,2.0,14.0,

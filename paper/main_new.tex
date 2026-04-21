@@ -1,0 +1,561 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% microtype omitted (requires scalable fonts not available in this installation)
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{csquotes}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,shadows.blur}
+
+\doublespacing
+\graphicspath{{figures/}{../figures/}{./}}
+
+\title{A single-parameter geometric model of contextual overlap in the Gender--Science IAT}
+
+\author{Anonymous Authors}
+
+\date{}
+
+\begin{document}
+\sloppy
+\maketitle
+
+\begin{abstract}
+Implicit Association Tests (IATs) produce robust reaction-time asymmetries between congruent and incongruent pairings, but standard analyses model these effects with additive learning and noise terms. We test a geometric interference account in which contextual overlap is summarized by a single interference angle $\theta$. For fixed $\theta$, participant-level coefficients have closed-form OLS solutions, and profiling $\theta$ over a dense grid yields an analytic posterior, $p(\theta)\propto \mathrm{RSS}(\theta)^{-n/2}$. Using public trial-level logs from the Gender--Science IAT ($N=141{,}329$), we obtain a sharply concentrated posterior: mean $17.29^\circ$, SD $0.48^\circ$, 94\% HDI $[16.50^\circ,18.25^\circ]$. This solution is stable across binning schemes, bootstrap resamples, and D-like congruency quintiles ($17^\circ$--$18^\circ$ despite D-like means from $-0.68$ to $0.79$). A matched 2019 Sexuality IAT ($N=207{,}366$) remains low-angle (mean $19.12^\circ$), whereas an independent life-satisfaction IAT shifts to near-orthogonal geometry (mean $177.48^\circ$). Additive baselines match local RMSE but leave more structured residual drift and worse held-out distributional fit. Recovery analyses show that low-angle inference requires large-scale aggregation; null analyses separate the empirical posterior from quadratic structure more clearly than from permutation controls. The most stable signal in these data is task-geometric and context-dependent rather than participant-specific.
+\end{abstract}
+
+\paragraph{Keywords:} Implicit Association Test, quantum cognition, interference angle, contextual overlap, geometric model, profile posterior
+
+\section{Introduction}
+
+The Implicit Association Test (IAT) remains the most widely adopted behavioral paradigm for studying implicit social cognition, automatic evaluation, and stereotype activation \citep{greenwald1998,greenwald2003,kurdi2020iat_response}. Despite its impact, standard analyses have typically decomposed reaction times into additive contributions from congruency, learning, and noise, relying on linear mixed-effects models and, in some cases, sequential-sampling and diffusion formulations \citep{klauer2007process,ratcliff2016diffusion}. These approaches provide detailed accounts of trial-level evidence accumulation but are grounded in classical probabilistic assumptions that treat processing channels as independent and errors as Gaussian. As a result, they do not explicitly represent contextual interference arising from overlapping evaluative representations, a phenomenon central to nonclassical and quantum-inspired models of cognition \citep{townsend2004theory,busemeyer2006quantum}.
+
+A further motivation for shifting the level of analysis comes from ongoing psychometric debate about what can be reliably inferred from IAT performance. Critics have argued that behavioral interference measures do not uniquely identify latent cognitive constructs at the individual level, even when fitted with sophisticated process models \citep{schimmack2019iat}. At the same time, responses to this critique emphasize that the validity of the IAT depends on the construct, task structure, and level of aggregation and caution against both overinterpretation and wholesale dismissal of implicit measures \citep{kurdi2020iat_response}. Recent methodological work strengthens that caution by showing that IAT measurement properties depend on stimulus validation, response modality, and the particular indirect-measure architecture used \citep{hogenboom2024stimuli,baranan2024facial,axt2024predictive}. Taken together, this literature suggests that the strongest and most defensible inferences concern task-level or population-level structure rather than individual latent parameters. Accordingly, the present approach targets population-level contextual geometry, estimating a global interference structure that is identifiable under aggregation without claiming access to individual implicit attitudes.
+
+Different from classical approaches, quantum cognition frameworks treat cognitive states as complex probability amplitudes evolving in Hilbert space \citep{busemeyer2012,pothos2013,pothos2022quantum,huang2025overview}. Contextual change is represented as a basis rotation between incompatible observables, with interference terms producing empirically verified deviations from classical probability, such as order effects \citep{trueblood2011,wang2014} and decision inertia \citep{yearsley2016}. The formal analogy between these models and wave mechanics suggests that adaptation dynamics in evaluative tasks can be characterized geometrically rather than additively, with latent ``angles'' quantifying the overlap between incompatible mental representations \citep{blutner2016,huang2025overview}.
+
+Here we introduce a geometric model of implicit adaptation in which contextual overlap is summarized by a single interference angle, $\theta$. The model does not treat $\theta$ as an individual attitude parameter or a learning rate. It treats $\theta$ as a population-level descriptor of overlap between task contexts in the Gender--Science IAT. For any fixed $\theta$, participant-specific coefficients are estimated by closed-form ordinary least squares. Profiling $\theta$ over a dense grid yields an analytic marginal posterior, $p(\theta)\propto \mathrm{RSS}(\theta)^{-n/2}$, without high-dimensional sampling. Highest-density intervals and posterior summaries were computed directly from the discretized profiled posterior; information criteria are reported only as secondary diagnostics.
+
+We ask six questions. Can a single angular parameter summarize adaptation dynamics across 141,329 participants? Is that parameter numerically stable and identifiable at the population level? Does it survive stratification by a conventional congruency metric? Does it replicate in a matched second public IAT domain and shift under an independent non-matched task? How does the geometric model compare with additive baselines under leak-free temporal hold-out? And how sensitive is the estimate to binning resolution?
+
+The aim is inference, not short-horizon prediction. We use predictive performance as a diagnostic, but the main target is a stable task-level descriptor of contextual overlap in the IAT.
+
+\section{Methods}
+
+\subsection{Data and preprocessing}
+We merged trial-level logs \texttt{iat.txt}, \texttt{iat2.txt}, and \texttt{iat.0003.txt} for task \texttt{scienceiat} (Project Implicit, demo release). Critical blocks (3, 4, 6, 7) were retained. Within each participant and block, trial index was normalized to $x\in[0,1]$. Latencies were aggregated to $N_{\text{bins}}\in\{4,6,8\}$ quantile bins (main analysis uses $6$). Participants with $<3$ populated bins were excluded, yielding curves $\{(x_t,y_t)\}_{t=1}^{T_i}$ with $T_i\in[3,8]$.
+
+\paragraph{Leak-free standardization.}
+For hold-out experiments, z-scoring is computed \emph{per participant from training bins only} and applied to both train and test bins. This prevents outcome leakage into the standardization step. For the posterior over $\theta$ (which is not a predictive split), z-scoring uses all bins to align scales with a Gaussian observation model.
+
+\subsection{Model}
+We model standardized mean latency as
+\begin{equation}
+y_i(x)\;=\;a_i + b_i\cos(\omega x) + c_i\sin(\omega x) + \varepsilon,
+\qquad \varepsilon\sim\mathcal{N}(0,\sigma^2),\quad
+\omega=\tfrac{\pi}{180}\,\theta.
+\end{equation}
+For any fixed $\theta$, the coefficients $(a_i,b_i,c_i)$ have the closed-form OLS solution $\hat\beta_i(\theta)=(X_i^\top X_i)^{-1}X_i^\top y_i$ with design columns $1,\cos(\omega x),\sin(\omega x)$.
+
+\subsection{Identifiability and inference}
+The functions $\{1,\cos(\omega x),\sin(\omega x)\}$ are linearly independent on any interval for $\omega\neq 0$, so $X_i^\top X_i$ is full rank when at least three distinct $x$ values are available. A small ridge term ($10^{-5}$) was added to stabilize inversion in near-degenerate cases.
+
+We assess identifiability at the population level rather than the participant level. With only $T_i\in[3,8]$ binned observations per participant, individual likelihoods are too sharp and too unstable to support strong interpretation. Pooling across participants yields a global interference angle that is estimable even when participant-level fits are noisy.
+
+Stacking all participants, we compute
+\[
+\mathrm{RSS}(\theta)=\sum_i \|y_i-X_i\hat\beta_i(\theta)\|_2^2,
+\]
+and form the profile posterior
+\[
+p(\theta)\propto \mathrm{RSS}(\theta)^{-n/2},
+\]
+corresponding to a Gaussian model with $\sigma$ integrated out under a reference prior. We profile $\theta$ on a grid $[0^\circ,180^\circ]$ in $0.25^\circ$ steps and refine near the mode. Posterior summaries and HDIs were computed directly from the discretized profiled posterior.
+
+\subsection{Predictive model comparison}
+We evaluate five comparators under \emph{temporal} hold-out per participant (highest-$x$ $\approx20\%$ of bins as test; remainder as train, requiring $\ge$ regressors):
+(i) full interference; (ii) cosine-only; (iii) sine-only; (iv) polynomial baseline $a+d_1x+d_2x^2$; (v) exponential $a+d e^{-kx}$ (grid on $k$); and (vi) power law $a+d x^p$ (grid on $p$). All fits use closed-form OLS with ridge $10^{-5}$. Performance is measured primarily as leak-free hold-out RMSE, complemented where feasible by approximate information-criteria-based comparisons (WAIC). All evaluations use leak-free standardization and are repeated for 4, 6, and 8 bins to assess robustness to binning resolution.
+
+\subsection{Recovery and falsification analyses}
+We ran a set of diagnostic checks on the pooled profiling procedure. First, we generated synthetic interference curves across a wide range of true angles and re-estimated the pooled posterior with the same pipeline (100 replicates per angle). Second, we generated quadratic null curves to test whether smooth non-interference structure could still produce a concentrated angular posterior. Third, we permuted the within-curve $x$ ordering to remove temporal structure while preserving marginal latency values (500 replicates). Fourth, we bootstrap-resampled participants to assess the stability of the pooled MAP (100 resamples of $N=30{,}000$). Fifth, we examined recovery as a function of sample size $N$. Finally, we compared posterior density, RSS, hold-out RMSE, and log score on a common $\theta$ grid. These checks are diagnostic. They constrain interpretation, but they do not by themselves establish mechanism.
+
+To test whether the recovered geometry carries leverage beyond the same pooled curves used to estimate it, we added three external-validity analyses.
+
+\paragraph{D-like congruency quintiles.}
+Within the Gender--Science corpus we computed a conventional D-like congruency score for each participant, defined as the difference between mean incongruent and congruent latencies divided by the participant's SD over critical-block latencies, and reprofiled $\theta$ separately within D-like quintiles.
+
+\paragraph{Matched public Sexuality IAT.}
+We analyzed matched 2019 public raw logs from a Sexuality IAT in the same Project Implicit archive family, using the same critical blocks, binning resolutions, and leak-free hold-out pipeline as in the main analysis. The Sexuality archive contained six split \texttt{iat*.txt} members; one file (\texttt{iat2.0003.txt}) was malformed and yielded no readable trial-level columns, so the matched-domain analysis used the remaining five raw logs. This comparison keeps the broad online IAT architecture, raw-log format, and preprocessing scheme close to the Gender--Science analysis while changing construct domain. The Sexuality comparison is more closely matched architecturally than the life-satisfaction task, but it still does not isolate construct content from all design features because stimuli and participant composition also differ.
+
+\paragraph{Independent life-satisfaction IAT.}
+We analyzed an independent 2024 life-satisfaction IAT collected in a five-phase Testable protocol (10 true/false practice trials, 10 self/not-self practice trials, 20 congruent combined trials, 10 reversed self/not-self practice trials, and 20 incongruent combined trials). The raw archive contained 187 per-participant CSV files. We kept the first attempt for repeated participant names, excluded participants with more than 10\% of raw attempts faster than 300 ms, and collapsed repeated correction loops back to the original item by summing latency across attempts. This yielded 180 valid participants. For the external task, $\theta$ was profiled on the critical combined phases only (phases 3 and 5), and the same leak-free temporal hold-out comparison used in the main analysis was repeated against the baseline family. The life-satisfaction comparison is intentionally contrastive rather than psychometrically matched to the Gender--Science IAT: it uses sentence-like verbal materials and a different five-phase architecture, so cross-task differences in $\theta$ may reflect task structure, construct content, or both.
+
+\subsection{Pipeline diagram}
+\begin{figure}[htbp]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  node distance=1.8cm and 1.6cm,
+  box/.style={rectangle, rounded corners=6pt, draw, very thick,
+              fill=gray!6, align=center, minimum width=3.6cm, minimum height=1.4cm, blur shadow},
+  arrow/.style={-{Latex[length=4mm,width=2.5mm]}, very thick}
+]
+\node[box] (data) {Project Implicit\\trial logs};
+\node[box, right=of data] (pre) {Preprocessing\\blocks 3/4/6/7};
+\node[box, right=of pre] (bin) {Quantile binning\\$N_{\text{bins}}\in\{4,6,8\}$};
+\node[box, right=of bin] (std) {Standardization\\z-score (leak-free)};
+\node[box, below right=1.2cm and 0cm of std] (int) {Interference grid\\per-$\theta$ OLS};
+\node[box, right=of int] (post) {Profile posterior\\$p(\theta)\propto \mathrm{RSS}^{-n/2}$};
+\node[box, below=1.2cm of int] (base) {Baselines \& ablations\\poly / exp / power};
+\node[box, right=of base] (eval) {Temporal hold-out\\RMSE (leak-free)};
+\node[box, above right=1.2cm and 0cm of post] (ppc) {Aggregation \& PPCs\\HDIs and summaries};
+\node[box, right=1.4cm of post] (out) {Tables \& Figures\\(Results)};
+
+\draw[arrow] (data) -- (pre);
+\draw[arrow] (pre) -- (bin);
+\draw[arrow] (bin) -- (std);
+\draw[arrow] (std) |- (int);
+\draw[arrow] (int) -- (post);
+\draw[arrow] (post) -- (ppc);
+\draw[arrow] (post) -- (out);
+\draw[arrow] (std) |- (base);
+\draw[arrow] (base) -- (eval);
+\draw[arrow] (eval) -- (out);
+\end{tikzpicture}}
+\caption{Processing pipeline for the profiled-posterior and hold-out analyses.}
+\label{fig:pipeline}
+\end{figure}
+
+\section{Results}
+
+\subsection{Posterior over \texorpdfstring{$\theta$}{theta}}
+On $N=141{,}329$ participants in the six-bin analysis, the profile posterior is sharply concentrated (Fig.~\ref{fig:theta_posterior}). The posterior mean is $17.29^\circ$, the 94\% HDI is $[16.50^\circ,18.25^\circ]$, and the MAP is $17.25^\circ$. Aggregate posterior-predictive curves track the observed mean curves closely, with residual $\hat\sigma\approx0.63$ (Fig.~\ref{fig:ppc}). Across binning resolutions, the posterior remains concentrated in the low-angle regime, although the mode shifts from $22.75^\circ$ at 4 bins to $17.25^\circ$ at 6 bins and $15.50^\circ$ at 8 bins (Table~\ref{tab:posterior-bins}).
+
+Bootstrap resampling shows that the pooled estimate is highly stable at large $N$. Across 100 resamples of 30,000 participants per replicate, the pooled MAP was effectively constant: mean $17.00^\circ$, SD $0.00^\circ$, IQR $0.00^\circ$, with a 95\% interval of $[17.0^\circ,17.0^\circ]$ (Fig.~\ref{fig:theta-bootstrap}).
+
+The inferential optimum and the predictive optimum are not the same. On a common $\theta$ grid, the posterior peaks at a low interior angle, whereas hold-out RMSE is minimized at the boundary $\theta=0^\circ$ for 4, 6, and 8 bins (Fig.~\ref{fig:objectives-vs-theta}). The pooled posterior therefore identifies a stable inferential solution, not the parameter value that minimizes short-horizon prediction error.
+
+That divergence is a principled model--objective mismatch rather than a contradiction. Hold-out RMSE is a \emph{local predictive criterion}: it rewards short-horizon interpolation of the last bins after participant-wise refitting. The profiled interference angle targets a \emph{global structural parameter}: the pooled geometric relation that best organizes contextual overlap across all curves. Figure~\ref{fig:objectives-vs-theta} makes the mismatch explicit. The criterion that best recovers the stable low-angle posterior need not minimize one-step-ahead bin prediction.
+
+\subsection{External leverage across D-like strata, a matched public domain, and an independent task}
+The recovered angle is not merely a relabeling of conventional IAT effect size. In the Gender--Science corpus, mean D-like congruency scores vary widely across participant quintiles, from $-0.684$ in the lowest quintile to $0.788$ in the highest. Yet the subgroup posteriors remain tightly clustered in the same low-angle regime: quintile MAPs fall only between $17^\circ$ and $18^\circ$, with HDIs spanning roughly $15^\circ$--$20^\circ$ (Table~\ref{tab:theta-dlike-quintiles}; Fig.~\ref{fig:external-leverage}). The angular summary therefore persists even when the conventional congruency metric changes markedly.
+
+The matched public-domain comparison addresses a more stringent version of the same question. Using year-matched 2019 raw archives from the same Project Implicit family, the Sexuality IAT yields another sharply concentrated low-angle posterior rather than an orthogonal shift. In the six-bin analysis, the Sexuality posterior mean is $19.12^\circ$, with SD $0.53^\circ$, MAP $19.0^\circ$, and 94\% HDI $[18.25^\circ,20.0^\circ]$ across 207,366 pooled curves (Table~\ref{tab:matched-public-theta}; Fig.~\ref{fig:matched-public-theta}). Relative to the matched 2019 Gender--Science archive, the posterior contrast Sexuality $-$ Gender--Science has mean $1.82^\circ$, 94\% HDI $[0.50^\circ,3.00^\circ]$, and posterior probability $0.991$ of being greater than zero. Thus the shift is real but modest: both matched public domains remain in the same low-angle regime.
+
+Across binning resolutions, the matched public domains show parallel behavior. In the 2019 Gender--Science subset, MAP estimates move from $22.75^\circ$ at 4 bins to $17.25^\circ$ at 6 bins and $15.50^\circ$ at 8 bins. In Sexuality, the corresponding values are $25.50^\circ$, $19.00^\circ$, and $17.00^\circ$. The absolute levels differ slightly, but the same downward shift with finer binning and the same low-angle concentration are preserved in both tasks. The matched-domain evidence therefore suggests that low geometric separation is not unique to the Gender--Science IAT.
+
+The independent life-satisfaction IAT yields the opposite qualitative geometry. After reconstructing 180 valid participants from the 187 raw Testable exports, the critical combined phases produce a sharply concentrated posterior at the high-angle boundary, with posterior mean $177.48^\circ$, SD $2.68^\circ$, MAP $180.0^\circ$, and 94\% HDI $[172.75^\circ,180.0^\circ]$ (Table~\ref{tab:external-task-theta}; Fig.~\ref{fig:external-leverage}). This cross-task shift is too large to be explained by numerical regularization alone. The same estimation procedure that recovers partial contextual overlap in the Gender--Science IAT and the matched Sexuality IAT recovers near-orthogonal geometry in the independent task.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{theta_posterior_full.png}
+\caption{Posterior over $\theta$ from grid-based OLS profiling on the full sample. Shaded band: $94\%$ HDI.}
+\label{fig:theta_posterior}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{ppc_full.png}
+\caption{Observed vs.\ model-predicted aggregate curves at $\theta_{\mathrm{MAP}}=17.25^\circ$. Points: observed binned means; dashed: model prediction.}
+\label{fig:ppc}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.80\textwidth]{matched_public_domain_theta_overlay.png}
+\caption{Matched public 2019 raw-domain comparison from the same Project Implicit archive family. Both Gender--Science and Sexuality produce sharply concentrated low-angle posteriors. Sexuality shifts upward slightly, but remains far from the orthogonal regime observed in the independent life-satisfaction task.}
+\label{fig:matched-public-theta}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Matched 2019 public-domain pooled \(\theta\) summaries.}
+\label{tab:matched-public-theta}
+\small
+\input{../tables/Table_matched_public_domain_theta.tex}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{external_leverage_summary.png}
+\caption{External leverage analyses. Left: Gender--Science posteriors stratified by D-like congruency-score quintile remain concentrated in the same low-angle band despite large differences in the conventional effect-size summary. Middle: the independent life-satisfaction IAT shifts the posterior from the low-angle Gender--Science regime to a near-orthogonal boundary solution. Right: hold-out RMSE on the external task favors the cosine-only boundary case, with the full interference model still substantially outperforming the quadratic baseline.}
+\label{fig:external-leverage}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Pooled \(\theta\) summaries for the main public corpus and the independent life-satisfaction IAT.}
+\label{tab:external-task-theta}
+\small
+\input{../tables/Table_external_task_theta.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Gender--Science pooled \(\theta\) by D-like congruency-score quintile.}
+\label{tab:theta-dlike-quintiles}
+\small
+\input{../tables/Table_theta_dlike_quintiles.tex}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\textwidth]{ext_bootstrap_distribution.png}
+\caption{Bootstrap stability of the pooled $\theta$ estimate. Each replicate resamples 30,000 participants and recomputes the pooled MAP. The bootstrap distribution is effectively degenerate around the empirical solution, indicating extremely high stability of the population-level estimate at large $N$.}
+\label{fig:theta-bootstrap}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{ext_objectives_vs_theta.png}
+\caption{Population-level objectives evaluated on the same $\theta$ grid for 4, 6, and 8 bins. The posterior density peaks in the low-angle interior, whereas the hold-out RMSE optimum occurs at $\theta=0^\circ$ in all three binning resolutions.}
+\label{fig:objectives-vs-theta}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Posterior summary for \(\theta\) in the main six-bin analysis.}
+\label{tab:theta-summary}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Parameter & Mean & SD & MAP & 94\% HDI low & 94\% HDI high \\
+\midrule
+\(\theta\) (deg) & 17.29 & 0.48 & 17.25 & 16.50 & 18.25 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Overall pooled fit quality at \(\theta_{\text{MAP}}\).}
+\label{tab:fit-quality}
+\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+Curves & Binned observations & \(\mathrm{RSS}(\theta_{\mathrm{MAP}})\) & \(\hat{\sigma}\) & Posterior peak \\
+\midrule
+141329 & 847974 & 336141.06 & 0.630 & 0.2068 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Pooled profile posterior summary by binning resolution.}
+\label{tab:posterior-bins}
+\small
+\begin{tabular}{@{}rrrrrrrr@{}}
+\toprule
+Bins & Mean \(\theta\) & SD & MAP & HDI low & HDI high & Posterior entropy & \(\hat{\sigma}\) at MAP \\
+\midrule
+4 & 22.901 & 0.623 & 22.750 & 21.750 & 24.000 & 2.330 & 0.443 \\
+6 & 17.292 & 0.483 & 17.250 & 16.500 & 18.250 & 2.077 & 0.630 \\
+8 & 15.566 & 0.423 & 15.500 & 14.750 & 16.250 & 1.944 & 0.697 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Predictive validation}
+In the six-bin Gender--Science analysis, the quadratic baseline is essentially tied with the full interference model on participant-level temporal hold-out RMSE (21.924 vs.\ 21.919), while some other additive or boundary cases do slightly better on this local criterion (Fig.~\ref{fig:model-comparison-bins6}; Table~\ref{tab:model-comparison}). Approximate WAIC on the pooled fit also favors the quadratic baseline over the interference model, while the exponential and power-law baselines perform much worse (Table~\ref{tab:waic-comparison}). The same broad pattern appears across bin counts (Table~\ref{tab:bins-robustness}). Read narrowly, these results say that smooth additive approximations can be competitive for short-horizon prediction on the pooled public corpus. They do \emph{not} show that the additive models recover the same structure as the geometric fit.
+
+The matched public Sexuality IAT reproduces the same local-prediction pattern. In that domain, the full interference model and the quadratic baseline are again nearly indistinguishable on temporal hold-out RMSE (25.015 vs.\ 25.019), while cosine-only, sine-only, exponential, and power-law variants are only marginally lower (24.997--25.000). The near-tie between geometric and additive prediction is therefore not specific to Gender--Science; it appears in a second public IAT processed through the same raw-log pipeline.
+
+That predictive conclusion is not uniform across contexts. On the independent life-satisfaction IAT, the full interference model clearly outperforms the quadratic baseline in leak-free hold-out RMSE ($5.230$ vs.\ $5.607$), while the best-performing model is the cosine-only boundary case (RMSE $4.804$; Table~\ref{tab:external-model-comparison}; Fig.~\ref{fig:external-leverage}). The external task therefore supplies the kind of out-of-sample comparison missing from the public corpus alone: angular geometry can matter for prediction when the task lives near an orthogonal contextual regime. At the same time, the external result also shows that the full sine-plus-cosine representation is not always necessary; near $\theta=180^\circ$, the cosine-only boundary case captures most of the predictive advantage.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.90\textwidth]{model_comparison_submission_bins6.png}
+\caption{Temporal hold-out RMSE for the six-bin analysis. Differences between models are small in absolute magnitude, but the full interference model does not achieve the lowest hold-out error.}
+\label{fig:model-comparison-bins6}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Leak-free temporal hold-out comparison for the six-bin analysis (lower RMSE is better).}
+\label{tab:model-comparison}
+\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Model & Best parameter & RMSE$_{\text{test}}$ & Mean log score$_{\text{test}}$ & \(\sigma_{\text{train}}\) & Boundary hit \\
+\midrule
+Interference & 124.20 & 21.919 & -21524.695 & 0.1056 & No \\
+Cosine only & 180.00 & 21.899 & -7212.871 & 0.1823 & Yes \\
+Sine only & 180.00 & 21.897 & -9632.215 & 0.1578 & Yes \\
+Polynomial (\(2^{\text{nd}}\) order) & --- & 21.924 & -21602.217 & 0.1055 & No \\
+Exponential & 10.10 & 21.896 & -9905.413 & 0.1556 & No \\
+Power law & 0.05 & 21.897 & -9259.726 & 0.1609 & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Interference-model hold-out robustness across numbers of bins per participant.}
+\label{tab:bins-robustness}
+\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+Bins & Selected \(\theta\) (deg) & RMSE$_{\text{test}}$ & \(\sigma_{\text{train}}\) & Boundary hit \\
+\midrule
+4 & 180.00 & 19.646 & 0.0000 & Yes \\
+6 & 124.20 & 21.919 & 0.1056 & No \\
+8 & 76.60 & 26.165 & 0.1703 & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Approximate WAIC comparison on the pooled full-sample fit. Higher ELPD-WAIC is better.}
+\label{tab:waic-comparison}
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Model & ELPD-WAIC & \(p_{\mathrm{WAIC}}\) & SE & \(\Delta\)ELPD-WAIC \\
+\midrule
+Polynomial (\(2^{\text{nd}}\) order) & -810739.770 & 0.000 & 636.685 & 0.000 \\
+Interference & -811813.911 & 0.012 & 632.836 & -1074.141 \\
+Exponential & -918121.539 & 1.514 & 660.983 & -107381.769 \\
+Power law & -927029.858 & 0.000 & 607.930 & -116290.088 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Leak-free hold-out comparison on the independent life-satisfaction IAT (critical combined phases only).}
+\label{tab:external-model-comparison}
+\small
+\input{../tables/Table_external_model_comparison.tex}
+\end{table}
+
+\subsection{Residual structure and held-out distributional fit}
+Near-tied RMSE does not imply that the quadratic baseline captures the same empirical structure. On block-curve hold-out data, the interference and quadratic fits are almost indistinguishable by RMSE alone (57.218 vs.\ 57.235), yet their residual maps are different (Fig.~\ref{fig:residual-structure}; Table~\ref{tab:objective-mismatch}). The quadratic model leaves stronger negative drift in the last held-out bin, especially in the higher-angle blocks 4 and 7. Its mean absolute residual in the final held-out bin of those higher-angle blocks is 0.476, versus 0.381 for the interference fit. The magnitude of quadratic residuals also aligns more strongly with the blockwise pooled angle (correlation 0.240 vs.\ 0.130). The additive fit therefore leaves structured error that tracks contextual geometry.
+
+Going beyond RMSE to the \emph{distributional shape} of the held-out responses strengthens the same conclusion. Across the eight held-out block/bin cells, the interference fit yields lower Wasserstein distance, lower quantile error, and lower interquartile-range error in every cell (means 1.022 vs.\ 1.323, 0.956 vs.\ 1.283, and 1.524 vs.\ 2.070 respectively; Fig.~\ref{fig:distributional-fit}; Table~\ref{tab:objective-mismatch}). The additive model can therefore match local pointwise error while still misrepresenting the global shape of the held-out response distribution.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{residual_structure_block_holdout.png}
+\caption{Held-out residual structure on block curves. Left: interference-model residual means by block and held-out bin. Middle: quadratic-model residual means. Right: quadratic minus interference residual means. The quadratic baseline leaves stronger late-bin negative drift, especially in higher-angle blocks.}
+\label{fig:residual-structure}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{distributional_shape_holdout.png}
+\caption{Held-out distributional-fit diagnostics across the eight critical block/bin cells. Lower values are better. In every cell, the interference model yields lower Wasserstein distance, quantile error, and interquartile-range error than the quadratic baseline.}
+\label{fig:distributional-fit}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Model--objective-mismatch diagnostics on block-curve hold-out data. Lower is better except for the residual--\(\theta\) correlation, where values closer to zero indicate less geometry-aligned structured error.}
+\label{tab:objective-mismatch}
+\small
+\input{../tables/Table_objective_mismatch_metrics.tex}
+\end{table}
+
+\subsection{Recovery and falsification analyses}
+Recovery is strongly asymmetric across the parameter space (Fig.~\ref{fig:recovery-extended}; Table~\ref{tab:theta-recovery-extended}). For low true angles, recovered MAPs are biased upward: mean recovered MAPs are $41.743^\circ$ for a true $5^\circ$, $39.763^\circ$ for $10^\circ$, $43.173^\circ$ for $17.25^\circ$, and $41.613^\circ$ for $20^\circ$. In this range, 94\% HDI coverage is zero or near zero. Coverage improves at $25^\circ$ and is close to nominal from $40^\circ$ upward. Under sparse binning, the pooled procedure therefore identifies moderate and high angles far more reliably than low ones.
+
+Bootstrap and sample-size analyses explain why the empirical estimate is nevertheless stable. Bootstrap resampling reproduces the pooled angle almost exactly (Fig.~\ref{fig:theta-bootstrap}). In the recovery-versus-$N$ analysis, small and moderate samples remain biased upward and often miss nominal coverage, whereas the empirical dataset at $N=141{,}329$ lies in a regime where the recovered MAP coincides with the observed estimate and the HDI covers the target angle (Fig.~\ref{fig:n-scaling}).
+
+The null diagnostics are mixed rather than uniformly favorable (Fig.~\ref{fig:null-diagnostics}; Table~\ref{tab:null-summary}). Relative to the quadratic null family, the empirical posterior is more sharply concentrated and centered at a lower angle. The within-curve permutation control is less decisive: some permuted datasets still yield concentrated, boundary-seeking posteriors, so posterior concentration alone is not a sufficient falsification diagnostic. The null analyses therefore constrain interpretation, but they do not by themselves establish mechanism.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{ext_recovery_plots.png}
+\caption{Extended simulation-based recovery of pooled \(\theta\). Left: identity plot with RMSE bars. Middle: bias as a function of the true generating angle. Right: 94\% HDI coverage as a function of the true generating angle. Recovery is poor in the low-angle regime and becomes near-nominal only at moderate-to-high angles.}
+\label{fig:recovery-extended}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{ext_nscaling.png}
+\caption{Population-level recovery as a function of sample size for the low-angle regime around the empirical solution. Simulated recovery remains unstable at modest $N$, whereas the empirical dataset at $N=141{,}329$ lies in the regime where the recovered MAP coincides with the observed solution and the HDI covers the target.}
+\label{fig:n-scaling}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{ext_null_distributions.png}
+\caption{Null posterior diagnostics versus the observed fit. The empirical posterior differs clearly from the quadratic additive null, whereas the within-curve permutation control remains a weaker and non-decisive falsification benchmark.}
+\label{fig:null-diagnostics}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Expanded simulation-based recovery over the full \(0^\circ\)--\(180^\circ\) profiling grid (100 replicates per angle, $N=5{,}000$ curves each).}
+\label{tab:theta-recovery-extended}
+\small
+\begin{tabular}{@{}rrrrrrrr@{}}
+\toprule
+True \(\theta\) & Replicates & Mean recovered MAP & Bias & RMSE & Median posterior SD & 94\% HDI coverage & Median HDI width \\
+\midrule
+5.000  & 100 & 41.743 & 36.743 & 40.930 & 14.394 & 0.000 & 50.125 \\
+10.000 & 100 & 39.763 & 29.763 & 33.412 & 12.658 & 0.000 & 44.500 \\
+15.000 & 100 & 42.363 & 27.363 & 31.090 & 12.451 & 0.000 & 44.500 \\
+17.250 & 100 & 43.173 & 25.923 & 29.044 & 11.810 & 0.000 & 41.875 \\
+20.000 & 100 & 41.613 & 21.613 & 24.666 & 10.752 & 0.010 & 38.625 \\
+25.000 & 100 & 42.030 & 17.030 & 19.739 &  8.620 & 0.500 & 31.375 \\
+30.000 & 100 & 39.915 &  9.915 & 11.987 &  6.995 & 0.800 & 25.625 \\
+40.000 & 100 & 42.610 &  2.610 &  5.964 &  5.172 & 0.910 & 19.250 \\
+60.000 & 100 & 59.948 & -0.053 &  2.524 &  2.356 & 0.910 &  8.750 \\
+90.000 & 100 & 89.988 & -0.013 &  0.962 &  0.885 & 0.940 &  3.250 \\
+120.000 & 100 & 119.990 & -0.010 & 0.494 &  0.438 & 0.950 &  1.500 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Summary of posterior-shape diagnostics under the two null families.}
+\label{tab:null-summary}
+\small
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Null type & Replicates & MAP mean & MAP SD & Mean posterior SD & Mean HDI width & Mean entropy \\
+\midrule
+Permutation & 500 & 109.650 & 67.790 & 7.716 & 24.120 & 1.317 \\
+Quadratic   & 300 &  42.250 & 13.590 & 11.591 & 41.700 & 5.200 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Block-dependent phase structure}
+To examine whether the inferred interference angle reflects a stationary property of the task or an aggregate over heterogeneous contexts, we estimated block-specific pooled phase parameters. The resulting structure exhibits systematic variation across blocks (Fig.~\ref{fig:block-theta-summary}; Table~\ref{tab:block-theta-summary}). Block 3 is associated with a lower pooled angle, whereas blocks 4, 6, and 7 cluster at higher values. This pattern indicates that contextual overlap is not constant over the course of the IAT and suggests that the aggregate interference angle recovered at the population level represents a mixture over block-specific geometries rather than a single stationary parameter.
+
+Figure~\ref{fig:block-theta-summary} makes the additive comparison sharper. The pooled angular summaries move substantially across blocks, from $21^\circ$ in block 3 to roughly $26^\circ$--$29^\circ$ in blocks 4, 6, and 7. By contrast, the blockwise quadratic coefficients cluster in almost the same direction in the \((d_1,d_2)\) plane (coefficient angles $145^\circ$--$148^\circ$) and vary mostly in norm rather than interpretable orientation. The polynomial model can only absorb block-dependent phase variation by refitting nuisance coefficients separately within each block; those coefficients do not map onto a single geometric dimension with substantive interpretation. \(\theta\), by contrast, places the blocks on a common contextual-rotation scale. This is exactly the kind of low-dimensional structure that local RMSE does not reward.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{block_parameter_contrast.png}
+\caption{Blockwise geometric versus additive summaries. Left: block-specific pooled \(\theta\) estimates with profiled HDI bounds. Right: block-specific quadratic coefficients in the \((d_1,d_2)\) plane. The angular summaries move systematically across blocks, whereas the quadratic coefficients largely preserve direction and vary mostly in norm.}
+\label{fig:block-theta-summary}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\caption{Block-specific pooled \(\theta\) summaries.}
+\label{tab:block-theta-summary}
+\small
+\begin{tabular}{@{}rrrrrrr@{}}
+\toprule
+Block & Curves & Mean \(\theta\) & SD & HDI low & HDI high & MAP \\
+\midrule
+3 & 141258 & 20.977 & 0.828 & 19.500 & 22.500 & 21.000 \\
+4 & 140027 & 29.580 & 2.388 & 25.250 & 34.000 & 29.000 \\
+6 & 136487 & 26.836 & 1.807 & 23.500 & 30.250 & 26.500 \\
+7 & 135700 & 26.503 & 1.751 & 23.250 & 29.750 & 26.250 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Model comparison on block-curve hold-out data.}
+\label{tab:block-model-comparison}
+\small
+\begin{tabular}{@{}p{5.2cm}p{4.1cm}rrr@{}}
+\toprule
+Model & Best parameter(s) & RMSE$_{\text{test}}$ & Mean log score$_{\text{test}}$ & Boundary hit \\
+\midrule
+Interference (global \(\theta\) on block curves) & 180.0 & 57.218 & -32778.299 & Yes \\
+Interference (block-specific \(\theta\)) & 3: 180.0; 4: 136.8; 6: 180.0; 7: 137.5 & 57.220 & -26240.180 & Yes \\
+Polynomial (block curves) & --- & 57.235 & -32781.817 & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Per-block hold-out details for the block-specific \(\theta\) selection procedure.}
+\label{tab:block-theta-holdout}
+\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+Block & Selected training \(\theta\) & RMSE$_{\text{test}}$ & Mean log score$_{\text{test}}$ & Boundary hit \\
+\midrule
+3 & 180.000 & 111.773 & -99475.387 & Yes \\
+4 & 136.800 &   9.893 &  -1438.477 & No \\
+6 & 180.000 &  14.863 &  -1592.495 & Yes \\
+7 & 137.500 &   5.099 &   -388.577 & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Quantifying block-level phase variation}
+Block-specific phase estimates exhibit systematic dispersion across critical blocks. Wrapped phase summaries are reported in Table~\ref{tab:block-phase-summary}. Taken together with the block-specific pooled-angle differences above, these results indicate that the pooled contextual overlap angle is best interpreted as an aggregate over heterogeneous block-specific geometries rather than as a stationary phase parameter.
+
+\begin{table}[htbp]
+\centering
+\caption{Wrapped phase summaries for each critical block at the pooled global \(\theta_{\mathrm{MAP}}\).}
+\label{tab:block-phase-summary}
+\small
+\begin{tabular}{@{}rrrrr@{}}
+\toprule
+Block & Curves & Circular mean (deg) & Circular variance & Global \(\theta_{\mathrm{MAP}}\) \\
+\midrule
+3 & 141258 & -159.793 & 0.660 & 17.250 \\
+4 & 140027 & -151.569 & 0.952 & 17.250 \\
+6 & 136487 & -158.427 & 0.753 & 17.250 \\
+7 & 135700 & -151.705 & 0.922 & 17.250 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+
+The main result is a stable low-angle interference solution, $\theta\approx17^\circ$, for the full Gender--Science corpus. That solution is sharply concentrated in the empirical data, stable across bootstrap resampling, and still visible across binning resolutions. It also remains essentially unchanged across wide D-like strata. A matched 2019 public Sexuality IAT from the same Project Implicit archive family lands in the same broad low-angle regime, with a modest upward shift to about $19^\circ$. By contrast, an independent life-satisfaction IAT shifts to a near-orthogonal solution near $180^\circ$. The same profiling procedure therefore tracks task context, not just generic smoothness or participant-level congruency magnitude. A small and stable $\theta$ should not be read as evidence that the categories in the Gender--Science IAT are theoretically identical. In the present model, $\theta$ summarizes the separation of task contexts in aggregated latency dynamics. Thus $\theta\approx17^\circ$ indicates low behavioral separation between the congruent and incongruent task regimes, not semantic identity of the underlying constructs.
+
+This distinction clarifies why the result is theoretically informative rather than contradictory. The Gender--Science IAT is built around nominally incongruent pairings, yet the pooled trajectories do not behave like strongly incompatible contexts. In the Gender--Science corpus, \(\theta\) barely moves across participant D-like strata, but it does move across task contexts: from the full-sample value near $17^\circ$ to block-specific values in the $21^\circ$--$29^\circ$ range, and then to the near-orthogonal external task. The most stable IAT structure in these analyses is therefore task-geometric rather than participant-specific. What often looks like a single global learning or trait signal is better described as a mixture over differently rotated contexts.
+
+The predictive results should therefore be interpreted through an explicit model--objective distinction. RMSE is a \emph{local predictive criterion}; it rewards short-horizon interpolation of the last held-out bins after each curve is refit. The profiled interference angle is a \emph{global structural parameter}; it is intended to summarize contextual overlap across the pooled task geometry. These objectives are not aligned, as Fig.~\ref{fig:objectives-vs-theta} shows directly. In the public corpus, a quadratic approximation can be competitive on local RMSE while still leaving stronger residual drift and worse held-out distributional fit. In the external task, where the geometry moves to the orthogonal boundary, the angular family also gains predictive leverage: the full interference model beats the quadratic baseline, and the cosine-only boundary case performs best. The right conclusion is therefore not that the interference model ``fails'' on prediction, but that predictive and structural targets reward different aspects of the data.
+
+What produces the low separation in the Gender--Science task remains unresolved. One class of explanation is structural: shared response mappings, stimulus familiarity, lexical length, stimulus type, and other design properties may compress the geometry of the task. Recent IAT work supports this possibility by showing that measurement properties depend on stimulus validation and response modality \citep{hogenboom2024stimuli,baranan2024facial}, and that predictive validity differs across indirect-measure architectures \citep{axt2024predictive}. A second class of explanation is construct-population: if gender--science associations are comparatively less divergent in the sampled population, then even a well-constructed IAT may yield low geometric separation. The present data do not cleanly separate these explanations.
+
+The new matched Sexuality analysis helps answer the sharper theoretical question: is low geometric separation mainly a property of this test architecture, or does it arise because the Gender--Science constructs are only weakly divergent in the sampled population? The present evidence points to a joint explanation with substantial task-architecture influence. Sexuality is ordinarily treated as a more consolidated social-category contrast than gender--science, yet under a closely matched public IAT architecture it still produces a low-angle posterior. The shift relative to the matched 2019 Gender--Science subset is statistically credible but modest (posterior mean difference $1.82^\circ$, 94\% HDI $[0.50^\circ,3.00^\circ]$, $P(\theta_{\mathrm{Sexuality}} > \theta_{\mathrm{Gender\text{--}Science}})=0.991$). Stronger construct content alone therefore does not push the system toward orthogonality. At the same time, the nonzero shift cautions against treating $\theta$ as a pure task artifact. The safest interpretation is that $\theta$ reflects a joint property of task architecture and population-level construct separation, with architecture constraining the range strongly enough that even a more consolidated public-domain contrast remains low-angle.
+
+The life-satisfaction comparison speaks to the same question in a different way. Its near-orthogonal solution shows that the profiling procedure is not forced toward low angles and that task regime matters. However, the comparison is not a matched test of construct complexity, because the life-satisfaction task uses longer sentence-like stimuli and a different block architecture. Cross-task differences there cannot be attributed solely to more distinct constructs or to greater processing complexity in the underlying concepts.
+
+The recovery analyses still narrow what can be claimed. Under sparse binning, low true angles are not well recovered in small or moderate synthetic samples; they are biased upward and show poor interval coverage. The empirical low-angle estimate becomes stable only under very large aggregation. That makes $\theta$ interpretable as a population-level descriptor of task geometry, not as a reliable participant-level trait.
+
+The null analyses sharpen the same point, but asymmetrically. Posterior concentration alone is not enough to support a mechanistic interpretation. The empirical solution differs clearly from the quadratic additive null, but the within-curve permutation null is not cleanly defeated. The safest conclusion is therefore limited: the observed solution is not well described as a simple quadratic artifact, yet the null analyses do not on their own rule out all alternative sources of posterior concentration.
+
+The strongest claim is therefore not predictive superiority. It is that additive baselines can win or tie on short-horizon RMSE while still leaving evidence of structured, low-dimensional geometry in the data. The interference model recovers that geometry in a way that is stable, identifiable at the population level, and externally consequential across blocks and tasks, even though the null analyses remain only partially decisive. In the public corpus, the angular summary survives large differences in a conventional congruency metric; across blocks and across an independent task, it changes dramatically. The model does not establish that contextual interference is always the best predictive model of trial-aggregated latency curves, and it does not justify strong claims about individual latent structure. But it does constrain how IAT structure should be interpreted: the strongest stable signal in these data is geometric and contextual.
+
+\paragraph{Future directions.}
+Three follow-up strategies could discriminate task-structure from construct-population explanations more directly. First, one can manipulate stimulus sets within the same IAT architecture, for example by swapping words, images, or culturally localized exemplars; systematic shifts in $\theta$ under matched procedures would indicate design sensitivity \citep{hogenboom2024stimuli}. Second, one can test country-level variation with archives that retain national identifiers, such as Project Implicit:International \citep{charlesworth2023international}; if $\theta$ varies with cultural context, that would implicate population-level stereotype structure rather than a fixed property of the task. Third, the same geometric pipeline should now be extended beyond Sexuality to additional matched public domains, especially race, to determine whether the low-angle regime generalizes across multiple consolidated social contrasts or whether some domains truly approach orthogonality under the same online IAT architecture.
+
+\paragraph{Limitations.}
+The data are observational and self-selected. Residuals are modeled as Gaussian. Participant-specific coefficients are treated as fixed effects. Participant-level interference angles remain weakly identified under sparse binning. Stronger claims about individual variation would require richer within-participant time series or a trial-level hierarchical model. The present trial-level corpus is a large online Project Implicit sample, but the analyzed logs contain task and session fields rather than country identifiers, so we cannot determine the national composition of the sample or test cross-cultural moderation within this corpus. In the matched Sexuality archive, one split raw file was malformed and had to be excluded, although the remaining sample was still very large. Even with that new matched-domain comparison, the design remains observational rather than experimental: we still cannot cleanly decompose task structure, stimulus set, and population composition. Likewise, the external life-satisfaction task is useful as a contrastive comparison, but it is not psychometrically matched to the Gender--Science IAT and therefore cannot isolate construct divergence from procedural differences.
+
+\section*{Data availability}
+The analyses use public Project Implicit raw logs for the Gender--Science and Sexuality IATs together with the external life-satisfaction task described in the Methods. Code and processed data will be made available upon publication.
+
+\section*{Author contributions}
+All authors contributed to study conception, analysis, and manuscript preparation. All authors approved the final version.
+
+\section*{Funding}
+This work was financially supported by the Conselho Nacional de Desenvolvimento Cient\'ifico e Tecnol\'ogico (CNPq) under Grant No.~309589/2023-1 to A.P., and by the Coordena\c{c}\~ao de Aperfei\c{c}oamento de Pessoal de N\'ivel Superior (CAPES).
+
+\section*{Conflicts of interest}
+The authors declare no competing interests.
+
+\section*{Ethics statement}
+The study uses publicly available, anonymized data from the Project Implicit demo release. No additional ethical approval was required.
+
+\bibliographystyle{apalike}
+\bibliography{references}
+\end{document}

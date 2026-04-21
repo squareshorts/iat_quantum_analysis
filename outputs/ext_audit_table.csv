@@ -1,0 +1,17 @@
+Metric,Reported,Computed,Match,Diff,Source
+Posterior mean θ,17.29,17.2918,OK,0.0018,Table 1 (posterior summary)
+Posterior SD θ,0.48,0.4833,OK,0.0033,Table 1
+Posterior MAP θ,17.25,17.25,OK,0.0,Table 1
+94% HDI low,16.5,16.5,OK,0.0,Table 1
+94% HDI high,18.25,18.25,OK,0.0,Table 1
+RSS at MAP,336141.06,336141.0556,OK,-0.0044,Table 2 (fit quality)
+Interference RMSE (6-bin),21.919,21.9186,OK,-0.0004,Table 3
+Polynomial RMSE (6-bin),21.924,21.9241,OK,0.0001,Table 3
+Cosine-only RMSE (6-bin),21.899,21.8992,OK,0.0002,Table 3
+Exp RMSE (6-bin),21.896,21.8958,OK,-0.0002,Table 3
+Interference best-param (6-bin),124.2,124.2,OK,-0.0,Table 3
+4-bin selected θ (Table 4),180.0,180.0,OK,-0.0,Table 4
+8-bin selected θ (Table 4),76.6,76.6,OK,-0.0,Table 4
+Mean MAP at true θ=17.25°,49.667,49.6667,OK,-0.0003,Table 6
+Permutation null p-value,0.333,0.3333,OK,0.0003,Table 8
+Block-shuffle p-value,0.0476,0.0476,OK,0.0,Table 8

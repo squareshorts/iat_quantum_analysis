@@ -1,0 +1,13 @@
+{
+  "pooled_theta": {
+    "mean": 17.291778189722976,
+    "sd": 0.483347639117652,
+    "hdi_low": 16.5,
+    "hdi_high": 18.25,
+    "map": 17.25
+  },
+  "phase_dispersion_observed": 0.0021612630712235514,
+  "phase_dispersion_null_mean": 7.636050376058633e-06,
+  "phase_dispersion_p_value": 0.047619047619047616,
+  "elapsed_minutes": 36.50800180435181
+}

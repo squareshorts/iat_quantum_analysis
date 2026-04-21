@@ -1,0 +1,29 @@
+{
+  "external_cleaning": {
+    "raw_files": 187,
+    "valid_participants": 180,
+    "excluded_fast": 6,
+    "excluded_repeat": 1
+  },
+  "external_theta": {
+    "task": "Life-satisfaction IAT",
+    "n": 180,
+    "theta_mean": 177.48384181026785,
+    "theta_sd": 2.6762513575135003,
+    "theta_map": 180.0,
+    "hdi_low": 172.75,
+    "hdi_high": 180.0
+  },
+  "external_best_rmse_model": {
+    "model": "Cosine only",
+    "best_param": 126.0,
+    "rmse_test": 4.803658594243092,
+    "boundary_hit": false
+  },
+  "gender_science_dlike_theta_range": {
+    "theta_map_min": 17.0,
+    "theta_map_max": 18.0,
+    "d_like_mean_min": -0.6835957938503946,
+    "d_like_mean_max": 0.7877846556083741
+  }
+}

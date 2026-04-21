@@ -1,0 +1,1 @@
+CLAIM ISSUE: Manuscript says 'simpler additive baselines achieve slightly lower hold-out RMSE than the full interference model' but poly RMSE=21.9241 > interference RMSE=21.9186 at 6-bin. The claim is false for polynomial specifically, though cosine/sine/exp/power DO outperform interference.

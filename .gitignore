@@ -1,0 +1,33 @@
+# Local environments
+.venv/
+env/*
+!env/requirements.txt
+!env/requirements.lock.txt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Notebook junk
+.ipynb_checkpoints/
+
+# Large regenerated intermediates & Data
+outputs/*.pkl
+outputs/*.parquet
+outputs/*.nc
+outputs/loglik/*.npy
+outputs/theta_phase_by_block.csv
+data/
+
+# LaTeX build files
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+
+# OS/editor noise
+Thumbs.db
+.DS_Store

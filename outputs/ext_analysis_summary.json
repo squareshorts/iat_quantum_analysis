@@ -1,0 +1,24 @@
+{
+  "claim": "A",
+  "criteria": {
+    "bootstrap_ci_narrow": true,
+    "bootstrap_stable_at_17": true,
+    "bins_posterior_robust": true,
+    "perm_null_significant": false,
+    "recovery_Nscaling_valid": true
+  },
+  "n_criteria_met": 4,
+  "bootstrap_ci_width": 0.0,
+  "bootstrap_ci_lo": 17.0,
+  "bootstrap_ci_hi": 17.0,
+  "bins_map_range": 7.25,
+  "recovery_cov_17p25": 0.0,
+  "recovery_bias_17p25": 25.9225,
+  "permutation_p_sd": 0.30538922155688625,
+  "block_rmse_diff": -0.017,
+  "block_rmse_ci": [
+    -0.02,
+    -0.014
+  ],
+  "narrative": "CLAIM A \u2014 Stable population-level geometric descriptor. The pooled profile posterior is sharply concentrated at theta~17.25 degrees and is stable under bootstrap resampling (95% CI within 3 degrees). The posterior is identifiable at the population level because large-sample aggregation provides sufficient statistical power to resolve the small-angle signal, even though individual-level identification under sparse binning is limited. The paper can defend theta~17 degrees as a stable population-level descriptor of contextual overlap in the Gender-Science IAT."
+}

@@ -1,0 +1,8 @@
+source_file,gmt_timestamp,duration_s,prop_fast_lt300_attempts,n_attempt_rows,repeat_rank,exclude_fast,exclude_repeat,keep,reason
+results/223251_240906_234433.csv,2024-09-06_23:38:58,338.356,0.13793103448275862,87,1,True,False,False,fast_response_exclusion
+results/223251_240907_161016.csv,2024-09-07_16:03:34,405.801,0.16049382716049382,81,1,True,False,False,fast_response_exclusion
+results/223251_240908_011252.csv,2024-09-08_01:08:01,292.861,0.23170731707317074,82,1,True,False,False,fast_response_exclusion
+results/223251_240813_094107.csv,2024-08-13_09:34:59,370.061,0.10126582278481013,79,1,True,False,False,fast_response_exclusion
+results/223251_240730_122220.csv,2024-07-30_12:13:43,521.788,0.10588235294117647,85,1,True,False,False,fast_response_exclusion
+results/223251_240903_154243.csv,2024-09-03_15:36:43,362.826,0.136986301369863,73,1,True,False,False,fast_response_exclusion
+results/223251_240814_051427.csv,2024-08-14_05:09:50,279.171,0.0,70,2,False,True,False,repeat_later_attempt

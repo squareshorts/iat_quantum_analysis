@@ -1,0 +1,4 @@
+model,best_param,rmse_test,mean_logscore_test,boundary_hit
+Interference (global theta on block curves),180.0,57.21811231815006,-32778.29863639071,True
+Interference (block-specific theta),"{""3"": 180.0, ""4"": 136.7999999999999, ""6"": 180.0, ""7"": 137.49999999999986}",57.22008817087195,-26240.179523291834,True
+Polynomial (block curves),,57.23529270307175,-32781.81665737103,False
