@@ -68,7 +68,7 @@ y_i(x)\;=\;a_i + b_i\cos(\omega x) + c_i\sin(\omega x) + \varepsilon,
 For any fixed $\theta$, the coefficients $(a_i,b_i,c_i)$ have the closed-form OLS solution $\hat\beta_i(\theta)=(X_i^\top X_i)^{-1}X_i^\top y_i$ with design columns $1,\cos(\omega x),\sin(\omega x)$.
 
 \subsection{Identifiability and inference}
-The functions $\{1,\cos(\omega x),\sin(\omega x)\}$ are linearly independent on any interval for $\omega\neq 0,\pi$, so $X_i^\top X_i$ is full rank when at least three distinct $x$ values are available. However, linear independence is not enough for \emph{practical} identifiability under sparse binning. Near $\omega=0$, $\sin(\omega x)\approx \omega x$ is small and $\cos(\omega x)\approx 1-\tfrac{1}{2}\omega^2x^2$ is nearly collinear with the intercept, so the design can become ill-conditioned even when nominally full rank. An analogous near-degeneracy occurs close to $\omega=\pi$ under coarse $x$ grids. We therefore add a small ridge term ($10^{-5}$) to stabilize inversion in near-degenerate cases.
+The functions $\{1,\cos(\omega x),\sin(\omega x)\}$ are linearly independent on any interval for $\omega\neq 0,\pi$, so $X_i^\top X_i$ is full rank when at least three distinct $x$ values are available. However, linear independence is not enough for \emph{practical} identifiability under sparse binning. Near $\omega=0$, $\sin(\omega x)\approx \omega x$ is small and $\cos(\omega x)\approx 1-\tfrac{1}{2}\omega^2x^2$ is nearly collinear with the intercept, so the design can become ill-conditioned even when nominally full rank. A parallel near-degeneracy occurs close to $\omega=\pi$: $\sin(\omega x)$ again becomes small while $\cos(\omega x)\approx -1$ is nearly collinear with the (sign-flipped) intercept on coarse grids. We therefore add a small ridge term ($10^{-5}$) to stabilize inversion in near-degenerate cases.
 
 This conditioning argument explains why low-angle inference is difficult: when $\theta$ is small and each participant contributes only $T_i\in[3,8]$ bins, between-angle differences in fitted RSS are tiny relative to sampling noise. Individual-level angular likelihoods are therefore broad, unstable, and often boundary-seeking. We target identifiability at the pooled level, where aggregation over many participants amplifies weak but coherent curvature in the objective.
 
@@ -100,7 +100,7 @@ p(\theta)\propto \mathrm{RSS}(\theta)^{-n/2},
 which is the same functional form up to slowly varying design-determinant and degrees-of-freedom constants on our fixed binning grid. We profile $\theta$ on $[0^\circ,180^\circ]$ in $0.25^\circ$ steps and refine near the mode. Posterior summaries and HDIs were computed directly from the discretized profiled posterior.
 
 \subsection{Predictive model comparison}
-We evaluate five comparators under \emph{temporal} hold-out per participant (highest-$x$ $\approx20\%$ of bins as test; remainder as train, requiring $\ge$ regressors):
+We evaluate five comparators under \emph{temporal} hold-out per participant (highest-$x$ $\approx20\%$ of bins as test; remainder as train, requiring number of training bins $\ge$ number of regressors):
 (i) full interference; (ii) cosine-only; (iii) sine-only; (iv) polynomial baseline $a+d_1x+d_2x^2$; (v) exponential $a+d e^{-kx}$ (grid on $k$); and (vi) power law $a+d x^p$ (grid on $p$). All fits use closed-form OLS with ridge $10^{-5}$. Performance is measured primarily as leak-free hold-out RMSE, complemented where feasible by approximate information-criteria-based comparisons (WAIC). All evaluations use leak-free standardization and are repeated for 4, 6, and 8 bins to assess robustness to binning resolution.
 
 \subsection{Recovery and falsification analyses}
@@ -160,7 +160,7 @@ On $N=141{,}329$ participants in the six-bin analysis, the profile posterior is 
 
 Bootstrap resampling shows that the pooled estimate is highly stable at large $N$. Across 100 resamples of 30,000 participants per replicate, the pooled MAP was effectively constant: mean $17.00^\circ$, SD $0.00^\circ$, IQR $0.00^\circ$, with a 95\% interval of $[17.0^\circ,17.0^\circ]$ (Fig.~\ref{fig:theta-bootstrap}).
 
-By design, this concentration is interpreted as a pooled structural estimate, not as evidence that low angles are easy to recover generically. The recovery section below shows the opposite: low-angle inference fails in small-to-moderate synthetic samples and becomes credible only after large-$N$ pooling.
+By design, this concentration is interpreted as a pooled structural estimate, not as evidence that low angles are easy to recover generically. The recovery section below shows the opposite: low-angle inference fails in small or moderate synthetic samples and becomes credible only after large-$N$ pooling.
 
 The inferential optimum and the predictive optimum are not the same. On a common $\theta$ grid, the posterior peaks at a low interior angle, whereas hold-out RMSE is minimized at the boundary $\theta=0^\circ$ for 4, 6, and 8 bins (Fig.~\ref{fig:objectives-vs-theta}). The pooled posterior therefore identifies a stable inferential solution, not the parameter value that minimizes short-horizon prediction error.
 
