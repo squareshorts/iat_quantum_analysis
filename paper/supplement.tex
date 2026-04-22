@@ -12,7 +12,7 @@
 \graphicspath{{figures/}{../figures/}{./}}
 
 \title{Supplementary Material:\\
-A single-parameter geometric model of contextual overlap in the Gender--Science IAT}
+A pooled angular inference framework for contextual overlap in the Gender--Science IAT}
 
 \author{}
 \date{}
@@ -84,11 +84,13 @@ a bootstrap subsampling analysis was performed. One hundred independent subsampl
 $N=30{,}000$ participants each were drawn from the full dataset (with replacement); for
 each subsample the complete grid-profiling procedure was repeated. The posterior MAP
 equalled $17^\circ$ on every replicate, yielding a bootstrap SD of $0.00^\circ$ and a
-95\% percentile interval of $[17^\circ, 17^\circ]$. This perfect stability, achieved
-on subsamples comprising only $21\%$ of the full dataset, demonstrates that the
-$\approx 17^\circ$--$18^\circ$ result is not a feature of any particular participant
-composition and that the concentration of the pooled posterior reflects an aggregate
-signal robustly present throughout the sample.
+95\% percentile interval of $[17^\circ, 17^\circ]$. This stability shows that
+the $\approx 17^\circ$--$18^\circ$ result is not a feature of any particular participant
+composition. However, bootstrap stability alone does not address recovery bias: the
+recovery analyses below show that at sample sizes far below the empirical corpus,
+pooled inference of low angles remains biased and wide. Bootstrap evidence is therefore
+interpreted together with the $N$-scaling and simulation-based recovery results, not as
+a standalone validation.
 
 \begin{figure}[htbp]
 \centering
@@ -103,10 +105,11 @@ extremely high stability of the population-level estimate at large $N$.}
 % -------------------------------------------------
 \subsection*{Expanded simulation-based recovery}
 
-Simulation-based recovery was conducted using 100 independent replicates for each of
-11 generating angles spanning $5^\circ$--$120^\circ$, with $N=5{,}000$ simulated
-participant curves per replicate. Recovery was performed on the full $0^\circ$--$180^\circ$
-profiling grid (0.25-degree steps).
+Recovery failure in the low-angle regime is the central limitation of the pooled angular
+inference framework. Simulation-based recovery was conducted using 100 independent
+replicates for each of 11 generating angles spanning $5^\circ$--$120^\circ$, with
+$N=5{,}000$ simulated participant curves per replicate. Recovery was performed on the
+full $0^\circ$--$180^\circ$ profiling grid (0.25-degree steps).
 
 Recovery is near-unbiased and yields coverage $\geq 91\%$ for
 $\theta_{\text{true}} \geq 40^\circ$. For small angles ($\theta_{\text{true}} \leq
@@ -151,13 +154,14 @@ estimate $\approx 17^\circ$).}
 \label{fig:supp-recovery}
 \end{figure}
 
-The poor small-angle recovery under $N=5{,}000$ does not contradict the
-population-level estimate. At the empirically observed scale ($N=141{,}329$), the
-profile posterior integrates signal across a far larger number of observations.
-The bootstrap analysis above---in which $30{,}000$-participant subsamples consistently
-recover $17^\circ$---directly demonstrates that population-level identification is
-robust even though participant-level estimation remains unreliable in this parameter
-regime.
+The poor small-angle recovery under $N=5{,}000$ does not invalidate the empirical
+population-level estimate, but it does constrain interpretation. At the empirically
+observed scale ($N=141{,}329$), the profile posterior integrates signal across a far
+larger number of observations. The bootstrap analysis above---in which $30{,}000$-participant
+subsamples consistently recover $17^\circ$---combined with the $N$-scaling analysis
+below shows that population-level identification enters a credible regime around and
+above the empirical dataset size. Credibility here is conditional on large-scale pooling:
+low-angle inference cannot be claimed at small or moderate sample sizes.
 
 % -------------------------------------------------
 \subsection*{Recovery as a function of sample size}
@@ -244,9 +248,13 @@ within participant curves and the profiling procedure was repeated. Five hundred
 permutation replicates were generated. Under permutation, null posterior MAPs scattered
 broadly (mean $= 109.65^\circ$, SD $= 67.79^\circ$, covering the full
 $[0^\circ, 180^\circ]$ interval), with mean posterior SD averaging $7.72^\circ$---16
-times wider than the observed SD of $0.48^\circ$. The observed concentration near
-$17^\circ$ is therefore statistically unusual under the null that temporal ordering
-carries no information.
+times wider than the observed SD of $0.48^\circ$.
+
+However, this null is weak and non-decisive. Concentrated, boundary-seeking posteriors
+still appear in some permutation replicates, so posterior sharpness alone does not rule
+out alternative sources of angular concentration. The permutation comparison provides
+one constraint on interpretation but should not be treated as strong confirming evidence
+for the geometric model.
 
 \subsubsection*{Quadratic null (300 replicates)}
 
@@ -400,10 +408,11 @@ under sparse binning. The recovery analyses show that low true angles are
 especially vulnerable to upward bias and poor interval coverage when fewer than roughly
 $10{,}000$ participants are aggregated. In the present design, $\theta$ is therefore
 best interpreted as a pooled descriptor of contextual overlap at the population level
-rather than as a stable individual-difference parameter. The population-level
-identification is valid and robust: the bootstrap analysis shows that
+rather than as a stable individual-difference parameter. Population-level identification
+is conditional on large-scale pooling: the bootstrap analysis shows that
 $\theta \approx 17^\circ$--$18^\circ$ is consistently recovered from any large random
-subsample ($N \geq 30{,}000$) of the dataset.
+subsample ($N \geq 30{,}000$) of the dataset, but the $N$-scaling analyses confirm that
+this stability does not generalize to small or moderate sample sizes.
 
 % =================================================
 \section*{Reproducibility}
