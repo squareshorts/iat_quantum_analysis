@@ -89,8 +89,13 @@ EXT_RECOVERY_THETAS = [5.0, 10.0, 15.0, 17.25, 20.0, 25.0, 30.0, 40.0, 60.0, 90.
 EXT_RECOVERY_REPS = 100        # per angle; 100 recommended for final submission
 EXT_SIM_N_CURVES = 5000       # participants per recovery simulation
 
-EXT_N_SCALE_SIZES = [500, 1000, 2000, 5000, 10000]
+EXT_N_SCALE_SIZES = [500, 1000, 2000, 5000, 10000, 20000, 30000, 50000, 75000, 100000]
 EXT_N_SCALE_REPS = 10         # reps per N value
+# NOTE: The extended N range (20K–100K) fills the gap between the N<=10K
+# simulation regime and the empirical N=141,329 result, completing the
+# calibration analysis required for Proposition 1.  These values are computed
+# from the same empirical-beta bootstrap as the smaller N values and must be
+# run on the machine with the real data.
 
 EXT_PERMUTE_REPS = 500        # within-curve permutation null replicates
 EXT_QUAD_NULL_REPS = 300      # quadratic null replicates
@@ -671,33 +676,61 @@ def step4b_n_scaling(x6, mask6, beta_emp, sigma_real):
         sd_map=("theta_map", "std"),
         mean_sd=("theta_sd", "mean"),
         coverage=("covered", "mean"),
+        mean_bias=("bias", "mean"),
+        rmse=("bias", lambda v: float(np.sqrt((np.asarray(v)**2).mean()))),
     ).reset_index()
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+    # Binomial CI on coverage
+    nr = agg["coverage"].map(lambda _: EXT_N_SCALE_REPS).values
+    cov = agg["coverage"].values
+    ci_lo = np.clip(cov - 1.96 * np.sqrt(cov * (1 - cov) / nr), 0, 1)
+    ci_hi = np.clip(cov + 1.96 * np.sqrt(cov * (1 - cov) / nr), 0, 1)
 
-    ax1.plot(agg["n_curves"], agg["mean_map"], "o-", color="steelblue", label="Simulation mean MAP")
-    ax1.fill_between(agg["n_curves"],
-                     agg["mean_map"] - agg["sd_map"],
-                     agg["mean_map"] + agg["sd_map"],
-                     alpha=0.25, color="steelblue")
-    ax1.scatter([141329], [17.25], color="red", s=80, zorder=5,
-                label="Real data (N=141,329)")
-    ax1.axhline(theta_true, color="gray", ls="--", lw=1, alpha=0.7)
-    ax1.set_xscale("log")
-    ax1.set_xlabel("N (participants)"); ax1.set_ylabel("Recovered MAP θ (degrees)")
-    # ax1.set_title("Population-level recovery vs N\n(true θ = 17.25°)")
-    ax1.legend(fontsize=8)
+    fig, axes = plt.subplots(1, 3, figsize=(16, 5))
 
-    ax2.plot(agg["n_curves"], agg["coverage"], "o-", color="steelblue")
-    ax2.scatter([141329], [1.0], color="red", s=80, zorder=5,
-                label="Real data MAP = 17.25° (exact)")
-    ax2.axhline(HDI_PROB, color="red", ls="--", lw=1.2,
-                label=f"Nominal {HDI_PROB:.0%}")
-    ax2.set_ylim(-0.05, 1.10)
-    ax2.set_xscale("log")
-    ax2.set_xlabel("N (participants)"); ax2.set_ylabel("94% HDI coverage rate")
-    # ax2.set_title("HDI coverage vs N\n(true θ = 17.25°)")
-    ax2.legend(fontsize=8)
+    ax = axes[0]
+    ax.fill_between(agg["n_curves"],
+                    agg["mean_map"] - agg["sd_map"],
+                    agg["mean_map"] + agg["sd_map"],
+                    alpha=0.25, color="steelblue")
+    ax.plot(agg["n_curves"], agg["mean_map"], "o-", color="steelblue",
+            lw=1.8, label="Simulation mean MAP (empirical betas)")
+    ax.scatter([141329], [17.25], color="red", s=100, zorder=6, marker="*",
+               label="Empirical data (N=141,329)")
+    ax.axhline(theta_true, color="gray", ls="--", lw=1.2, alpha=0.8,
+               label=f"True θ = {theta_true}°")
+    ax.set_xscale("log")
+    ax.set_xlabel("N (participants, log scale)", fontsize=10)
+    ax.set_ylabel("Recovered MAP θ (degrees)", fontsize=10)
+    ax.set_title("MAP recovery vs sample size", fontsize=10)
+    ax.legend(fontsize=8, frameon=False)
+
+    ax = axes[1]
+    ax.axhline(0, color="k", ls="--", lw=0.9, alpha=0.6)
+    ax.plot(agg["n_curves"], agg["mean_bias"], "o-", color="steelblue",
+            lw=1.8, label="Mean bias (MAP − true)")
+    ax.scatter([141329], [0.0], color="red", s=100, zorder=6, marker="*",
+               label="Empirical data (bias = 0)")
+    ax.set_xscale("log")
+    ax.set_xlabel("N (participants, log scale)", fontsize=10)
+    ax.set_ylabel("Bias (degrees)", fontsize=10)
+    ax.set_title("Recovery bias vs sample size", fontsize=10)
+    ax.legend(fontsize=8, frameon=False)
+
+    ax = axes[2]
+    ax.fill_between(agg["n_curves"], ci_lo, ci_hi, alpha=0.20, color="steelblue")
+    ax.plot(agg["n_curves"], agg["coverage"], "o-", color="steelblue",
+            lw=1.8, label=f"Coverage (empirical betas, {EXT_N_SCALE_REPS} reps/N)")
+    ax.scatter([141329], [1.0], color="red", s=100, zorder=6, marker="*",
+               label="Empirical data (MAP = 17.25°, covered)")
+    ax.axhline(HDI_PROB, color="red", ls="--", lw=1.5,
+               label=f"Nominal {HDI_PROB:.0%}")
+    ax.set_ylim(-0.05, 1.10)
+    ax.set_xscale("log")
+    ax.set_xlabel("N (participants, log scale)", fontsize=10)
+    ax.set_ylabel("94% HDI coverage rate", fontsize=10)
+    ax.set_title("HDI coverage vs sample size", fontsize=10)
+    ax.legend(fontsize=8, frameon=False)
 
     plt.tight_layout()
     plt.savefig(FIG_DIR / "ext_nscaling.png", dpi=300)

@@ -38,6 +38,14 @@ For the estimation of the pooled interference angle $\theta$, all bins were used
 standardization to maintain consistency with the Gaussian observation model used in
 profiling.
 
+\subsection*{Low-angle calibration plan (Proposition~1 validation)}
+
+The theoretical prediction in Proposition~1 of the main text specifies a transition $N^*\approx30{,}000$--$100{,}000$ for the low-angle regime.  The existing N-scaling analysis (step~4b of \texttt{run\_extended\_analysis.py}, Fig.~\ref{fig:n-scaling}) already validates the two endpoints: recovery is poor at $N\leq10{,}000$ (zero HDI coverage, interior attractor at $\sim38$--$44^\circ$) and complete at $N=141{,}329$.  The missing piece is the intermediate regime $N\in\{20{,}000,30{,}000,50{,}000,75{,}000,100{,}000\}$.
+
+The correct procedure is to extend \texttt{EXT\_N\_SCALE\_SIZES} in \texttt{run\_extended\_analysis.py} to include those values and re-run step~4b.  This uses \emph{exactly} the same generator as the existing small-$N$ simulations (bootstrap-resampled empirical $\hat\beta_i$ coefficients from the real Gender--Science data), so there is no mixing of simulation regimes.  \emph{This run must be done on the machine with the real data files.}
+
+The script \texttt{run\_low\_angle\_calibration.py} provides a complementary standalone analysis for cross-checking, but it cannot replace the empirical-beta pipeline as the primary publication evidence.
+
 \subsection*{Numerical stability}
 
 Closed-form ordinary least squares (OLS) estimation was used throughout. To stabilize
@@ -341,6 +349,28 @@ Gender--Science IAT.
 \footnotesize
 \resizebox{\textwidth}{!}{\input{../tables/Table_matched_public_domain_model_comparison.tex}}
 \end{table}
+
+% -------------------------------------------------
+\subsection*{Planned cross-domain expansion: Race and Age IATs}
+
+The next priority extension is applying the same six-bin profiling pipeline to
+Race and Age IATs from the 2019 Project Implicit archive.  These domains provide
+the most direct empirical test of whether the low-angle regime is a property of
+the online IAT architecture or of the specific constructs studied.  Race is
+typically considered a more consolidated social-category contrast than
+Gender--Science; if the Race IAT also produces a low-angle posterior close to
+$17^\circ$--$19^\circ$, that would strongly implicate shared task-architecture
+constraints.  If Race approaches orthogonality while Gender--Science remains
+low-angle, that supports a construct-divergence explanation.
+
+The analysis is implemented in \texttt{run\_cross\_domain\_expansion.py}.
+Beyond profile-posterior comparisons, this script also evaluates a
+\emph{domain-transfer predictive criterion}: the interference-model $\theta$
+estimated on Gender--Science is applied directly---without refitting---to
+predict held-out curves in a new domain.  This is a harder test than
+within-domain RMSE: if geometric structure identified in one domain carries
+predictive leverage in another, that provides stronger evidence for a genuine
+structural parameter rather than a domain-specific numerical artifact.
 
 % -------------------------------------------------
 \subsection*{External leverage: D-like quintiles and independent life-satisfaction IAT}
