@@ -37,6 +37,31 @@ The repo now also includes an independent 2024 life-satisfaction IAT archive plu
   - writes `figures/external_leverage_summary.png`
   - writes `tables/Table_external_task_theta.tex`, `tables/Table_theta_dlike_quintiles.tex`, and `tables/Table_external_model_comparison.tex`
 
+## Adding the Age IAT
+
+We now support a conventional public Age IAT domain as the recommended replacement/supplement for the life-satisfaction task. Age was selected because it is a standard social-category IAT and the public OSF project exposes a dedicated `Raw Data` component with trial-level `iat.txt` archives, unlike participant-level D-score summary exports that are insufficient for the geometric pipeline.
+
+Run the Age pipeline with:
+
+```powershell
+python -m src.data.download_age_iat --osf-node cv7iq --year 2019
+python -m src.data.prepare_age_iat --critical-blocks 3 4 6 7
+python -m src.analysis.run_domain --domain Age
+python -m src.pipeline.run_age_iat
+```
+
+Outputs are written to:
+
+- `data/raw/age_iat/`
+- `data/interim/age_iat/`
+- `data/processed/age_iat/`
+- `results/age_iat/`
+- `figures/age_iat/`
+- `tables/age_iat/`
+- `reports/age_iat_qc_report.md`
+
+Important warning: the analysis requires trial-level files with session/block/trial/latency fields. The public participant-level `Age IAT.public.*` summary archives and analogous D-score files cannot be used directly for the manuscript’s geometric pipeline.
+
 ## Repository layout
 
 - `data/`

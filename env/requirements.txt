@@ -5,9 +5,11 @@ matplotlib
 seaborn
 arviz
 pymc
+requests
 xarray
 netcdf4
 pyarrow
+pyreadstat
 scikit-learn
 statsmodels
 tqdm

@@ -335,41 +335,66 @@ Gender--Science IAT.
 \end{table}
 
 % -------------------------------------------------
-\subsection*{External leverage: D-like quintiles and independent life-satisfaction IAT}
+\subsection*{Pairing-label audit, D-like quintiles, and life-satisfaction sensitivity}
 
 \subsubsection*{D-like congruency quintiles}
 
 To test whether the recovered angle is reducible to a conventional IAT effect-size
 summary, the Gender--Science corpus was stratified into quintiles of a D-like
 congruency score (difference between incongruent and congruent mean latencies divided
-by participant SD). Mean D-like values vary substantially across quintiles (from
-$-0.684$ in the lowest to $0.788$ in the highest), yet the subgroup posteriors remain
-tightly clustered in the same low-angle regime. Quintile MAP estimates range only from
-$17^\circ$ to $18^\circ$, with HDIs spanning roughly $15^\circ$--$20^\circ$. The
-angular summary is not captured by the conventional congruency metric.
+by participant SD). Congruent and incongruent labels were derived from the raw
+\texttt{block\_pairing\_definition} field rather than from block numbers alone. Mean
+D-like values vary substantially across quintiles (from $-0.320$ in the lowest to
+$0.825$ in the highest), yet the subgroup posteriors remain tightly clustered in the
+same low-angle regime. Quintile MAP estimates range only from $17.00^\circ$ to
+$17.75^\circ$, with HDIs spanning roughly $15^\circ$--$20^\circ$. The angular summary
+is not captured by the corrected conventional congruency metric.
 
-\subsubsection*{Independent life-satisfaction IAT}
+\begin{table}[htbp]
+\centering
+\caption{Critical-stage response-time descriptives by actual pairing labels. Values are in milliseconds.}
+\label{tab:supp-critical-pair-side}
+\footnotesize
+\resizebox{\textwidth}{!}{\input{../tables/Table_critical_pair_side_rt_summary.tex}}
+\end{table}
+
+\subsubsection*{Independent life-satisfaction IAT stimulus-order audit}
 
 An independent 2024 life-satisfaction IAT (Testable protocol, five phases) was
-analyzed as an out-of-sample contrast. The raw archive contained 187 per-participant
-CSV files; after excluding repeated names (retaining first attempt) and participants
-with $>10\%$ of raw attempts faster than 300 ms, and collapsing correction loops,
-180 valid participants were retained. Profiling was restricted to the critical combined
-phases (phases 3 and 5).
+analyzed as a sensitivity case rather than as a matched out-of-sample construct
+contrast. The raw archive contained 187 per-participant CSV files; after excluding
+repeated names (retaining first attempt) and participants with $>10\%$ of raw attempts
+faster than 300 ms, and collapsing correction loops, 180 valid participants were
+retained. Profiling was restricted to the critical combined phases (phases 3 and 5).
 
-The resulting posterior concentrates at the near-orthogonal boundary: posterior mean
+The original item-ID analysis concentrated at the high-angle boundary (posterior mean
 $177.48^\circ$, SD $2.68^\circ$, MAP $180.0^\circ$, 94\% HDI $[172.75^\circ,
-180.0^\circ]$. This stands in sharp contrast to the low-angle Gender--Science solution
-and is too large a shift to be explained by numerical regularization alone. The same
-estimation procedure that recovers partial contextual overlap in the Gender--Science
-IAT recovers near-orthogonal geometry in the independent task, confirming that the
-angle tracks task context.
+180.0^\circ]$), but the stimulus-order audit shows that this result should not be
+interpreted as a true near-orthogonal regime. Each critical stimulus appeared exactly
+180 times in the congruent phase and 180 times in the incongruent phase. The imbalance
+was structural rather than numerical: item identifiers 1--10 were logical true/false
+anchors, whereas item identifiers 11--20 were life-satisfaction statements. These two
+families differed strongly in latency and error rate (Table~\ref{tab:supp-life-family}).
+When actual display order was used as the within-block axis, the MAP dropped to
+$17.75^\circ$; after within-family centering, the MAP was $18.50^\circ$
+(Table~\ref{tab:supp-life-theta-audit}). The life-satisfaction task is therefore
+reported as a preprocessing audit, not as evidence for a distinct latent angular regime.
 
-On the independent task, the full interference model outperforms the quadratic baseline
-in leak-free hold-out RMSE ($5.230$ vs.\ $5.607$), while the best-performing model is
-the cosine-only boundary case (RMSE $4.804$). This shows that angular geometry carries
-predictive leverage when the task occupies a different contextual regime, and that the
-full sine-plus-cosine form is not always necessary near the orthogonal boundary.
+\begin{table}[htbp]
+\centering
+\caption{Life-satisfaction stimulus-family descriptives in the critical combined phases. Values are in milliseconds except error rate.}
+\label{tab:supp-life-family}
+\small
+\input{../tables/Table_life_satisfaction_stimulus_family_audit.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Life-satisfaction pooled $\theta$ sensitivity to the within-block axis and stimulus-family adjustment.}
+\label{tab:supp-life-theta-audit}
+\small
+\resizebox{\textwidth}{!}{\input{../tables/Table_life_satisfaction_theta_audit.tex}}
+\end{table}
 
 % -------------------------------------------------
 \subsection*{Block-dependent phase structure}

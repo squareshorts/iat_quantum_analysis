@@ -1,0 +1,7 @@
+model,best_param,rmse_test,boundary_hit
+Exponential,8.75,1.569630803455033,False
+Sine only,134.0,1.573991620319857,False
+Cosine only,0.0,1.646594212140127,True
+Interference,0.0,1.646594212140127,True
+Power law,0.05,1.6512793552022913,True
+Polynomial (2nd order),,3.335827576525632,False

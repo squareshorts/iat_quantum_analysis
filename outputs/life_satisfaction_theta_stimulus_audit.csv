@@ -1,0 +1,13 @@
+variant,n_curves,theta_mean,theta_sd,theta_map,hdi_low,hdi_high
+collapsed_total_item_id_all,180,177.48384181026782,2.67625135751343,180.0,172.75,180.0
+collapsed_total_display_order_all,180,28.486596163073955,13.676509404776025,17.75,8.5,53.75
+first_attempt_item_id_all,180,177.48384181026782,2.67625135751343,180.0,172.75,180.0
+final_attempt_item_id_all,180,177.48384181026782,2.67625135751343,180.0,172.75,180.0
+collapsed_total_item_id_logical-anchor,180,154.50666725818675,31.596395616167044,180.0,90.75,180.0
+collapsed_total_display_order_logical-anchor,180,25.335346209362076,11.851836725074184,16.25,8.0,47.25
+first_attempt_item_id_logical-anchor,180,154.50666725818675,31.596395616167044,180.0,90.75,180.0
+collapsed_total_item_id_life-satisfaction statement,180,163.04752201451592,20.90325871446935,180.0,128.5,180.0
+collapsed_total_display_order_life-satisfaction statement,180,35.43999275803851,19.79260660526717,17.5,7.5,71.75
+first_attempt_item_id_life-satisfaction statement,180,163.04752201451592,20.90325871446935,180.0,128.5,180.0
+collapsed_total_item_id_error_free_items_only,180,176.4759026680648,3.7161974348116424,180.0,169.75,180.0
+family_centered_within_participant_block_item_id_all,180,42.02483707797988,25.051701011106044,18.5,7.25,87.75

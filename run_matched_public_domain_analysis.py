@@ -44,6 +44,27 @@ BASE_DIR = Path(__file__).resolve().parent
 RAW_COLS = {"task_name", "block_number", "trial_number", "trial_latency", "session_id"}
 PROCESSED_COLS = ["pid", "block", "trial_in_block", "rt"]
 
+
+def load_age_iat_df() -> pd.DataFrame:
+    parquet_path = BASE_DIR / "data" / "processed" / "age_iat" / "age_iat_trials_standardized.parquet"
+    if not parquet_path.exists():
+        raise FileNotFoundError(
+            f"Missing standardized Age IAT parquet at {parquet_path}. "
+            "Run `python -m src.data.download_age_iat` and `python -m src.data.prepare_age_iat` first."
+        )
+    df = pd.read_parquet(parquet_path)
+    missing = [column for column in PROCESSED_COLS if column not in df.columns]
+    if missing:
+        raise RuntimeError(f"Standardized Age IAT parquet is missing required columns: {missing}")
+    df = df[PROCESSED_COLS].dropna(subset=["pid", "block", "trial_in_block", "rt"]).copy()
+    df["block"] = pd.to_numeric(df["block"], errors="coerce")
+    df["trial_in_block"] = pd.to_numeric(df["trial_in_block"], errors="coerce")
+    df["rt"] = pd.to_numeric(df["rt"], errors="coerce")
+    df = df.dropna(subset=["block", "trial_in_block", "rt"])
+    df["block"] = df["block"].astype(int)
+    df["trial_in_block"] = df["trial_in_block"].astype(int)
+    return df[df["block"].isin(CRITICAL_BLOCKS)].copy()
+
 DOMAIN_SPECS = [
     {
         "domain": "Gender-Science",
@@ -57,7 +78,14 @@ DOMAIN_SPECS = [
         "task_name": "sexualityiat",
         "paths": sorted((BASE_DIR / "data" / "sexuality_raw" / "Sexuality_iat_2019" / "iat").glob("iat*.txt")),
     },
+    {
+        "domain": "Age",
+        "short": "age_iat",
+        "year": 2019,
+        "loader": load_age_iat_df,
+    },
 ]
+DOMAIN_SPEC_BY_NAME = {spec["domain"].lower(): spec for spec in DOMAIN_SPECS}
 
 
 def ensure_dirs():
@@ -116,31 +144,50 @@ def cache_path_for(domain_short: str, n_bins: int) -> Path:
     return OUT_DIR / f"matched_public_{domain_short}_raw_curves_bins{n_bins}.pkl"
 
 
-def build_curves_for_domain(domain_short: str, paths: list[Path], task_name: str, n_bins: int) -> list[dict]:
-    cache_path = cache_path_for(domain_short, n_bins)
+def load_domain_dataframe(spec: dict) -> pd.DataFrame:
+    if "loader" in spec:
+        return spec["loader"]()
+
+    frames = []
+    for path in spec["paths"]:
+        df = read_domain_raw_file(path, task_name=spec["task_name"])
+        if not df.empty:
+            frames.append(df)
+    if not frames:
+        return empty_domain_frame()
+    return pd.concat(frames, ignore_index=True)
+
+
+def build_curves_for_domain(spec: dict, n_bins: int) -> list[dict]:
+    cache_path = cache_path_for(spec["short"], n_bins)
     if cache_path.exists():
         with open(cache_path, "rb") as handle:
             return pickle.load(handle)
 
     curves: list[dict] = []
-    used_files = 0
-    skipped_files = 0
-    for path in paths:
-        print(f"  Reading {path.name} for {domain_short} | bins={n_bins}")
-        df = read_domain_raw_file(path, task_name=task_name)
-        if df.empty:
-            skipped_files += 1
-            continue
-        used_files += 1
+    if "loader" in spec:
+        df = load_domain_dataframe(spec)
         curves.extend(build_participant_curves_raw(df, n_bins=n_bins))
-        del df
-        gc.collect()
+        print(f"  Finished {spec['short']} | bins={n_bins}: {len(curves)} curves from standardized parquet")
+    else:
+        used_files = 0
+        skipped_files = 0
+        for path in spec["paths"]:
+            print(f"  Reading {path.name} for {spec['short']} | bins={n_bins}")
+            df = read_domain_raw_file(path, task_name=spec["task_name"])
+            if df.empty:
+                skipped_files += 1
+                continue
+            used_files += 1
+            curves.extend(build_participant_curves_raw(df, n_bins=n_bins))
+            del df
+            gc.collect()
 
-    print(
-        f"  Finished {domain_short} | bins={n_bins}: "
-        f"{len(curves)} curves from {used_files} usable files"
-        + (f"; skipped {skipped_files} malformed/empty files" if skipped_files else "")
-    )
+        print(
+            f"  Finished {spec['short']} | bins={n_bins}: "
+            f"{len(curves)} curves from {used_files} usable files"
+            + (f"; skipped {skipped_files} malformed/empty files" if skipped_files else "")
+        )
     with open(cache_path, "wb") as handle:
         pickle.dump(curves, handle)
     return curves
@@ -212,6 +259,7 @@ def plot_theta_overlay(summary_df: pd.DataFrame, profile_map: dict[str, np.ndarr
     palette = {
         "Gender-Science": "#1f77b4",
         "Sexuality": "#d62728",
+        "Age": "#2ca02c",
     }
     for _, row in summary_df.iterrows():
         domain = row["domain"]
@@ -221,7 +269,6 @@ def plot_theta_overlay(summary_df: pd.DataFrame, profile_map: dict[str, np.ndarr
         plt.axvline(row["theta_map"], ls="--", lw=1.2, color=color, alpha=0.9)
     plt.xlabel(r"$\theta$ (degrees)")
     plt.ylabel("Normalized posterior")
-    plt.title("Matched public raw-domain comparison (2019)")
     plt.legend(frameon=False)
     plt.tight_layout()
     plt.savefig(out_path, dpi=300)
@@ -230,7 +277,12 @@ def plot_theta_overlay(summary_df: pd.DataFrame, profile_map: dict[str, np.ndarr
 
 def plot_theta_bar(summary_df: pd.DataFrame, out_path: Path) -> None:
     plt.figure(figsize=(6.8, 4.6))
-    colors = ["#1f77b4" if d == "Gender-Science" else "#d62728" for d in summary_df["domain"]]
+    palette = {
+        "Gender-Science": "#1f77b4",
+        "Sexuality": "#d62728",
+        "Age": "#2ca02c",
+    }
+    colors = [palette.get(domain, "#7f7f7f") for domain in summary_df["domain"]]
     y = summary_df["theta_mean"].to_numpy(dtype=float)
     yerr = np.vstack(
         [
@@ -277,6 +329,22 @@ def posterior_difference_summary(
     )
 
 
+def pairwise_posterior_difference_summaries(profile_map: dict[str, np.ndarray]) -> pd.DataFrame:
+    labels = list(profile_map)
+    frames = []
+    for idx_a, label_a in enumerate(labels):
+        for label_b in labels[idx_a + 1 :]:
+            frames.append(
+                posterior_difference_summary(
+                    label_a=label_a,
+                    label_b=label_b,
+                    posterior_a=profile_map[label_a],
+                    posterior_b=profile_map[label_b],
+                )
+            )
+    return pd.concat(frames, ignore_index=True)
+
+
 def main():
     ensure_dirs()
     t0 = time.time()
@@ -287,18 +355,13 @@ def main():
     model_frames = []
 
     for spec in DOMAIN_SPECS:
-        if not spec["paths"]:
+        if not spec.get("loader") and not spec["paths"]:
             raise FileNotFoundError(f"No raw files found for {spec['domain']}")
 
         print(f"\n=== {spec['domain']} ===")
         primary_curves = None
         for n_bins in BIN_OPTIONS:
-            curves = build_curves_for_domain(
-                domain_short=spec["short"],
-                paths=spec["paths"],
-                task_name=spec["task_name"],
-                n_bins=n_bins,
-            )
+            curves = build_curves_for_domain(spec=spec, n_bins=n_bins)
             if not curves:
                 raise RuntimeError(f"No curves built for {spec['domain']} at {n_bins} bins")
             summary, posterior, rss, _, _ = profile_from_curves(curves)
@@ -322,7 +385,7 @@ def main():
                 primary_rows.append(
                     {
                         "domain": spec["domain"],
-                        "year": 2019,
+                        "year": spec.get("year", 2019),
                         "n_curves": len(curves),
                         "theta_mean": summary["mean"],
                         "theta_sd": summary["sd"],
@@ -343,19 +406,14 @@ def main():
             raise RuntimeError(f"Missing primary-bin curves for {spec['domain']}")
         comp_df = evaluate_models_for_curves(primary_curves)
         comp_df.insert(0, "domain", spec["domain"])
-        comp_df.insert(1, "year", 2019)
+        comp_df.insert(1, "year", spec.get("year", 2019))
         comp_df.insert(2, "bins", PRIMARY_BINS)
         model_frames.append(comp_df)
 
     primary_df = pd.DataFrame(primary_rows).sort_values("theta_mean").reset_index(drop=True)
     bins_df = pd.DataFrame(bins_rows).sort_values(["domain", "bins"]).reset_index(drop=True)
     model_df = pd.concat(model_frames, ignore_index=True)
-    delta_df = posterior_difference_summary(
-        label_a="Gender-Science",
-        label_b="Sexuality",
-        posterior_a=profile_map["Gender-Science"],
-        posterior_b=profile_map["Sexuality"],
-    )
+    delta_df = pairwise_posterior_difference_summaries(profile_map)
 
     primary_df.to_csv(OUT_DIR / "matched_public_domain_theta_summary.csv", index=False)
     bins_df.to_csv(OUT_DIR / "matched_public_domain_theta_bins.csv", index=False)
@@ -436,7 +494,7 @@ def main():
 
     summary = {
         "domains": primary_rows,
-        "theta_difference": delta_df.iloc[0].to_dict(),
+        "theta_difference": delta_df.to_dict(orient="records"),
         "elapsed_minutes": (time.time() - t0) / 60.0,
         "holdout_fraction": HOLDOUT_FRAC,
     }
