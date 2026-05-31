@@ -1,0 +1,29 @@
+﻿task,stage,pairing_definition,pair_side,stimulus_category,n_trials,mean_ms,median_ms,sd_ms,iqr_ms,q1_ms,q3_ms
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,2244026,847.7000778957107,698.0,545.4500076278232,333.0,581.0,914.0
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Old people,2245782,822.7654518559682,665.0,580.7163260488912,280.0,569.0,849.0
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,2243220,810.9704968750278,671.0,509.2266535213219,308.0,564.0,872.0
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Young people,2245222,846.5348206101669,688.0,581.5713860056144,288.0,588.0,876.0
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,2230951,1061.4577299098007,849.0,725.8008894713397,584.0,641.0,1225.0
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Old people,2232701,1032.5310715586188,790.0,773.3349360567428,514.0,627.0,1141.0
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,2232172,1054.2239625799446,844.0,722.9554189201211,553.0,647.0,1200.0
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Young people,2233032,1085.4124105700232,833.0,803.8278770611533,539.0,661.0,1200.0
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Female,2000535,797.1563111867575,676.0,456.09654210857474,298.0,568.0,866.0
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Liberal Arts,2001929,1057.331324937098,851.0,699.5685258353693,514.0,672.0,1186.0
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Male,2001349,829.0344982309432,703.0,478.37069144351454,319.0,586.0,905.0
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Science,2002406,1012.0210936243699,806.0,677.9698046488984,478.0,647.0,1125.0
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Liberal Arts,1993467,1250.7566194975889,1014.0,831.992236423561,652.0,771.0,1423.0
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Male,1993568,949.3281513346924,797.0,575.9868235005579,413.0,641.0,1054.0
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Female,1992392,919.2614771591133,769.0,558.318781264252,409.0,617.0,1026.0
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Science,1992961,1206.7480733441346,976.0,817.5502823804712,646.0,733.0,1379.0
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,1800,3037.9855555555555,2495.5,2967.165890116163,1897.25,1717.0,3614.25
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,1800,1992.7905555555556,1657.5,1235.460176049135,1002.5,1274.75,2277.25
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,1800,3609.737777777778,2828.5,3531.5015266773516,2206.75,1953.5,4160.25
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,1800,2546.218888888889,2088.0,1834.7782040974644,1379.75,1520.0,2899.75
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,2973353,996.5529548627425,796.0,660.9502667499969,481.0,636.0,1117.0
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Gay people,2973771,1048.247863066793,839.0,729.2538076220984,457.0,677.0,1134.0
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,2974407,1015.5369477008359,813.0,670.6139834764248,486.0,649.0,1135.0
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Straight people,2975528,1071.2255179584934,867.0,712.0668145336676,466.0,700.0,1166.0
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Gay people,2973011,1083.0370580532665,866.0,748.5301240390477,492.0,690.0,1182.0
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,2971142,1137.357063041753,922.0,770.9497327806746,610.0,690.0,1300.0
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,2970606,1077.9906291847522,868.0,717.9585534315144,553.0,670.0,1223.0
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Straight people,2969805,1238.4649244647376,987.0,852.8624393199492,590.0,776.0,1366.0

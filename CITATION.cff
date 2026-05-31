@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the Zenodo software archive and the manuscript."
+title: "Angular profiling of contextual structure in implicit-association latency data"
+version: "v1.0.1"
+doi: "10.5281/zenodo.19711302"
+url: "https://github.com/squareshorts/iat_quantum_analysis"
+repository-code: "https://github.com/squareshorts/iat_quantum_analysis"
+license: "MIT"
+authors:
+  - family-names: "Matos"
+    given-names: "Felipe de Oliveira"
+    orcid: "https://orcid.org/0000-0002-4926-4694"
+    affiliation: "Department of Physiological Sciences, Universidade Estadual de Maringa"
+  - family-names: "Andrade de Lima"
+    given-names: "Marlos"
+    orcid: "https://orcid.org/0000-0002-8901-2272"
+    affiliation: "Department of Developmental Psychology and Personality, Universidade Federal do Rio Grande do Sul"
+  - family-names: "Zanon"
+    given-names: "Cristian"
+    orcid: "https://orcid.org/0000-0003-3822-5275"
+    affiliation: "Department of Developmental Psychology and Personality, Universidade Federal do Rio Grande do Sul"
+  - family-names: "Pereira"
+    given-names: "Antonio"
+    orcid: "https://orcid.org/0000-0002-0808-1058"
+    affiliation: "Signal Processing Laboratory, Universidade Federal do Para"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19711302"
+    description: "Zenodo software archive for the GitHub repository"
+references:
+  - type: data
+    title: "De-identified life-satisfaction IAT database for angular profiling of implicit-association latency data"
+    notes: "Zenodo dataset DOI to be added after the de-identified database package is published."

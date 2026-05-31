@@ -1,0 +1,2 @@
+domain,year,theta_mean,theta_sd,theta_map,hdi_low,hdi_high,posterior_entropy
+Age,2019,18.476419785317983,0.5218882823600506,18.5,17.5,19.25,2.153299032589747

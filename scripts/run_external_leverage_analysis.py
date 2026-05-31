@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import csv
 import glob
 import io
@@ -16,13 +17,16 @@ import numpy as np
 import pandas as pd
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "data"
 OUT_DIR = BASE_DIR / "outputs"
 FIG_DIR = BASE_DIR / "figures"
 TAB_DIR = BASE_DIR / "tables"
 
 EXTERNAL_ZIP = DATA_DIR / "life_satisfaction_iat_2024" / "raw" / "187results.zip"
+SYNTHETIC_LIFE_CSV = DATA_DIR / "synthetic" / "life_satisfaction_iat_synthetic.csv"
+LIFE_SATISFACTION_DATABASE_DOI = "TBD_AFTER_ZENODO_PUBLICATION"
+SOFTWARE_ARCHIVE_DOI = "10.5281/zenodo.19711302"
 EXTERNAL_PHASE_MAP = {"fase1": 1, "fase2": 2, "fase3": 3, "fase4": 4, "fase5": 5}
 EXTERNAL_CRITICAL_PHASES = ["fase3", "fase5"]
 DEFAULT_BINS = 6
@@ -302,6 +306,81 @@ def load_external_archive(zip_path: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
             quality_rows.append(quality_row)
             collapsed_rows.extend(rows)
     return pd.DataFrame(quality_rows), pd.DataFrame(collapsed_rows)
+
+
+def load_synthetic_external_trials(csv_path: Path) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, dict[str, object]]:
+    if not csv_path.exists():
+        raise FileNotFoundError(f"Missing synthetic life-satisfaction dataset: {csv_path}")
+    clean_trials = pd.read_csv(csv_path)
+    required = {
+        "participant_id",
+        "source_file",
+        "phase",
+        "block",
+        "trial_in_block",
+        "rt",
+        "n_attempts",
+        "n_errors",
+    }
+    missing = sorted(required - set(clean_trials.columns))
+    if missing:
+        raise ValueError(f"Synthetic life-satisfaction dataset is missing required columns: {missing}")
+
+    clean_trials = clean_trials.copy()
+    clean_trials["block"] = clean_trials["block"].astype(int)
+    clean_trials["trial_in_block"] = clean_trials["trial_in_block"].astype(int)
+    clean_trials["rt"] = pd.to_numeric(clean_trials["rt"], errors="coerce")
+    clean_trials = clean_trials.dropna(subset=["participant_id", "phase", "block", "trial_in_block", "rt"])
+    clean_trials = clean_trials.sort_values(["participant_id", "block", "trial_in_block"]).reset_index(drop=True)
+
+    participant_summary = (
+        clean_trials.groupby("participant_id")
+        .agg(
+            source_file=("source_file", "first"),
+            total_items=("rt", "size"),
+            total_attempts=("n_attempts", "sum"),
+            total_errors=("n_errors", "sum"),
+            mean_rt=("rt", "mean"),
+            median_rt=("rt", "median"),
+        )
+        .reset_index()
+    )
+    participant_summary["error_rate"] = participant_summary["total_errors"] / participant_summary["total_attempts"]
+
+    critical = clean_trials[clean_trials["phase"].isin(EXTERNAL_CRITICAL_PHASES)].copy()
+    rt_by_phase = (
+        critical.groupby(["participant_id", "phase"])["rt"]
+        .mean()
+        .unstack()
+        .rename(columns={"fase3": "rt_congruent", "fase5": "rt_incongruent"})
+    )
+    rt_sd = critical.groupby("participant_id")["rt"].std()
+    d_like = pd.DataFrame(index=rt_by_phase.index)
+    d_like["rt_congruent"] = rt_by_phase["rt_congruent"]
+    d_like["rt_incongruent"] = rt_by_phase["rt_incongruent"]
+    d_like["sd_critical"] = rt_sd
+    d_like["d_like"] = (d_like["rt_incongruent"] - d_like["rt_congruent"]) / d_like["sd_critical"]
+    participant_summary = participant_summary.merge(d_like.reset_index(), on="participant_id", how="left")
+
+    quality_df = participant_summary[["source_file", "participant_id"]].copy()
+    quality_df["gmt_timestamp"] = ""
+    quality_df["duration_s"] = np.nan
+    quality_df["prop_fast_lt300_attempts"] = 0.0
+    quality_df["n_attempt_rows"] = participant_summary["total_attempts"].to_numpy()
+    quality_df["repeat_rank"] = 1
+    quality_df["exclude_fast"] = False
+    quality_df["exclude_repeat"] = False
+    quality_df["keep"] = True
+
+    summary = {
+        "raw_files": 0,
+        "valid_participants": int(participant_summary["participant_id"].nunique()),
+        "excluded_fast": 0,
+        "excluded_repeat": 0,
+        "synthetic": True,
+        "synthetic_path": str(csv_path),
+    }
+    return quality_df, participant_summary, clean_trials, summary
 
 
 def clean_external_trials(
@@ -696,13 +775,39 @@ def write_tables(
         handle.write(model_df.to_latex(index=False, escape=False))
 
 
-def main() -> None:
-    ensure_dirs()
-    if not EXTERNAL_ZIP.exists():
-        raise FileNotFoundError(f"Missing external archive: {EXTERNAL_ZIP}")
+def build_arg_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Run external life-satisfaction leverage analyses.")
+    parser.add_argument(
+        "--use-synthetic-life-data",
+        action="store_true",
+        help="Use synthetic life-satisfaction IAT data instead of restricted participant-level raw data.",
+    )
+    parser.add_argument(
+        "--synthetic-life-data",
+        type=Path,
+        default=SYNTHETIC_LIFE_CSV,
+        help="Synthetic life-satisfaction CSV used with --use-synthetic-life-data.",
+    )
+    return parser
 
-    quality_df, collapsed_df = load_external_archive(EXTERNAL_ZIP)
-    quality_df, participant_summary, clean_trials, external_summary = clean_external_trials(quality_df, collapsed_df)
+
+def main(argv: list[str] | None = None) -> None:
+    parser = build_arg_parser()
+    args = parser.parse_args(argv)
+    ensure_dirs()
+
+    if args.use_synthetic_life_data:
+        quality_df, participant_summary, clean_trials, external_summary = load_synthetic_external_trials(
+            args.synthetic_life_data
+        )
+    else:
+        if not EXTERNAL_ZIP.exists():
+            raise FileNotFoundError(
+                f"Missing external archive: {EXTERNAL_ZIP}. "
+                "Use --use-synthetic-life-data for the public review workflow."
+            )
+        quality_df, collapsed_df = load_external_archive(EXTERNAL_ZIP)
+        quality_df, participant_summary, clean_trials, external_summary = clean_external_trials(quality_df, collapsed_df)
     participant_summary.to_csv(OUT_DIR / "external_life_satisfaction_participants_clean.csv", index=False)
     clean_trials.to_csv(OUT_DIR / "external_life_satisfaction_trials_clean.csv", index=False)
 
@@ -735,6 +840,8 @@ def main() -> None:
     plot_external_leverage(gs_quintiles, gs_full, external_posterior, external_models)
 
     summary = {
+        "software_archive_doi": SOFTWARE_ARCHIVE_DOI,
+        "life_satisfaction_database_doi": LIFE_SATISFACTION_DATABASE_DOI,
         "external_cleaning": external_summary,
         "external_theta": {
             "task": str(external_theta_df.loc[0, "task"]),

@@ -1,0 +1,21 @@
+﻿variant,n_curves,theta_mean,theta_sd,theta_map,hdi_low,hdi_high,dropped_base_trial,dropped_family,dropped_stimulus
+drop_item_15,180,175.93200895283888,4.253044398122115,180.0,168.25,180.0,15,life-satisfaction statement,"Se pudesse, eu não mudaria a minha vida"
+drop_item_20,180,176.3062833841077,3.856841484374698,180.0,169.25,180.0,20,life-satisfaction statement,Mudaria toda a minha vida se eu pudesse
+drop_item_10,180,176.78838492072572,3.3773783204990746,180.0,170.75,180.0,10,logical-anchor,Estou participando de uma festa
+drop_item_19,180,176.88624398783577,3.290743639178618,180.0,171.0,180.0,19,life-satisfaction statement,Não consegui coisas que queria na vida
+drop_item_08,180,177.0410999969972,3.127999214324196,180.0,171.5,180.0,8,logical-anchor,Estou fazendo um teste de matemática
+drop_item_18,180,177.14983787221408,3.0108317806791804,180.0,171.75,180.0,18,life-satisfaction statement,Não estou nada satisfeito com minha vida
+drop_item_11,180,177.15459106527936,3.008634122565398,180.0,171.75,180.0,11,life-satisfaction statement,Minha vida está bem perto do meu ideal
+drop_item_16,180,177.22938162600803,2.9353307078707562,180.0,172.0,180.0,16,life-satisfaction statement,Minha vida não está perto do meu ideal
+drop_item_07,180,177.2916089283886,2.873689379770124,180.0,172.0,180.0,7,logical-anchor,Estou lendo uma frase em irlandês
+drop_item_06,180,177.3785110965687,2.782907784795779,180.0,172.25,180.0,6,logical-anchor,Estou na frente de uma geladeira
+drop_item_03,180,177.41709933054105,2.741534638597536,180.0,172.5,180.0,3,logical-anchor,Estou digitando minhas respostas com um teclado
+drop_item_12,180,177.44778248040936,2.7127148226490116,180.0,172.5,180.0,12,life-satisfaction statement,Minha vida está em condições ótimas
+drop_item_09,180,177.44834453423871,2.7118160384070102,180.0,172.5,180.0,9,logical-anchor,Estou digitando minhas respostas com uma lapiseira
+drop_item_02,180,177.4942151109437,2.6695616917382026,180.0,172.75,180.0,2,logical-anchor,Estou lendo uma frase em português
+drop_item_17,180,177.53277145087864,2.625636247861031,180.0,172.75,180.0,17,life-satisfaction statement,Minha vida não está em condições ótimas
+drop_item_01,180,177.55521436545556,2.6072320395678914,180.0,172.75,180.0,1,logical-anchor,Estou na frente de um computador
+drop_item_14,180,177.57328716800552,2.5839154061670624,180.0,173.0,180.0,14,life-satisfaction statement,Consegui o que eu queria na minha vida
+drop_item_05,180,177.57848572641348,2.577887641920556,180.0,173.0,180.0,5,logical-anchor,Estou participando de um experimento
+drop_item_13,180,177.64294859298465,2.5137965008290304,180.0,173.0,180.0,13,life-satisfaction statement,Sou bastante satisfeito com a minha vida
+drop_item_04,180,177.64405840015337,2.5148307392548013,180.0,173.0,180.0,4,logical-anchor,Estou fazendo um teste de psicologia

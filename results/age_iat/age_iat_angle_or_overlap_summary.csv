@@ -1,0 +1,2 @@
+domain,year,theta_mean_deg,theta_map_deg,theta_hdi_low_deg,theta_hdi_high_deg,contextual_overlap_cos_theta_mean,contextual_overlap_cos_theta_map
+Age,2019,18.476419785317983,18.5,17.5,19.25,0.9484541623791468,0.9483236552061993

@@ -1,0 +1,15 @@
+﻿task,stage,pairing_definition,pair_side,n_trials,mean_ms,median_ms,sd_ms,iqr_ms,q1_ms,q3_ms
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,4489808,835.2278888094992,680.0,563.5039581689498,307.0,575.0,882.0
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,4488442,828.7605902003412,680.0,546.9024306371925,298.0,576.0,874.0
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,4463652,1046.9887303042442,817.0,750.0932995917224,553.0,633.0,1186.0
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,4465204,1069.821190028496,838.0,764.6285611153177,545.0,655.0,1200.0
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,4002464,927.2891256486005,751.0,604.7162660615256,415.0,610.0,1025.0
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,4003755,920.5519503566028,749.0,593.836840160608,395.0,614.0,1009.0
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,3987035,1100.038567506932,892.0,731.2291318723024,544.0,694.0,1238.0
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,3985353,1063.0252978845288,859.0,714.6619072722693,540.0,663.0,1203.0
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,3600,2515.3880555555556,2001.0,2331.7303624472124,1524.75,1412.75,2937.5
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,3600,3077.9783333333335,2376.0,2863.494962342995,1881.25,1682.5,3563.75
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,5947124,1022.40222568085,819.0,696.4226677203299,469.0,656.0,1125.0
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,5949935,1043.3864788438866,842.0,692.2151073472307,478.0,673.0,1151.0
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,5944153,1110.1885207194364,890.0,760.304301936275,553.0,690.0,1243.0
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,5940411,1158.216957715552,931.0,792.365459726776,575.0,720.0,1295.0

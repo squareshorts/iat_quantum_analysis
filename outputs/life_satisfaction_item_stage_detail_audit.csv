@@ -1,0 +1,41 @@
+﻿stage,stimulus_family,base_trial,stimulus,n_trials,mean_ms,median_ms,sd_ms,iqr_ms,n_attempts,n_errors,error_rate
+Congruent,life-satisfaction statement,11,Minha vida está bem perto do meu ideal,180,3196.7166666666667,2245.5,7282.880783444551,1540.0,180,66,0.36666666666666664
+Incongruent,life-satisfaction statement,11,Minha vida está bem perto do meu ideal,180,3513.4777777777776,2670.5,3287.8791851003684,2142.0,180,97,0.5388888888888889
+Congruent,life-satisfaction statement,12,Minha vida está em condições ótimas,180,2560.838888888889,2053.0,1842.7158853804335,1452.5,180,64,0.35555555555555557
+Incongruent,life-satisfaction statement,12,Minha vida está em condições ótimas,180,3233.55,2521.0,2887.3971253530763,1824.5,180,86,0.4777777777777778
+Congruent,life-satisfaction statement,13,Sou bastante satisfeito com a minha vida,180,2514.7722222222224,2021.0,1646.5297342303088,1310.75,180,55,0.3055555555555556
+Incongruent,life-satisfaction statement,13,Sou bastante satisfeito com a minha vida,180,3247.5833333333335,2769.5,2380.168140802582,2193.0,180,89,0.49444444444444446
+Congruent,life-satisfaction statement,14,Consegui o que eu queria na minha vida,180,2617.3722222222223,2222.5,1367.447126144007,1630.75,180,68,0.37777777777777777
+Incongruent,life-satisfaction statement,14,Consegui o que eu queria na minha vida,180,3145.738888888889,2586.5,1977.1759369439137,1830.5,180,86,0.4777777777777778
+Congruent,life-satisfaction statement,15,"Se pudesse, eu não mudaria a minha vida",180,4016.233333333333,3350.0,2653.4491627347747,2502.75,180,85,0.4722222222222222
+Incongruent,life-satisfaction statement,15,"Se pudesse, eu não mudaria a minha vida",180,4284.583333333333,3260.0,3720.83275486346,2454.75,180,81,0.45
+Congruent,life-satisfaction statement,16,Minha vida não está perto do meu ideal,180,3153.3,2796.0,1851.075233056656,1745.25,180,61,0.3388888888888889
+Incongruent,life-satisfaction statement,16,Minha vida não está perto do meu ideal,180,4533.211111111111,3259.5,7394.63205727274,2685.5,180,81,0.45
+Congruent,life-satisfaction statement,17,Minha vida não está em condições ótimas,180,3089.811111111111,2831.0,1736.9752582925717,1652.75,180,51,0.2833333333333333
+Incongruent,life-satisfaction statement,17,Minha vida não está em condições ótimas,180,3863.961111111111,3109.5,2834.6487596628226,2024.25,180,93,0.5166666666666667
+Congruent,life-satisfaction statement,18,Não estou nada satisfeito com minha vida,180,2955.5222222222224,2475.5,2167.920826275863,1792.0,180,34,0.18888888888888888
+Incongruent,life-satisfaction statement,18,Não estou nada satisfeito com minha vida,180,3337.9666666666667,2586.0,2329.8447112996496,2212.75,180,88,0.4888888888888889
+Congruent,life-satisfaction statement,19,Não consegui coisas que queria na vida,180,3469.25,2794.5,2314.7469952966,2436.0,180,69,0.38333333333333336
+Incongruent,life-satisfaction statement,19,Não consegui coisas que queria na vida,180,3705.616666666667,2845.0,3031.105787262368,2402.75,180,88,0.4888888888888889
+Congruent,life-satisfaction statement,20,Mudaria toda a minha vida se eu pudesse,180,2806.038888888889,2546.0,1410.8030929914669,1771.5,180,46,0.25555555555555554
+Incongruent,life-satisfaction statement,20,Mudaria toda a minha vida se eu pudesse,180,3231.688888888889,2684.5,1826.6073270547656,2085.0,180,89,0.49444444444444446
+Congruent,logical-anchor,1,Estou na frente de um computador,180,1750.3722222222223,1414.5,1170.2424951898245,839.5,180,9,0.05
+Incongruent,logical-anchor,1,Estou na frente de um computador,180,2209.911111111111,1857.5,1407.5999593939712,1337.25,180,142,0.7888888888888889
+Congruent,logical-anchor,2,Estou lendo uma frase em português,180,1855.911111111111,1568.5,964.7481929775805,918.0,180,3,0.016666666666666666
+Incongruent,logical-anchor,2,Estou lendo uma frase em português,180,2497.1444444444446,2229.0,1543.9268085606996,1355.5,180,142,0.7888888888888889
+Congruent,logical-anchor,3,Estou digitando minhas respostas com um teclado,180,2507.016666666667,2041.5,1596.5365218630163,1191.75,180,7,0.03888888888888889
+Incongruent,logical-anchor,3,Estou digitando minhas respostas com um teclado,180,2982.0222222222224,2627.5,1865.8465329226879,1424.0,180,133,0.7388888888888889
+Congruent,logical-anchor,4,Estou fazendo um teste de psicologia,180,1849.05,1610.5,1117.2542124063193,850.5,180,6,0.03333333333333333
+Incongruent,logical-anchor,4,Estou fazendo um teste de psicologia,180,2450.972222222222,2013.0,1624.2180875338536,1304.5,180,139,0.7722222222222223
+Congruent,logical-anchor,5,Estou participando de um experimento,180,1895.5055555555555,1494.5,1215.8274856365515,914.0,180,4,0.022222222222222223
+Incongruent,logical-anchor,5,Estou participando de um experimento,180,2716.1277777777777,2140.0,2103.7444616963203,1396.5,180,137,0.7611111111111111
+Congruent,logical-anchor,6,Estou na frente de uma geladeira,180,1961.7666666666667,1512.5,1313.694700636509,864.0,180,3,0.016666666666666666
+Incongruent,logical-anchor,6,Estou na frente de uma geladeira,180,2273.266666666667,1944.5,1346.4422584378667,1307.5,180,138,0.7666666666666667
+Congruent,logical-anchor,7,Estou lendo uma frase em irlandês,180,1871.35,1533.0,1072.4069230750135,840.5,180,8,0.044444444444444446
+Incongruent,logical-anchor,7,Estou lendo uma frase em irlandês,180,2555.1222222222223,2014.0,1699.1527058917243,1280.25,180,136,0.7555555555555555
+Congruent,logical-anchor,8,Estou fazendo um teste de matemática,180,1935.1277777777777,1701.0,878.5684269243519,994.5,180,5,0.027777777777777776
+Incongruent,logical-anchor,8,Estou fazendo um teste de matemática,180,2247.1944444444443,1952.5,1320.2676302975171,1168.0,180,140,0.7777777777777778
+Congruent,logical-anchor,9,Estou digitando minhas respostas com uma lapiseira,180,2501.811111111111,2126.5,1531.328677062599,1284.5,180,4,0.022222222222222223
+Incongruent,logical-anchor,9,Estou digitando minhas respostas com uma lapiseira,180,2945.711111111111,2348.0,2327.273966939494,1430.5,180,133,0.7388888888888889
+Congruent,logical-anchor,10,Estou participando de uma festa,180,1799.9944444444445,1549.0,1039.62937367402,781.75,180,8,0.044444444444444446
+Incongruent,logical-anchor,10,Estou participando de uma festa,180,2584.7166666666667,1900.0,2528.1600001409815,1126.0,180,133,0.7388888888888889

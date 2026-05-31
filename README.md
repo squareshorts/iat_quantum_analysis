@@ -2,7 +2,68 @@
 
 This repository matches the manuscript project titled:
 
-`A single-parameter geometric model of contextual overlap in the Gender--Science IAT`
+`Angular profiling of contextual structure in implicit-association latency data`
+
+## Data, code, and materials for BRM review
+
+This repository has been prepared for the Behavior Research Methods TOP Level 2 data/code/materials review for manuscript BR-Org-26-540.
+
+Repository/software sister publication on Zenodo:
+
+- Version DOI: https://doi.org/10.5281/zenodo.19711302
+- Zenodo record: https://zenodo.org/records/19711302
+- GitHub repository: https://github.com/squareshorts/iat_quantum_analysis
+
+Verified public Project Implicit raw-data links, accessed 2026-05-31:
+
+- Gender--Science IAT: OSF Raw Data component https://osf.io/cfvyj/; 2019 archive `GenderScience_iat_2019.zip` at https://osf.io/download/7gb96/.
+- Sexuality IAT: OSF Raw Data component https://osf.io/5s9ty/; 2019 archive `Sexuality_iat_2019.zip` at https://osf.io/download/79ch3/.
+- Age IAT: OSF Raw Data component https://osf.io/9jvmk/; 2019 archive `Age_iat_2019.zip` at https://osf.io/download/34wsk/.
+
+The editor-reported Gender--Science parent node `davke` is not used because the OSF API reports that node as not found. The verified Gender--Science source is the public Raw Data component at https://osf.io/cfvyj/.
+
+The participant-level raw data from the independent life-satisfaction IAT cannot be shared openly because the consent and ethics approval for the original study did not authorize unrestricted public release of participant-level behavioral data. For code execution and review, the repository provides:
+
+- synthetic data: `data/synthetic/life_satisfaction_iat_synthetic.csv`
+- generator: `scripts/generate_synthetic_life_satisfaction_iat.py`
+- validator: `scripts/validate_synthetic_life_satisfaction_iat.py`
+- documentation: `docs/SYNTHETIC_DATA.md`
+
+The actual life-satisfaction database used for analysis must not be published from the raw Testable ZIP because the raw export includes direct identifiers. Build the de-identified Zenodo upload package with:
+
+```powershell
+python scripts/build_life_satisfaction_zenodo_package.py
+```
+
+This writes `release/life_satisfaction_iat_database_zenodo.zip` and a suggested `zenodo_metadata.json`. After the dataset record is published, replace the life-satisfaction DOI placeholder in `DATA_AVAILABILITY.md`, `data_sources.yaml`, `paper/main_new.tex`, `CITATION.cff`, and `.zenodo.json`.
+
+Reviewer commands for the public/synthetic pipeline:
+
+```powershell
+python scripts/generate_synthetic_life_satisfaction_iat.py
+python scripts/validate_synthetic_life_satisfaction_iat.py
+python scripts/run_external_leverage_analysis.py --use-synthetic-life-data
+```
+
+Quick smoke test without restricted data:
+
+```powershell
+python scripts/check_external_links.py
+python scripts/validate_synthetic_life_satisfaction_iat.py
+python scripts/run_reproducibility_smoke_test.py
+```
+
+Main public-domain figure/table generation commands:
+
+```powershell
+python scripts/run_theta_grid_full_plus_baselines.py
+python scripts/run_submission_evidence.py
+python scripts/run_matched_public_domain_analysis.py
+python -m src.pipeline.run_age_iat --osf-node cv7iq --year 2019
+python -m src.analysis.generate_manuscript_outputs
+```
+
+`scripts/run_theta_grid_full_plus_baselines.py` regenerates the primary Gender--Science posterior, posterior predictive checks, and baseline comparison tables. `scripts/run_submission_evidence.py` regenerates robustness, calibration, null, WAIC, and blockwise diagnostics. `scripts/run_matched_public_domain_analysis.py` regenerates the matched Gender--Science/Sexuality public-domain outputs. `python -m src.pipeline.run_age_iat` downloads, preprocesses, analyzes, and exports the Age IAT outputs.
 
 The main manuscript-aligned pipeline is the grid-OLS workflow in `run_theta_grid_full_plus_baselines.py`, which:
 
@@ -30,7 +91,7 @@ These repo artifacts line up with the manuscript text you supplied:
 The repo now also includes an independent 2024 life-satisfaction IAT archive plus an external-leverage pipeline:
 
 - `data/life_satisfaction_iat_2024/raw/187results.zip`
-- `run_external_leverage_analysis.py`
+- `scripts/run_external_leverage_analysis.py`
   - reconstructs the 180 valid participants
   - exports anonymized cleaned trials/participants
   - compares Gender--Science geometry against D-like strata and the independent task
@@ -77,24 +138,26 @@ Important warning: the analysis requires trial-level files with session/block/tr
   - small reusable utilities
 - `tables/`
   - manuscript-facing LaTeX tables
+- `scripts/`
+  - top-level executable pipelines and analysis workflows
 - `archive/`
   - legacy or non-manuscript material kept for reference
 
 ## Main scripts
 
-- `run_theta_grid_full_plus_baselines.py`
+- `scripts/run_theta_grid_full_plus_baselines.py`
   - primary manuscript-aligned analysis
-- `run_theta_grid_full.py`
+- `scripts/run_theta_grid_full.py`
   - simpler posterior/PPC run without the baseline sweep
-- `run_submission_evidence.py`
+- `scripts/run_submission_evidence.py`
   - expanded scientific-audit pipeline with corrected full-sample hold-out, block-specific analyses, null checks, recovery simulations, and approximate WAIC
-- `run_external_leverage_analysis.py`
+- `scripts/run_external_leverage_analysis.py`
   - external-task ingestion, cleaning, subgroup contrasts against a conventional D-like metric, and independent-task model comparison
-- `run_objective_mismatch_analysis.py`
+- `scripts/run_objective_mismatch_analysis.py`
   - residual-structure, held-out distributional-fit, and blockwise interpretability diagnostics contrasting the interference and quadratic baselines
-- `run_hierarchical_analysis.py`
+- `scripts/run_hierarchical_analysis.py`
   - exploratory PyMC workflow; not the primary manuscript result
-- `run_grouped_loo.py`
+- `scripts/run_grouped_loo.py`
   - exploratory information-criterion export; currently not submission-ready
 
 ## Reproducibility
@@ -107,12 +170,12 @@ Environment files live in `env/`:
 Typical run order:
 
 ```powershell
-python run_theta_grid_full_plus_baselines.py
-python run_export_participant_loglik.py
-python run_export_baseline_loglik.py
-python run_grouped_loo.py
-python run_external_leverage_analysis.py
-python run_objective_mismatch_analysis.py
+python scripts/run_theta_grid_full_plus_baselines.py
+python scripts/run_export_participant_loglik.py
+python scripts/run_export_baseline_loglik.py
+python scripts/run_grouped_loo.py
+python scripts/run_external_leverage_analysis.py
+python scripts/run_objective_mismatch_analysis.py
 ```
 
 ## Submission status

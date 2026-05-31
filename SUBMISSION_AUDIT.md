@@ -13,9 +13,9 @@ The strongest evidence is:
 ## Present and aligned
 
 - Main grid-OLS analysis script:
-  - `run_theta_grid_full_plus_baselines.py`
+  - `scripts/run_theta_grid_full_plus_baselines.py`
 - Expanded scientific-audit script:
-  - `run_submission_evidence.py`
+  - `scripts/run_submission_evidence.py`
 - Matching manuscript outputs:
   - `figures/theta_posterior_full.png`
   - `figures/ppc_full.png`
@@ -42,7 +42,7 @@ The strongest evidence is:
 - No journal/package metadata yet.
   - There is no cover letter, title page variant, author contribution statement, conflict statement, or journal-specific checklist in the repo.
 - No license file.
-  - If this repo will be public, add a `LICENSE`.
+  - Resolved: An MIT `LICENSE` has been added.
 
 ## Inconsistencies to resolve
 
@@ -51,7 +51,7 @@ The strongest evidence is:
   - ArviZ appears in exploratory hierarchical scripts, not the main result path.
 - The manuscript describes temporal hold-out evaluation generically.
   - The original script still defaults to a `5000`-participant subsample.
-  - The new `run_submission_evidence.py` script performs a corrected full-sample re-analysis, but those results are not yet integrated into the manuscript text.
+  - The new `scripts/run_submission_evidence.py` script performs a corrected full-sample re-analysis, but those results are not yet integrated into the manuscript text.
 - The manuscript says robustness checks are repeated for `4, 6, 8` bins.
   - The new audit script does run hold-out comparisons across `4, 6, 8` bins.
   - However, those outputs show stronger preprocessing sensitivity and should be reflected honestly in the paper.

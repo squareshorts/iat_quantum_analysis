@@ -1,5 +1,7 @@
 # Local environments
 .venv/
+.vendor/
+.vendor312/
 env/*
 !env/requirements.txt
 !env/requirements.lock.txt
@@ -11,13 +13,20 @@ __pycache__/
 # Notebook junk
 .ipynb_checkpoints/
 
-# Large regenerated intermediates & Data
+# Large regenerated intermediates & data
 outputs/*.pkl
 outputs/*.parquet
 outputs/*.nc
 outputs/loglik/*.npy
 outputs/theta_phase_by_block.csv
-data/
+data/*
+!data/synthetic/
+!data/synthetic/life_satisfaction_iat_synthetic.csv
+!data/life_satisfaction_iat_2024/
+data/life_satisfaction_iat_2024/*
+!data/life_satisfaction_iat_2024/README.md
+release/
+zenodo_submission.zip
 
 # LaTeX build files
 paper/*.aux

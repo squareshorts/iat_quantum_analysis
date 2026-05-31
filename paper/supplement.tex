@@ -3,71 +3,70 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{setspace}
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{caption}
+
 \doublespacing
-\graphicspath{{figures/}{../figures/}{./}}
+\graphicspath{{figures/}{./}}
 
-\title{Supplementary Material:\\
-A single-parameter geometric model of contextual overlap in the Gender--Science IAT}
+\sisetup{
+  group-separator = {,},
+  group-minimum-digits = 4,
+  table-number-alignment = center
+}
 
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\title{Supplementary Material\\Pooled angular profiling of contextual separation in implicit-association latency data}
 \author{}
 \date{}
 
 \begin{document}
+
 \maketitle
 
-% =================================================
-\section*{Supplementary Methods}
-% =================================================
-
-\subsection*{Binning and normalization}
-
-Within each participant and critical block, trials were ordered by presentation sequence
-and mapped to a normalized position variable $x \in [0,1]$. Reaction times were
-aggregated into quantile bins with $N_{\text{bins}} \in \{4,6,8\}$. Participants with
-fewer than three populated bins were excluded so that the cosine--sine basis remained
-identifiable.
-
-For predictive validation, standardization was performed in a leak-free manner:
-z-scores were computed from training bins only and then applied to held-out bins.
-For the estimation of the pooled interference angle $\theta$, all bins were used for
-standardization to maintain consistency with the Gaussian observation model used in
-profiling.
-
-\subsection*{Numerical stability}
-
-Closed-form ordinary least squares (OLS) estimation was used throughout. To stabilize
-matrix inversion in near-degenerate cases, a ridge penalty of $10^{-5}$ was added to
-$X^\top X$. Results were insensitive to the precise value of this penalty within
-several orders of magnitude.
-
-% =================================================
 \section*{Supplementary Results}
-% =================================================
-
-% -------------------------------------------------
-\subsection*{Robustness of the pooled posterior to binning resolution}
-
-To assess sensitivity to temporal discretization, the full profiling pipeline was
-repeated using 4, 6, and 8 quantile bins per participant. The inferred pooled posterior
-remained concentrated in the low-angle regime across all three resolutions, although the
-posterior mode shifted modestly with the number of bins---from $22.75^\circ$ (4 bins)
-to $17.25^\circ$ (6 bins) to $15.50^\circ$ (8 bins). All three posteriors are sharply
-concentrated (SD $<1^\circ$). This pattern supports robustness of the low-angle
-solution while also showing that it is not numerically invariant to discretization.
 
 \begin{table}[htbp]
 \centering
-\caption{Pooled profile-posterior summary by binning resolution ($N_{\text{bins}} \in \{4,6,8\}$). Mean, SD, MAP, and 94\% HDI are shown alongside posterior entropy (nats) and residual $\hat{\sigma}$. All posteriors are sharply concentrated.}
+\caption{Dataset-level summary of validation corpora.}
+\label{tab:supp-dataset-summary}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{3.1cm}p{3.2cm}p{2.5cm}p{2.5cm}p{3.0cm}@{}}
+\toprule
+Dataset & Source & Analytic sample & Critical blocks & Analytic role \\
+\midrule
+Gender--Science IAT & Project Implicit public archive & 141{,}329 participants & Blocks 3, 4, 6, and 7 & Primary public reference corpus \\
+Sexuality IAT & Project Implicit public archive & 207{,}366 participants & Blocks 3, 4, 6, and 7 & Matched public social-category comparison \\
+Age IAT & Project Implicit OSF archive & 156{,}005 participants after critical-block latency cleaning & Blocks 3, 4, 6, and 7 & Additional public social-category comparison \\
+Life-satisfaction IAT & Independent Testable study & 180 participants & Blocks 3 and 5 & External self-referential comparison \\
+\bottomrule
+\end{tabular}
+
+\begin{flushleft}
+\footnotesize\emph{Note}. IAT = Implicit Association Test; OSF = Open Science Framework. The public IAT datasets preserve the standard group-based Project Implicit architecture, whereas the life-satisfaction IAT differs in platform, protocol, language, sample size, stimulus format, and construct target.
+\end{flushleft}
+\end{table}
+
+\subsection*{Robustness to binning resolution}
+
+To assess sensitivity to temporal discretization, the full profiling pipeline was repeated using 4, 6, and 8 quantile bins per participant. Across all three resolutions, the pooled profile remained concentrated in the low-angle regime. The posterior mode shifted from \(22.75^\circ\) at 4 bins to \(17.25^\circ\) at 6 bins and \(15.50^\circ\) at 8 bins, showing stable regime-level behavior with measurable discretization sensitivity.
+
+\begin{table}[htbp]
+\centering
+\caption{Pooled profile-posterior summary by binning resolution.}
 \label{tab:supp-posterior-bins}
 \small
-\begin{tabular}{@{}rrrrrrrr@{}}
+\begin{tabular}{@{}cccccccc@{}}
 \toprule
-Bins & Mean \(\theta\) & SD & MAP & HDI low & HDI high & Posterior entropy & \(\hat{\sigma}\) at MAP \\
+Bins & Mean $\theta$ & SD & MAP & HDI low & HDI high & Posterior entropy & $\hat{\sigma}$ at MAP \\
 \midrule
 4 & 22.901 & 0.623 & 22.750 & 21.750 & 24.000 & 2.330 & 0.443 \\
 6 & 17.292 & 0.483 & 17.250 & 16.500 & 18.250 & 2.077 & 0.630 \\
@@ -76,66 +75,41 @@ Bins & Mean \(\theta\) & SD & MAP & HDI low & HDI high & Posterior entropy & \(\
 \end{tabular}
 \end{table}
 
-% -------------------------------------------------
-\subsection*{Population-level bootstrap stability}
+\subsection*{Bootstrap stability}
 
-To assess whether the pooled $\theta$ estimate is stable across random participant draws,
-a bootstrap subsampling analysis was performed. One hundred independent subsamples of
-$N=30{,}000$ participants each were drawn from the full dataset (with replacement); for
-each subsample the complete grid-profiling procedure was repeated. The posterior MAP
-equalled $17^\circ$ on every replicate, yielding a bootstrap SD of $0.00^\circ$ and a
-95\% percentile interval of $[17^\circ, 17^\circ]$. This perfect stability, achieved
-on subsamples comprising only $21\%$ of the full dataset, demonstrates that the
-$\approx 17^\circ$--$18^\circ$ result is not a feature of any particular participant
-composition and that the concentration of the pooled posterior reflects an aggregate
-signal robustly present throughout the sample.
+To assess the stability of the pooled estimate, we drew 100 bootstrap subsamples of $N=30{,}000$ participants from the full dataset and reran the profiling procedure for each subsample. The pooled MAP was $17^\circ$ in every replicate, indicating that the empirical low-angle solution is highly stable to resampling at large $N$.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.72\textwidth]{ext_bootstrap_distribution.png}
-\caption{Bootstrap stability of the pooled \(\theta\) estimate. Each of 100 replicates
-resamples 30{,}000 participants and recomputes the pooled MAP. The bootstrap
-distribution is effectively degenerate around the empirical solution, indicating
-extremely high stability of the population-level estimate at large $N$.}
+\caption{Bootstrap stability of the pooled estimate. Each replicate resamples 30,000 participants and recomputes the pooled MAP.}
 \label{fig:supp-bootstrap}
 \end{figure}
 
-% -------------------------------------------------
-\subsection*{Expanded simulation-based recovery}
+\subsection*{Generic recovery diagnostics}
 
-Simulation-based recovery was conducted using 100 independent replicates for each of
-11 generating angles spanning $5^\circ$--$120^\circ$, with $N=5{,}000$ simulated
-participant curves per replicate. Recovery was performed on the full $0^\circ$--$180^\circ$
-profiling grid (0.25-degree steps).
-
-Recovery is near-unbiased and yields coverage $\geq 91\%$ for
-$\theta_{\text{true}} \geq 40^\circ$. For small angles ($\theta_{\text{true}} \leq
-25^\circ$), recovery is substantially biased toward the range $38^\circ$--$44^\circ$,
-and 94\% HDI coverage drops to 0\%--50\%. This asymmetry is geometrically expected:
-for $\theta \approx 17^\circ$, the cosinusoidal argument $\theta \cdot x$ spans only
-a narrow range over the trial sequence, producing a nearly flat temporal modulation
-difficult to distinguish from additive trends at $N=5{,}000$.
+These simulations are included as diagnostics of the estimator's generic behavior across the full angular range. They are not the primary basis for interpreting the empirical low-angle regime, which is addressed separately below using matched-domain calibration under empirically realistic coefficient and noise structures.
 
 \begin{table}[htbp]
 \centering
-\caption{Expanded simulation-based recovery (100 replicates per generating angle, $N=5{,}000$ curves each, full $0^\circ$--$180^\circ$ profiling grid).}
+\caption{Simulation-based recovery over the full profiling grid.}
 \label{tab:supp-recovery}
 \small
-\begin{tabular}{@{}rrrrrrrr@{}}
+\begin{tabular}{@{}cccccccc@{}}
 \toprule
-True \(\theta\) & Replicates & Mean MAP & Bias & RMSE & Med.\ SD & 94\% cov. & Med.\ HDI \\
+True $\theta$ & Replicates & Mean MAP & Bias & RMSE & Median SD & 94\% coverage & Median HDI width \\
 \midrule
-5.000  & 100 & 41.743 & 36.743 & 40.930 & 14.394 & 0.000 & 50.125 \\
-10.000 & 100 & 39.763 & 29.763 & 33.412 & 12.658 & 0.000 & 44.500 \\
-15.000 & 100 & 42.363 & 27.363 & 31.090 & 12.451 & 0.000 & 44.500 \\
-17.250 & 100 & 43.173 & 25.923 & 29.044 & 11.810 & 0.000 & 41.875 \\
-20.000 & 100 & 41.613 & 21.613 & 24.666 & 10.752 & 0.010 & 38.625 \\
-25.000 & 100 & 42.030 & 17.030 & 19.739 &  8.620 & 0.500 & 31.375 \\
-30.000 & 100 & 39.915 &  9.915 & 11.987 &  6.995 & 0.800 & 25.625 \\
-40.000 & 100 & 42.610 &  2.610 &  5.964 &  5.172 & 0.910 & 19.250 \\
-60.000 & 100 & 59.948 & -0.053 &  2.524 &  2.356 & 0.910 &  8.750 \\
-90.000 & 100 & 89.988 & -0.013 &  0.962 &  0.885 & 0.940 &  3.250 \\
-120.000 & 100 & 119.990 & -0.010 & 0.494 &  0.438 & 0.950 &  1.500 \\
+5.000   & 100 & 41.743  & 36.743  & 40.930 & 14.394 & 0.000 & 50.125 \\
+10.000  & 100 & 39.763  & 29.763  & 33.412 & 12.658 & 0.000 & 44.500 \\
+15.000  & 100 & 42.363  & 27.363  & 31.090 & 12.451 & 0.000 & 44.500 \\
+17.250  & 100 & 43.173  & 25.923  & 29.044 & 11.810 & 0.000 & 41.875 \\
+20.000  & 100 & 41.613  & 21.613  & 24.666 & 10.752 & 0.010 & 38.625 \\
+25.000  & 100 & 42.030  & 17.030  & 19.739 & 8.620  & 0.500 & 31.375 \\
+30.000  & 100 & 39.915  & 9.915   & 11.987 & 6.995  & 0.800 & 25.625 \\
+40.000  & 100 & 42.610  & 2.610   & 5.964  & 5.172  & 0.910 & 19.250 \\
+60.000  & 100 & 59.948  & -0.053  & 2.524  & 2.356  & 0.910 & 8.750 \\
+90.000  & 100 & 89.988  & -0.013  & 0.962  & 0.885  & 0.940 & 3.250 \\
+120.000 & 100 & 119.990 & -0.010  & 0.494  & 0.438  & 0.950 & 1.500 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -143,299 +117,195 @@ True \(\theta\) & Replicates & Mean MAP & Bias & RMSE & Med.\ SD & 94\% cov. & M
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\textwidth]{ext_recovery_plots.png}
-\caption{Simulation-based recovery across generating angles. Left: identity plot
-(recovered MAP $\pm$ RMSE). Centre: bias vs.\ generating angle. Right: 94\% HDI
-coverage vs.\ generating angle. Recovery is accurate for $\theta \geq 40^\circ$
-but biased toward $38^\circ$--$44^\circ$ for small angles (including the empirical
-estimate $\approx 17^\circ$).}
-\label{fig:supp-recovery}
+\caption{Simulation-based recovery across generating angles. Low angles show strong upward bias and poor coverage, whereas moderate and high angles are recovered substantially better.}
+\label{fig:supp-recovery-plot}
 \end{figure}
 
-The poor small-angle recovery under $N=5{,}000$ does not contradict the
-population-level estimate. At the empirically observed scale ($N=141{,}329$), the
-profile posterior integrates signal across a far larger number of observations.
-The bootstrap analysis above---in which $30{,}000$-participant subsamples consistently
-recover $17^\circ$---directly demonstrates that population-level identification is
-robust even though participant-level estimation remains unreliable in this parameter
-regime.
+\subsection*{Matched-domain calibration in the empirical low-angle regime}
 
-% -------------------------------------------------
-\subsection*{Recovery as a function of sample size}
+Calibration was evaluated directly at the empirical low-angle solutions observed in the matched Gender--Science and Sexuality datasets. In both domains, recovery remained strongly biased upward, and interval coverage was poor at the relevant sample sizes. Under the present binned Gaussian profiling model and empirical online-IAT noise structure, low-angle profile peaks define a stable population-level descriptor with limited low-angle generative recovery.
 
-To clarify why the empirical low-angle estimate is stable despite poor recovery at small
-sample size, recovery was examined as a function of $N$. Small and moderate samples
-($N \lesssim 10{,}000$) remain biased upward with 0\%--50\% coverage, whereas the
-empirical dataset falls in a regime where the recovered MAP aligns with the observed
-estimate and the HDI covers the target angle.
+In the Gender--Science corpus, calibration at $\theta_{\mathrm{true}}=17.25^\circ$ yielded mean recovered MAP values of $39.04^\circ$ at $N=10{,}000$ and $39.62^\circ$ at $N=30{,}000$, with 94\% HDI coverage equal to 0\% at both sample sizes. In the matched Sexuality corpus, calibration at $\theta_{\mathrm{true}}=19.12^\circ$ showed the same pattern: mean recovered MAP $41.99^\circ$ at $N=10{,}000$ and $38.94^\circ$ at $N=30{,}000$, again with 0\% coverage.
+
+\subsection*{Null controls}
+
+Two null controls were used to assess whether the observed posterior concentration could be explained by disrupted temporal order or generic smooth trends alone.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.90\textwidth]{ext_nscaling.png}
-\caption{Population-level recovery as a function of sample size for the low-angle
-regime near the empirical solution. The empirical dataset at $N=141{,}329$ lies in
-the regime where the recovered MAP coincides with the observed solution and the HDI
-covers the target.}
-\label{fig:supp-nscaling}
+\includegraphics[width=0.95\textwidth]{ext_null_distributions.png}
+\caption{Null posterior diagnostics versus the observed fit.}
+\label{fig:supp-nulls}
 \end{figure}
-
-% -------------------------------------------------
-\subsection*{Objective comparison: profiling posterior versus hold-out predictive criterion}
-
-Posterior density, normalized RSS, hold-out RMSE, and log-predictive-score were
-compared on a common $\theta$ grid for each of the three binning conditions. The
-hold-out RMSE is minimized at the boundary $\theta = 0^\circ$ for all three bin counts,
-whereas the profile posterior peaks in the low-angle interior. This divergence reflects
-a mismatch between objective functions, not a contradiction in the results. Hold-out
-RMSE is a local predictive criterion that rewards short-horizon interpolation of the
-last bins after participant-wise refitting. The profiled interference angle targets a
-global structural parameter---the pooled geometric relation that organizes contextual
-overlap across curves. These two criteria are not aligned, and the figure makes the
-distinction explicit.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{ext_objectives_vs_theta.png}
-\caption{Population-level objectives evaluated on the same $\theta$ grid for 4, 6, and
-8 bins. The posterior density peaks in the low-angle interior, whereas the hold-out
-RMSE optimum occurs at $\theta=0^\circ$ in all three binning resolutions.}
-\label{fig:supp-objectives}
-\end{figure}
-
-% -------------------------------------------------
-\subsection*{Additional model comparison details}
-
-Predictive performance was evaluated using participant-wise temporal hold-out, in which
-the highest-$x$ $\approx 20\%$ of bins were reserved for testing. Root mean squared
-error (RMSE) was computed on held-out bins after leak-free standardization. At 6 bins,
-differences in RMSE between all models are small in absolute magnitude: the interference
-model (RMSE $= 21.919$) and the polynomial baseline (RMSE $= 21.924$) are
-effectively tied, while cosine-only, exponential, and power-law boundary cases
-achieve RMSE values near $21.896$--$21.899$. The full interference model does not
-achieve the lowest hold-out error, consistent with the objective-mismatch pattern
-described above.
 
 \begin{table}[htbp]
 \centering
-\caption{Hold-out RMSE by model and binning resolution (6 bins unless noted).}
+\caption{Summary of posterior-shape diagnostics under the two null families.}
+\label{tab:supp-null-summary}
+\small
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Null type & Replicates & MAP mean & MAP SD & Mean posterior SD & Mean HDI width & Mean entropy \\
+\midrule
+Permutation & 500 & 109.650 & 67.790 & 7.716 & 24.120 & 1.317 \\
+Quadratic   & 300 & 42.250 & 13.590 & 11.591 & 41.700 & 5.200 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Model comparison details}
+
+Predictive performance was evaluated by participant-wise temporal hold-out, with the highest-$x$ approximately 20\% of bins reserved for testing.
+
+\begin{table}[htbp]
+\centering
+\caption{Hold-out RMSE by model for the main six-bin analysis.}
 \label{tab:supp-model-comparison}
 \small
-\begin{tabular}{@{}lrrrrr@{}}
+\begin{tabular}{@{}lccccc@{}}
 \toprule
-Model & Best parameter & RMSE$_{\text{test}}$ & Mean log score$_{\text{test}}$ & \(\sigma_{\text{train}}\) & Boundary hit \\
+Model & Best parameter & RMSE$_{\mathrm{test}}$ & Mean log score$_{\mathrm{test}}$ & $\sigma_{\mathrm{train}}$ & Boundary hit \\
 \midrule
 Interference & 124.20 & 21.919 & -21524.695 & 0.1056 & No \\
 Cosine only & 180.00 & 21.899 & -7212.871 & 0.1823 & Yes \\
 Sine only & 180.00 & 21.897 & -9632.215 & 0.1578 & Yes \\
-Polynomial (\(2^{\text{nd}}\) order) & --- & 21.924 & -21602.217 & 0.1055 & No \\
+Polynomial (\(2^{\mathrm{nd}}\) order) & --- & 21.924 & -21602.217 & 0.1055 & No \\
 Exponential & 10.10 & 21.896 & -9905.413 & 0.1556 & No \\
 Power law & 0.05 & 21.897 & -9259.726 & 0.1609 & Yes \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-% -------------------------------------------------
-\subsection*{Null-geometry controls}
+\subsection*{Age IAT supplementary results}
 
-\subsubsection*{Within-curve permutation null (500 replicates)}
-
-To test whether the recovered contextual overlap angle reflects genuine temporal
-structure rather than smoothness or binning artefacts, bin order was randomly permuted
-within participant curves and the profiling procedure was repeated. Five hundred
-permutation replicates were generated. Under permutation, null posterior MAPs scattered
-broadly (mean $= 109.65^\circ$, SD $= 67.79^\circ$, covering the full
-$[0^\circ, 180^\circ]$ interval), with mean posterior SD averaging $7.72^\circ$---16
-times wider than the observed SD of $0.48^\circ$. The observed concentration near
-$17^\circ$ is therefore statistically unusual under the null that temporal ordering
-carries no information.
-
-\subsubsection*{Quadratic null (300 replicates)}
-
-Synthetic data were generated from the empirical polynomial (quadratic) coefficient
-distribution and subjected to the same profiling procedure. Three hundred replicates
-($N=5{,}000$ per replicate) were assessed on the full $0^\circ$--$180^\circ$ grid.
-The quadratic null produced MAP estimates centred near $42^\circ$ (mean $= 42.25^\circ$,
-SD $= 13.59^\circ$, mean HDI width $41.70^\circ$), substantially broader and
-higher in entropy (mean $= 5.20$ nats) than the observed posterior (HDI width
-$1.75^\circ$, entropy $2.08$ nats). Additive polynomial trends do not produce the
-sharp low-angle concentration present in the real data.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.95\textwidth]{ext_null_distributions.png}
-\caption{Null posterior diagnostics versus the observed fit. The observed posterior
-(crimson vertical lines) is substantially sharper and lower-entropy than either the
-within-curve permutation null (500 replicates, blue) or the quadratic additive null
-(300 replicates, orange).}
-\label{fig:supp-nulls}
-\end{figure}
-
-% -------------------------------------------------
-\subsection*{Residual structure and held-out distributional fit}
-
-Near-tied RMSE on participant-level temporal hold-out does not imply equivalent model
-structure. On block-curve hold-out data, the interference and quadratic model RMSEs
-are nearly indistinguishable ($57.218$ vs.\ $57.235$), but their residual maps differ
-systematically. The quadratic model leaves stronger negative drift in the last held-out
-bin, particularly in the higher-angle blocks 4 and 7 (mean absolute residual in the
-final held-out bin: $0.476$ vs.\ $0.381$ for the interference fit). The magnitude of
-quadratic residuals also correlates more strongly with the blockwise pooled angle
-($r = 0.240$) than the interference residuals do ($r = 0.130$).
-
-Considering the full held-out distribution, rather than pointwise RMSE, further
-discriminates the models. Across the eight held-out block/bin cells, the interference
-fit yields lower Wasserstein distance, lower quantile error, and lower interquartile-range
-error in every cell (cell means: $1.022$ vs.\ $1.323$, $0.956$ vs.\ $1.283$, and
-$1.524$ vs.\ $2.070$, respectively). The additive model can match local pointwise error
-while still misrepresenting the shape of the held-out response distribution.
-
-% -------------------------------------------------
-\subsection*{Matched public Sexuality IAT: extended results}
-
-To complement the six-bin matched-domain comparison reported in the main text,
-the full profiling pipeline was repeated at 4 and 8 bins for both the year-matched
-2019 Gender--Science and Sexuality archives. Table~\ref{tab:supp-matched-bins}
-gives the posterior summaries for each domain$\times$resolution combination;
-Table~\ref{tab:supp-matched-diff} reports the six-bin posterior contrast.
-
-Across all three resolutions the two domains remain in the same low-angle regime, and
-the same downward shift of the MAP with finer binning observed in the main corpus is
-reproduced in both matched archives. The posterior contrast (Sexuality minus
-Gender--Science) has 94\% HDI $[0.50^\circ,3.00^\circ]$ with posterior probability
-$0.991$ of exceeding zero.
-
-Table~\ref{tab:supp-matched-model} extends the predictive comparison to the Sexuality
-domain. The interference model and quadratic baseline are again nearly tied on
-temporal hold-out RMSE ($25.015$ vs.\ $25.019$), while cosine-only, sine-only,
-exponential, and power-law variants achieve marginally lower RMSE
-($24.997$--$25.000$). This local-prediction tie is therefore not specific to the
-Gender--Science IAT.
+The Age IAT was added as an additional conventional public social-category IAT. Trial-level data were downloaded automatically from the Project Implicit OSF archive and processed using the same critical-block pipeline applied to the Gender--Science and Sexuality domains. Analyses retained blocks 3, 4, 6, and 7 and used a cleaned latency variable restricted to the 300--10{,}000 ms window.
 
 \begin{table}[htbp]
 \centering
-\caption{Matched 2019 public-domain pooled $\theta$ summaries by binning resolution.}
+\caption{Age IAT posterior summary.}
+\label{tab:supp-age-posterior}
+\small
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Domain & Mean $\theta$ & SD $\theta$ & MAP $\theta$ & HDI low & HDI high & Posterior entropy \\
+\midrule
+Age & 18.476 & 0.522 & 18.500 & 17.500 & 19.250 & 2.153 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Age IAT quality-control summary after automatic OSF download and trial-level preprocessing.}
+\label{tab:age-iat-qc}
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Metric & Value \\
+\midrule
+Raw rows & 30{,}168{,}625 \\
+Retained critical-block trials after latency cleaning & 17{,}907{,}400 \\
+Participants & 156{,}005 \\
+Available blocks & 0--7 \\
+Retained critical blocks & 3, 4, 6, 7 \\
+Pre-cleaning median latency (ms) & 734.00 \\
+Pre-cleaning mean latency (ms) & 1019.13 \\
+Pre-cleaning SD latency (ms) & 43{,}934.52 \\
+Post-cleaning median latency (ms) & 741.00 \\
+Post-cleaning mean latency (ms) & 944.89 \\
+Post-cleaning SD latency (ms) & 673.43 \\
+Post-cleaning IQR latency (ms) & 430.00 \\
+Fast-trial proportion ($<300$ ms) & 0.0189 \\
+Long-trial proportion ($>10{,}000$ ms) & 0.0012 \\
+Error rate & 0.0727 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Matched Sexuality supplementary results}
+
+To complement the six-bin matched-domain comparison in the main text, the full profiling pipeline was repeated at 4 and 8 bins for both the year-matched 2019 Gender--Science and Sexuality archives.
+
+\begin{table}[htbp]
+\centering
+\caption{Matched 2019 public-domain pooled \(\theta\) summaries by binning resolution.}
 \label{tab:supp-matched-bins}
 \footnotesize
-\resizebox{\textwidth}{!}{\input{../tables/Table_matched_public_domain_theta_bins.tex}}
+\resizebox{\textwidth}{!}{\input{tables/Table_matched_public_domain_theta_bins.tex}}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\caption{Posterior contrast (Sexuality minus Gender--Science) at six bins.}
+\caption{Posterior contrast at six bins: Sexuality minus Gender--Science.}
 \label{tab:supp-matched-diff}
 \small
-\input{../tables/Table_matched_public_domain_theta_difference.tex}
+\input{tables/Table_matched_public_domain_theta_difference.tex}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\caption{Leak-free temporal hold-out model comparison for both matched 2019 public domains (six bins).}
+\caption{Leak-free temporal hold-out model comparison for both matched 2019 public domains.}
 \label{tab:supp-matched-model}
 \footnotesize
-\resizebox{\textwidth}{!}{\input{../tables/Table_matched_public_domain_model_comparison.tex}}
+\resizebox{\textwidth}{!}{\input{tables/Table_matched_public_domain_model_comparison.tex}}
 \end{table}
 
-% -------------------------------------------------
-\subsection*{Pairing-label audit, D-like quintiles, and life-satisfaction sensitivity}
+\subsection*{Independent life-satisfaction IAT angular summary}
 
-\subsubsection*{D-like congruency quintiles}
-
-To test whether the recovered angle is reducible to a conventional IAT effect-size
-summary, the Gender--Science corpus was stratified into quintiles of a D-like
-congruency score (difference between incongruent and congruent mean latencies divided
-by participant SD). Congruent and incongruent labels were derived from the raw
-\texttt{block\_pairing\_definition} field rather than from block numbers alone. Mean
-D-like values vary substantially across quintiles (from $-0.320$ in the lowest to
-$0.825$ in the highest), yet the subgroup posteriors remain tightly clustered in the
-same low-angle regime. Quintile MAP estimates range only from $17.00^\circ$ to
-$17.75^\circ$, with HDIs spanning roughly $15^\circ$--$20^\circ$. The angular summary
-is not captured by the corrected conventional congruency metric.
+The independent life-satisfaction IAT was analyzed using the same pooled angular-profiling framework, with the within-block coordinate defined by normalized display order within the critical combined blocks. The posterior was broader than in the large public Project Implicit corpora, consistent with the smaller sample size, but the modal estimate remained in the low-angle range.
 
 \begin{table}[htbp]
 \centering
-\caption{Critical-stage response-time descriptives by actual pairing labels. Values are in milliseconds.}
-\label{tab:supp-critical-pair-side}
+\caption{Independent life-satisfaction IAT posterior summary.}
+\label{tab:supp-life-theta}
+\small
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Domain & Participants & Mean $\theta$ & SD $\theta$ & MAP $\theta$ & HDI low & HDI high \\
+\midrule
+Life-satisfaction IAT & 180 & 28.49 & 13.68 & 17.75 & 8.50 & 53.75 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Life-satisfaction IAT sample}
+
+\begin{table}[htbp]
+\centering
+\caption{Sociodemographic characteristics of the independent life-satisfaction IAT sample.}
+\label{tab:supp-life-iat-demographics}
 \footnotesize
-\resizebox{\textwidth}{!}{\input{../tables/Table_critical_pair_side_rt_summary.tex}}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& \multicolumn{2}{c}{Individualist ($n=68$)} & \multicolumn{2}{c}{Collectivist ($n=112$)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Characteristic & $n$ & \% & $n$ & \% \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{Sex at birth}} \\
+Female & 43 & 63.23 & 86 & 76.78 \\
+Male & 25 & 36.77 & 26 & 23.22 \\[2pt]
+\multicolumn{5}{@{}l}{\textit{Marital status}} \\
+Single & 45 & 66.18 & 70 & 62.50 \\
+Married & 18 & 26.47 & 34 & 30.36 \\
+Separated & 4 & 5.88 & 6 & 5.36 \\
+Widowed & 1 & 1.47 & 2 & 1.79 \\[2pt]
+\multicolumn{5}{@{}l}{\textit{Schooling}} \\
+Middle school & 38 & 55.88 & 58 & 51.79 \\
+Complete higher education & 15 & 22.06 & 15 & 13.39 \\
+Postgraduate studies & 15 & 22.06 & 39 & 34.82 \\[2pt]
+\multicolumn{5}{@{}l}{\textit{Ethnicity}} \\
+White & 40 & 58.82 & 61 & 54.46 \\
+Brown & 23 & 33.82 & 37 & 33.04 \\
+Black & 4 & 5.88 & 10 & 8.93 \\
+Indigenous & 0 & 0.00 & 2 & 1.79 \\[2pt]
+\multicolumn{5}{@{}l}{\textit{Country region}} \\
+South & 17 & 25.00 & 39 & 34.82 \\
+Southeast & 27 & 39.71 & 32 & 28.57 \\
+Midwest & 3 & 4.41 & 3 & 2.68 \\
+Northeast & 19 & 27.94 & 33 & 29.46 \\
+North & 5 & 7.35 & 5 & 4.46 \\
+\bottomrule
+\end{tabular}
 \end{table}
-
-\subsubsection*{Independent life-satisfaction IAT stimulus-order audit}
-
-An independent 2024 life-satisfaction IAT (Testable protocol, five phases) was
-analyzed as a sensitivity case rather than as a matched out-of-sample construct
-contrast. The raw archive contained 187 per-participant CSV files; after excluding
-repeated names (retaining first attempt) and participants with $>10\%$ of raw attempts
-faster than 300 ms, and collapsing correction loops, 180 valid participants were
-retained. Profiling was restricted to the critical combined phases (phases 3 and 5).
-
-The original item-ID analysis concentrated at the high-angle boundary (posterior mean
-$177.48^\circ$, SD $2.68^\circ$, MAP $180.0^\circ$, 94\% HDI $[172.75^\circ,
-180.0^\circ]$), but the stimulus-order audit shows that this result should not be
-interpreted as a true near-orthogonal regime. Each critical stimulus appeared exactly
-180 times in the congruent phase and 180 times in the incongruent phase. The imbalance
-was structural rather than numerical: item identifiers 1--10 were logical true/false
-anchors, whereas item identifiers 11--20 were life-satisfaction statements. These two
-families differed strongly in latency and error rate (Table~\ref{tab:supp-life-family}).
-When actual display order was used as the within-block axis, the MAP dropped to
-$17.75^\circ$; after within-family centering, the MAP was $18.50^\circ$
-(Table~\ref{tab:supp-life-theta-audit}). The life-satisfaction task is therefore
-reported as a preprocessing audit, not as evidence for a distinct latent angular regime.
-
-\begin{table}[htbp]
-\centering
-\caption{Life-satisfaction stimulus-family descriptives in the critical combined phases. Values are in milliseconds except error rate.}
-\label{tab:supp-life-family}
-\small
-\input{../tables/Table_life_satisfaction_stimulus_family_audit.tex}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption{Life-satisfaction pooled $\theta$ sensitivity to the within-block axis and stimulus-family adjustment.}
-\label{tab:supp-life-theta-audit}
-\small
-\resizebox{\textwidth}{!}{\input{../tables/Table_life_satisfaction_theta_audit.tex}}
-\end{table}
-
-% -------------------------------------------------
-\subsection*{Block-dependent phase structure}
-
-Block-specific pooled phase parameters were estimated to examine whether the inferred
-interference angle reflects a stationary property or an aggregate over heterogeneous
-contexts. The resulting structure exhibits systematic variation. Block 3 is associated
-with a lower pooled angle (MAP $= 21.00^\circ$), whereas blocks 4, 6, and 7 cluster at
-higher values (MAPs ranging from $26.25^\circ$ to $29.00^\circ$). This indicates that
-contextual overlap is not constant across the IAT and that the aggregate interference
-angle recovered at the population level represents a mixture over block-specific
-geometries rather than a single stationary parameter.
-
-Blockwise quadratic coefficients, by contrast, point in nearly the same direction in
-the $(d_1,d_2)$ plane (coefficient angles $145^\circ$--$148^\circ$) and differ mainly
-in norm. The polynomial model can absorb block-dependent variation only by refitting
-nuisance coefficients within each block; those coefficients do not map onto a single
-interpretable geometric dimension. The angle $\theta$ places different blocks on a
-common contextual-rotation scale---low-dimensional structure that local RMSE does not
-reward.
-
-% =================================================
-\section*{Limits of individual-level interpretation}
-% =================================================
-
-Participant-specific interference angles can be estimated, but they are weakly identified
-under sparse binning. The recovery analyses show that low true angles are
-especially vulnerable to upward bias and poor interval coverage when fewer than roughly
-$10{,}000$ participants are aggregated. In the present design, $\theta$ is therefore
-best interpreted as a pooled descriptor of contextual overlap at the population level
-rather than as a stable individual-difference parameter. The population-level
-identification is valid and robust: the bootstrap analysis shows that
-$\theta \approx 17^\circ$--$18^\circ$ is consistently recovered from any large random
-subsample ($N \geq 30{,}000$) of the dataset.
-
-% =================================================
-\section*{Reproducibility}
-% =================================================
-
-All analyses were performed using deterministic grid profiling and closed-form regression
-rather than stochastic posterior sampling. Scripts and configuration files are provided
-with the project materials so that all reported results can be regenerated.
 
 \end{document}

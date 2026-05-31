@@ -1,0 +1,405 @@
+﻿task,stage,pairing_definition,pair_side,stimulus_category,stimulus,n_trials,mean_ms,median_ms,sd_ms,iqr_ms,q1_ms,q3_ms,n_errors,error_rate
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Abuse,70356,829.6778526351698,691.0,524.783803148812,303.0,584.0,887.0,3822,0.05432372505543237
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Angry,69885,842.7779208700007,695.0,534.3974613973421,345.0,574.0,919.0,4197,0.060055805966945694
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Annoy,70140,880.714128885087,721.0,578.2166457919411,356.0,598.0,954.0,5755,0.08205018534359852
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Awful,69877,846.4838072613306,699.0,543.6585878864809,333.0,581.0,914.0,4997,0.07151136997867681
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Bothersome,70303,898.291666073994,733.0,580.5825305158802,342.0,617.0,959.0,4347,0.061832354238083725
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Despise,70116,896.8300102686976,728.0,597.0609776303825,380.0,598.0,978.0,4990,0.07116777910890525
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Detest,70742,839.6186706624071,698.0,533.199020143034,309.0,586.0,895.0,3613,0.051072912838200785
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Dirty,69737,799.036479917404,664.0,490.2100708643676,299.0,560.0,859.0,3364,0.0482383813470611
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Disaster,69839,834.5226735778003,688.0,528.5533782339501,330.0,572.0,902.0,3066,0.04390097223614313
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Disgust,69966,824.8354057685161,678.0,530.6284379515553,323.0,566.0,889.0,3273,0.04677986450561701
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Evil,70375,780.0484689165187,653.0,478.35814189513206,283.0,551.0,834.0,3199,0.04545648312611012
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Failure,70329,856.7153521307,706.0,551.1939061419725,345.0,583.0,928.0,4093,0.05819789844871959
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Grief,70546,883.8754854988234,718.0,590.4691391347486,351.0,598.0,949.0,5523,0.07828934312363564
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Gross,69782,837.2176492505231,685.0,543.83996427415,327.0,574.0,901.0,4392,0.06293886675647015
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Hate,70808,805.5197011637104,672.0,496.68789010453247,307.0,562.0,869.0,3593,0.05074285391481188
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Hatred,69902,820.7588624073703,677.0,523.5273649098813,315.0,566.0,881.0,3250,0.04649366255615004
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Horrible,70262,831.5404343741994,689.0,525.3829704984047,327.0,572.0,899.0,3766,0.053599385158407106
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Horrific,69308,837.1595775379466,688.0,545.30814345384,327.0,574.0,901.0,4034,0.05820395913891614
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Humiliate,70313,972.3064298209435,789.0,636.1777567467303,428.0,643.0,1071.0,8083,0.11495740474734402
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Hurtful,70193,861.7918310942687,710.0,552.487812147178,346.0,588.0,934.0,4273,0.06087501602723918
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Nasty,69541,805.395061905926,668.0,519.1950833379757,297.0,563.0,860.0,3413,0.049078960613163455
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Negative,70054,837.9290119051018,695.0,526.9310475431753,337.0,573.0,910.0,3361,0.04797727467382305
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Pain,70383,843.2542517369251,698.0,532.2110109076634,331.0,582.0,913.0,4713,0.06696219257491155
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Poison,70354,807.9825311993632,673.0,489.06775190370007,290.0,573.0,863.0,3623,0.0514967166045996
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Rotten,69535,801.9201265549723,666.0,516.5459847864859,280.0,568.0,848.0,3177,0.04568922125548285
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Sadness,70355,878.923814938526,719.0,568.3709131800176,367.0,591.0,958.0,4630,0.06580911093738896
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Scorn,70499,823.6493141746691,685.0,519.305454290032,295.0,580.0,875.0,3765,0.05340501283706152
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Selfish,70045,961.4809194089514,782.0,623.8416108746629,426.0,634.0,1060.0,7682,0.10967235348704404
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Sickening,69989,856.1815713897898,706.0,547.5127271427106,326.0,592.0,918.0,3715,0.05307976967809227
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Tragic,70266,897.9945492841488,734.0,587.2230363073826,369.0,606.0,975.0,5676,0.08077875501665101
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Ugly,70018,813.7228855437173,672.0,522.4552896269689,317.0,559.0,876.0,3490,0.04984432574480848
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Bad,Yucky,70208,817.138046946217,678.0,523.4378029282859,285.0,577.0,862.0,4439,0.0632264129443938
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Old people,of1.jpg,374413,896.0392881657422,724.0,623.8113641317473,329.0,609.0,938.0,28500,0.07611915184568911
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Old people,of2.jpg,374665,776.0349565611947,635.0,548.4106084722939,235.0,551.0,786.0,15799,0.04216833704776267
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Old people,of3.jpg,374154,894.9727465161404,719.0,629.3330328980556,344.0,601.0,945.0,29207,0.07806143994184213
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Old people,om1.jpg,374349,780.7292179223132,639.0,546.5130458917793,238.0,554.0,792.0,15107,0.0403553902908783
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Old people,om2.jpg,374159,774.9562325107775,637.0,538.2659607272568,232.0,553.0,785.0,14449,0.03861727233609241
+Age,Congruent,"Old people/Bad,Young people/Good",Old people/Bad,Old people,om3.jpg,374042,813.8932606498736,658.0,576.3322262867734,274.0,564.0,838.0,16424,0.04390950748846386
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Adore,70406,812.7179075646962,676.0,514.3123131550057,297.0,572.0,869.0,3579,0.05083373576115672
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Appealing,70677,852.4285552584292,699.0,553.4179413945689,341.0,581.0,922.0,3249,0.04596969311091303
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Attractive,69980,803.1465275793083,673.0,484.1206794500711,290.0,569.0,859.0,2851,0.040740211488996855
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Beautiful,70570,777.4700580983421,651.0,469.9902134484629,284.0,550.0,834.0,3067,0.0434603939350999
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Celebrate,69720,797.8569277108434,665.0,484.10032433820334,292.0,564.0,856.0,2699,0.038711990820424556
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Cheer,70387,783.7974483924588,652.0,483.6175270516349,286.0,552.0,838.0,2841,0.04036256695128362
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Cheerful,70320,788.0231513083049,652.0,492.5471773490902,291.0,552.0,843.0,2864,0.040728100113765646
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Cherish,69869,831.57551990153,679.0,539.6752987713865,327.0,569.0,896.0,3442,0.04926362192102363
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Delight,70143,843.7453060177066,695.0,531.2066884177892,336.0,580.0,916.0,4452,0.06347033916427869
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Delightful,70540,836.2373405160192,688.0,524.0074297125774,326.0,577.0,903.0,4198,0.05951233342784236
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Enjoy,69887,791.152217150543,664.0,487.5709875356322,299.0,556.0,855.0,3135,0.04485812812110979
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Excellent,70309,803.8401342644612,671.0,488.2790267497282,307.0,562.0,869.0,3971,0.056479255856291516
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Excitement,70639,811.1195798355017,673.0,498.06808361841746,306.0,566.0,872.0,3217,0.04554141479919025
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Fabulous,69846,807.2484752169057,666.0,511.1795902980658,301.0,563.0,864.0,3132,0.04484150846147238
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Fantastic,70101,812.5044721188,673.0,508.27522161798623,307.0,567.0,874.0,3181,0.045377384060141794
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Friend,70235,789.9518616074606,658.0,486.28691168738965,291.0,555.0,846.0,2413,0.03435609026838471
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Friendship,70147,793.8297860207849,657.0,492.41711974347066,286.0,558.0,844.0,2343,0.033401285871099265
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Glad,69899,806.8637462624644,675.0,503.4779922181519,306.0,564.0,870.0,3456,0.0494427674215654
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Glorious,69826,820.4411250823475,677.0,513.4365235298843,318.0,569.0,887.0,3527,0.05051127087331367
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Happy,69654,754.910830677348,637.0,447.2866585363228,274.0,536.0,810.0,2565,0.036824877250409165
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Joyful,70132,781.1824701990532,645.0,501.8347919552846,285.0,546.0,831.0,2760,0.03935436034905607
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Joyous,70425,777.4194817181399,647.0,485.07192527135345,276.0,552.0,828.0,2791,0.03963081292154775
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Laughing,69803,790.7269028551782,660.0,481.96553728630255,287.0,559.0,846.0,2685,0.038465395470108736
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Love,69738,741.8525050904815,628.0,438.2523401576879,262.0,535.0,797.0,2558,0.036680145688147064
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Lovely,69819,773.1973818015153,644.0,483.02774761149806,286.0,544.0,830.0,2646,0.037897993382890044
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Magnificent,69841,832.8977964233044,684.0,520.1906497540178,314.0,578.0,892.0,3386,0.04848155095144686
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Pleasing,70466,820.3353674112337,680.0,503.3746665268098,308.0,573.0,881.0,2987,0.04238923736269974
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Pleasure,69767,811.6740722691244,674.0,499.7715085767127,303.0,569.0,872.0,3006,0.04308627287972824
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Smiling,70096,775.7841816936773,650.0,469.1839500527468,280.0,550.0,830.0,2270,0.032384158867838395
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Spectacular,69796,834.3069660152444,689.0,521.7860562034575,310.0,582.0,892.0,3124,0.04475901197776377
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Terrific,69778,1008.7418813952822,810.0,692.5486374484826,502.0,634.0,1136.0,11839,0.16966665711255696
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Good,Triumph,70404,883.9084142946424,720.0,562.5375917972669,359.25,601.0,960.25,5731,0.0814016249076757
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Young people,yf1.jpg,374093,846.1744592922081,684.0,588.8577789526868,293.0,583.0,876.0,16703,0.04464932516780586
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Young people,yf2.jpg,374190,829.9906571527833,680.0,564.7300610457512,268.0,584.0,852.0,16072,0.04295144178091344
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Young people,yf3.jpg,374402,836.3574927484361,681.0,573.1328190003351,281.0,582.0,863.0,16866,0.045047836282925836
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Young people,ym1.jpg,374020,854.8898561574248,693.0,585.6737324362628,292.0,593.0,885.0,22043,0.058935351050745946
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Young people,ym2.jpg,374101,872.8379475061547,708.0,597.0582045583093,312.0,600.0,912.0,21994,0.05879160975244653
+Age,Congruent,"Old people/Bad,Young people/Good",Young people/Good,Young people,ym3.jpg,374416,838.9787989829495,681.0,578.3853522462609,278.0,585.0,863.0,21262,0.05678710311525149
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Adore,70019,1056.2819806052644,848.0,717.0457822283867,564.0,649.0,1213.0,7378,0.10537139919164798
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Appealing,70168,1108.174310226884,887.0,757.5044439371768,614.0,665.0,1279.0,7301,0.10405027932960893
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Attractive,69799,1106.5537901689136,886.0,764.231534897817,620.0,661.0,1281.0,8312,0.119084800641843
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Beautiful,70440,1037.917404883589,828.0,720.5498496267247,575.0,623.0,1198.0,7553,0.10722600795002839
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Celebrate,69246,1038.4882736908992,827.0,707.5423414744214,558.0,633.0,1191.0,6175,0.08917482598272825
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Cheer,70203,1034.793911941085,828.0,705.833770287107,570.0,628.0,1198.0,6991,0.09958263891856474
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Cheerful,70073,1043.250010703124,831.0,710.9259611346218,583.0,626.0,1209.0,6946,0.09912519800779188
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Cherish,69488,1071.4851053419295,855.0,735.5604398788206,586.0,647.0,1233.0,7066,0.10168662215058716
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Delight,69501,1087.528927641329,873.0,745.7975561241358,594.0,659.0,1253.0,7951,0.11440123163695487
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Delightful,70222,1080.484349634018,863.0,742.9284776625011,592.75,651.0,1243.75,7566,0.10774401184813875
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Enjoy,69605,1049.756339343438,852.0,706.1877609326709,568.0,644.0,1212.0,7621,0.10948926082896343
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Excellent,69688,1040.2513058202273,843.0,698.6306843969526,565.0,636.0,1201.0,7470,0.10719205602112272
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Excitement,70281,1067.264196582291,851.0,734.3669661002117,589.0,642.0,1231.0,7008,0.09971400520766636
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Fabulous,69582,1055.8388663734875,841.0,730.0399864129556,582.0,635.0,1217.0,6881,0.09889051766261389
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Fantastic,69470,1062.2072117460775,851.0,724.4096555177067,585.0,642.0,1227.0,7020,0.10105081330070534
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Friend,70283,1092.1672239375098,881.0,738.2517908095585,609.0,655.0,1264.0,8058,0.1146507690337635
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Friendship,69860,1076.4173632980246,862.0,741.9243073301168,601.0,643.0,1244.0,7375,0.10556827941597481
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Glad,69436,1053.215954260038,848.0,717.5958978902481,568.0,643.0,1211.0,7222,0.10400944754882194
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Glorious,69101,1051.5343048581062,834.0,730.7450292873874,577.0,633.0,1210.0,6502,0.09409415203832072
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Happy,69490,1015.6557202475176,819.0,675.3948138303541,561.0,618.0,1179.0,6913,0.09948193984746007
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Joyful,69539,1033.2563453601576,827.0,701.0376712069462,577.0,622.0,1199.0,7003,0.10070607860337365
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Joyous,70167,1024.8094830903417,812.0,709.5088856647149,556.0,621.0,1177.0,6737,0.09601379565892798
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Laughing,69552,1046.7588710605014,840.0,704.8333246540868,573.0,637.0,1210.0,6557,0.09427478720956982
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Love,69105,981.7103538094204,791.0,659.6167754372284,528.0,605.0,1133.0,6241,0.09031184429491354
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Lovely,69472,1025.9848140257945,819.0,700.66668742616,566.0,619.0,1185.0,6700,0.09644173192077383
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Magnificent,69594,1065.7267293157456,849.0,727.3280853669614,582.0,644.0,1226.0,6510,0.09354254677127338
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Pleasing,70212,1068.6394633396,856.0,726.5557089500444,578.0,649.0,1227.0,6679,0.09512618925539794
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Pleasure,69329,1052.766879660748,844.0,705.3345459169121,573.0,641.0,1214.0,6676,0.09629447994345801
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Smiling,69523,1039.3992204018814,835.0,706.2198792583213,567.0,631.0,1198.0,6565,0.09442918170965005
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Spectacular,69347,1062.9730630020044,844.0,717.6666888824253,573.0,649.0,1222.0,6270,0.09041487014578857
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Terrific,69203,1232.5217259367369,986.0,858.768732558667,707.0,722.0,1429.0,12571,0.18165397453867607
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Good,Triumph,69953,1102.4940317070034,879.0,742.7376183504648,603.0,668.0,1271.0,8154,0.11656397867139365
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Old people,of1.jpg,371638,1078.1134006748503,827.0,797.0755067033662,540.0,654.0,1194.0,29065,0.07820782589509145
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Old people,of2.jpg,372324,989.3815118015492,758.0,739.2726102488688,479.0,608.0,1087.0,27882,0.07488638927385825
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Old people,of3.jpg,372250,1079.248846205507,828.0,802.6862762810803,551.0,649.0,1200.0,29483,0.07920214909335124
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Old people,om1.jpg,371878,1004.5675544130064,767.0,756.8767292168083,491.0,614.0,1105.0,29290,0.07876238981601492
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Old people,om2.jpg,372322,1003.2182788016825,767.0,752.578022389033,489.0,615.0,1104.0,29017,0.07793522810900243
+Age,Incongruent,"Young people/Bad,Old people/Good",Old people/Good,Old people,om3.jpg,372289,1040.7172223729415,793.0,784.2951236712136,529.0,626.0,1155.0,29256,0.07858411073117927
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Abuse,69975,1028.4980635941408,831.0,697.9702434863561,521.0,645.0,1166.0,5905,0.08438728117184709
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Angry,69595,1061.8801063294777,854.0,732.8297575224847,573.0,644.0,1217.0,6488,0.09322508800919606
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Annoy,69700,1063.4748923959828,850.0,736.6610482689807,551.0,655.0,1206.0,6471,0.09284074605451936
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Awful,69643,1049.0125784357365,840.0,727.4912951293481,539.0,647.0,1186.0,6646,0.09542954783682495
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Bothersome,69898,1097.578385647658,876.0,744.3621334169136,565.0,679.0,1244.0,6100,0.08727002203210392
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Despise,69999,1097.2273746767812,875.0,755.5432133070028,586.0,667.0,1253.0,6886,0.0983728338976271
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Detest,70029,1040.0631738279856,836.0,696.840560663868,542.0,646.0,1188.0,6097,0.08706393065729912
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Dirty,69219,1005.5954578945087,803.0,690.6507575435987,526.5,618.5,1145.0,5714,0.08254958898568313
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Disaster,69455,1050.1399467280974,836.0,720.4950129148572,560.0,640.0,1200.0,5628,0.08103088330573753
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Disgust,69747,1042.9422627496524,834.0,722.8161502266903,558.0,634.0,1192.0,5902,0.08462012703055329
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Evil,69757,986.218300672334,797.0,664.6319352026399,510.0,616.0,1126.0,5956,0.0853821121894577
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Failure,69827,1063.798101021095,854.0,731.0736263119336,557.0,654.0,1211.0,6149,0.08806049235968895
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Grief,69953,1107.1889697368233,884.0,761.6560317278687,591.0,675.0,1266.0,8059,0.11520592397752777
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Gross,69632,1045.1124770220588,835.0,719.5848532741609,557.0,640.0,1197.0,6563,0.0942526424632353
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Hate,70465,1012.8711133186688,818.0,687.8419097519715,525.0,627.0,1152.0,5908,0.08384304264528489
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Hatred,69573,1036.676900521754,831.0,714.9081960640927,544.0,636.0,1180.0,5840,0.08394060914435197
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Horrible,69793,1047.8750877595173,841.0,728.751336142666,547.0,644.0,1191.0,6434,0.09218689553393607
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Horrific,69109,1056.215992128377,846.0,722.2372602815452,553.0,648.0,1201.0,6640,0.09608010534083838
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Humiliate,69972,1164.3362916595208,927.0,796.4481273637782,620.0,708.0,1328.0,8399,0.12003372777682501
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Hurtful,69836,1061.5877341199382,852.0,720.296209439392,554.0,655.0,1209.0,6319,0.09048341829428948
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Nasty,69472,1007.8727257024412,805.0,696.2155472193233,521.0,621.0,1142.0,5724,0.0823929064947029
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Negative,69538,1042.9291178923754,839.0,701.3140540128211,548.0,644.0,1192.0,5429,0.07807242083465156
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Pain,69889,1045.4072600838472,839.0,708.8981225066598,548.0,642.0,1190.0,6603,0.09447838715677717
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Poison,70217,1002.707748835752,806.0,671.1010040996586,510.0,627.0,1137.0,5748,0.08186051810815045
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Rotten,69260,1008.8819376263356,807.0,685.5199794787899,518.0,626.0,1144.0,5952,0.0859370488016171
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Sadness,69958,1094.097272649304,871.0,753.7173396635822,585.0,663.0,1248.0,6424,0.09182652448612025
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Scorn,70321,1033.6472461995706,832.0,701.4923855421957,536.0,641.0,1177.0,6633,0.09432459720424909
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Selfish,69600,1139.5840948275861,910.0,781.1133902255643,607.0,693.0,1300.0,7573,0.10880747126436782
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Sickening,69613,1071.2755663453665,856.0,731.9573168873386,554.0,660.0,1214.0,5978,0.08587476477094795
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Tragic,69766,1105.5702634521112,885.0,755.9588046024609,586.0,675.0,1261.0,7160,0.10262878766161167
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Ugly,69497,1046.626286026735,838.0,729.6682504968107,564.0,633.0,1197.0,6559,0.09437817459746464
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Bad,Yucky,69864,1017.7763511966106,816.0,690.5489544775857,518.0,635.0,1153.0,6626,0.09484140616054047
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Young people,yf1.jpg,372156,1113.635056266727,855.0,822.4934009844586,570.0,671.0,1241.0,38692,0.10396715355926009
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Young people,yf2.jpg,372137,1097.0684264128533,845.0,805.5444243473536,542.0,671.0,1213.0,39735,0.1067751930068765
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Young people,yf3.jpg,372302,1106.5066290269726,851.0,814.4161421937963,560.0,671.0,1231.0,40565,0.1089572443876208
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Young people,ym1.jpg,372341,1060.1199035292916,812.0,790.1771102978636,511.0,650.0,1161.0,29321,0.07874770707496623
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Young people,ym2.jpg,371721,1089.5271615001573,835.0,806.8117963459304,536.0,665.0,1201.0,31651,0.0851471937286298
+Age,Incongruent,"Young people/Bad,Old people/Good",Young people/Bad,Young people,ym3.jpg,372375,1045.650387378315,800.0,780.553233240591,504.0,641.0,1145.0,29518,0.07926955354145686
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Female,Aunt,250145,813.521209698375,683.0,478.3396144683277,301.0,577.0,878.0,11287,0.04512182933898339
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Female,Daughter,249869,798.3034069852603,675.0,453.9677750585128,288.0,572.0,860.0,9666,0.03868427055777227
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Female,Female,250320,770.3148170341963,664.0,416.5181882649305,276.0,561.0,837.0,9126,0.03645733461169703
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Female,Girl,250044,757.0319503767337,648.0,423.25973235971236,272.0,548.0,820.0,8244,0.03297019724528483
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Female,Grandma,249973,904.0313993911342,770.0,518.0032854252958,368.0,631.0,999.0,19659,0.07864449360530937
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Female,Mother,250186,790.8774991406393,667.0,451.0287181111636,290.0,565.0,855.0,10875,0.04346766006091468
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Female,Wife,250151,777.8538802563252,661.0,439.9086535248618,279.0,560.0,839.0,9006,0.036002254638198526
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Female,Woman,249847,765.3572666471881,650.0,442.71357467003827,275.0,549.0,824.0,8868,0.03549372215796067
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Liberal Arts,Arts,285833,930.1927104288168,761.0,592.8738314044691,399.0,623.0,1022.0,16849,0.058947007518376116
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Liberal Arts,English,286065,1050.5230279831508,858.0,678.3141615059028,500.0,678.0,1178.0,31215,0.10911855697131771
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Liberal Arts,History,286510,1195.6197375309762,981.0,781.3403108907585,626.0,741.0,1367.0,53478,0.1866531709189906
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Liberal Arts,Humanities,286273,1025.2832715624595,819.0,674.8648249083228,455.0,670.0,1125.0,23488,0.08204755600423372
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Liberal Arts,Literature,285846,984.9437249428014,793.0,643.6742704959433,441.0,645.0,1086.0,17238,0.06030519930312126
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Liberal Arts,Music,286011,997.3345640552286,809.0,646.484137322369,454.0,650.0,1104.0,20433,0.07144130820143281
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Liberal Arts/Female,Liberal Arts,Philosophy,285391,1217.4377958660225,991.0,803.2516448621777,631.0,753.0,1384.0,56296,0.19725919878342343
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Male,Boy,250076,803.0831627185336,684.0,455.9061712356706,311.0,571.0,882.0,11945,0.04776547929429453
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Male,Father,250370,817.6619602987579,689.0,470.519950477039,309.0,579.0,888.0,11352,0.04534089547469745
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Male,Grandpa,250441,921.8429051153764,781.0,534.5068988720036,369.0,644.0,1013.0,18136,0.07241625772137948
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Male,Husband,250081,852.2070449174468,718.0,499.85407392162364,326.0,599.0,925.0,10584,0.04232228757882446
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Male,Male,249834,787.5890191086881,680.0,429.18918567620483,288.0,572.0,860.0,10886,0.043572932427131617
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Male,Man,250235,780.9891022438908,669.0,441.05389159160313,284.0,564.0,848.0,10092,0.040330089715667275
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Male,Son,250079,814.7053011248446,691.0,469.0027271637192,309.0,579.0,888.0,12100,0.04838471043150364
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Male,Uncle,250233,854.049845543953,719.0,502.2886839552159,330.0,599.0,929.0,12821,0.05123624781703452
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Science,Astronomy,286465,1063.0323460108564,842.0,711.0460712138185,528.0,667.0,1195.0,28298,0.09878344649433614
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Science,Biology,285938,1035.2108534017864,831.0,693.0778014664877,505.0,656.0,1161.0,28859,0.10092747378802398
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Science,Chemistry,286455,974.9907769108586,785.0,636.4226658727398,439.0,639.0,1078.0,20759,0.07246862508945559
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Science,Engineering,285833,954.1965483341671,757.0,641.9088211970545,407.0,627.0,1034.0,17171,0.06007353944436087
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Science,Geology,285947,1046.1740462393382,827.0,706.9601866322366,516.0,656.0,1172.0,26074,0.09118473003738455
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Science,Math,285863,1023.9887008811913,816.0,693.1540684071799,504.0,644.0,1148.0,26100,0.0913024770606899
+Gender--Science,Congruent,"Science/Male,Liberal Arts/Female",Science/Male,Science,Physics,285905,986.5052062748116,792.0,651.4651452518349,436.0,646.0,1082.0,20323,0.07108305206274812
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Liberal Arts,Arts,284719,1167.3402196551688,963.0,748.7569074057839,565.0,750.0,1315.0,41012,0.1440437764954218
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Liberal Arts,English,284550,1251.8872922157793,1023.0,821.9869026434895,648.0,778.0,1426.0,39998,0.14056580565805657
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Liberal Arts,History,284759,1310.5102209236582,1052.0,887.6121712967503,744.0,776.0,1520.0,37464,0.13156388384563789
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Liberal Arts,Humanities,284683,1225.627399598852,988.0,823.9696988311659,620.0,760.0,1380.0,36530,0.12831816441445398
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Liberal Arts,Literature,284921,1190.7961399826618,966.0,786.8526679111271,597.0,747.0,1344.0,31747,0.11142386837053078
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Liberal Arts,Music,285015,1217.6694840622424,999.0,792.484624993158,618.5,763.0,1381.5,39400,0.1382383383330702
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Liberal Arts,Philosophy,284820,1391.4816972122744,1127.0,927.1516726354336,759.0,842.0,1601.0,58094,0.20396741801839757
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Male,Boy,249442,923.7557788985015,782.0,554.5287166083336,409.0,623.0,1032.0,13400,0.053719902823101164
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Male,Father,249490,946.6914345264339,786.0,584.3724418397743,418.0,634.0,1052.0,13372,0.053597338570684196
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Male,Grandpa,248762,1045.437651248985,876.0,628.5004785887959,458.0,704.0,1162.0,17268,0.06941574677804488
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Male,Husband,249206,964.170958965675,805.0,585.0496985951745,414.0,651.0,1065.0,10919,0.043815156938436475
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Male,Male,249202,905.5126403479908,771.0,531.4946931103552,379.0,626.0,1005.0,13224,0.0530653847079879
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Male,Man,249039,897.9253610880223,758.0,541.9045923092568,377.0,616.0,993.0,12056,0.04841008837973169
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Male,Son,249209,936.3280098230803,788.0,564.8422740403596,410.0,631.0,1041.0,13445,0.053950700014846975
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Liberal Arts/Male,Male,Uncle,249218,974.9656044105964,816.0,597.679505698264,428.0,654.0,1082.0,13916,0.055838663338924156
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Female,Aunt,248878,955.588782455661,796.0,586.1801859875234,424.0,638.0,1062.0,15095,0.060652207105489436
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Female,Daughter,248960,925.3128574871465,773.0,556.5666034200452,407.0,623.0,1030.0,11956,0.048023778920308485
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Female,Female,249033,874.210707014733,741.0,512.243972464303,368.0,602.0,970.0,9841,0.03951685118036565
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Female,Girl,249064,873.8185205409052,737.0,516.062792879054,383.0,594.0,977.0,10585,0.04249911669289821
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Female,Grandma,249336,1041.136506561427,877.0,624.0418181267192,471.0,696.0,1167.0,20199,0.08101116565598229
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Female,Mother,248876,914.1839952426108,757.0,561.8772968658363,411.0,610.0,1021.0,12278,0.04933380478631929
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Female,Wife,248979,896.7168516220244,750.0,544.5974442583321,391.0,605.0,996.0,10368,0.041642066198354075
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Female,Woman,249266,873.0405069283416,727.0,535.6465127607071,382.0,588.0,970.0,10037,0.04026622162669598
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Science,Astronomy,284459,1238.7004032215539,997.0,838.7934627637333,678.0,745.0,1423.0,40941,0.1439258381699999
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Science,Biology,284743,1156.7376932883337,934.0,780.9585857541252,618.0,704.0,1322.0,31158,0.10942499025436973
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Science,Chemistry,284281,1127.471667118098,914.0,756.6558513868033,589.0,696.0,1285.0,30297,0.10657412911872408
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Science,Engineering,284748,1208.92004860438,978.0,826.7396043820088,633.0,738.0,1371.0,45442,0.159586722294801
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Science,Geology,284715,1242.0075443864916,1002.0,844.4405684106354,683.0,745.0,1428.0,42694,0.14995346223416398
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Science,Math,284847,1296.4864857274256,1062.0,862.2676934490664,697.0,792.0,1489.0,58775,0.20633884155353577
+Gender--Science,Incongruent,"Liberal Arts/Male,Science/Female",Science/Female,Science,Physics,285168,1176.831218790327,952.0,795.3393449668207,609.0,726.0,1335.0,37673,0.13210809066935983
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,Consegui o que eu queria na minha vida,180,2617.3722222222223,2222.5,1367.447126144007,1630.75,1654.75,3285.5,68,0.37777777777777777
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,Minha vida está bem perto do meu ideal,180,3196.7166666666667,2245.5,7282.880783444552,1540.0,1617.75,3157.75,66,0.36666666666666664
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,Minha vida está em condições ótimas,180,2560.838888888889,2053.0,1842.7158853804337,1452.5,1408.75,2861.25,64,0.35555555555555557
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,Minha vida não está em condições ótimas,180,3089.811111111111,2831.0,1736.9752582925719,1652.75,2022.5,3675.25,51,0.2833333333333333
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,Minha vida não está perto do meu ideal,180,3153.3,2796.0,1851.075233056656,1745.25,1909.0,3654.25,61,0.3388888888888889
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,Mudaria toda a minha vida se eu pudesse,180,2806.038888888889,2546.0,1410.8030929914669,1771.5,1766.0,3537.5,46,0.25555555555555554
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,Não consegui coisas que queria na vida,180,3469.25,2794.5,2314.7469952966,2436.0,1905.25,4341.25,69,0.38333333333333336
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,Não estou nada satisfeito com minha vida,180,2955.5222222222224,2475.5,2167.920826275863,1792.0,1670.5,3462.5,34,0.18888888888888888
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,"Se pudesse, eu não mudaria a minha vida",180,4016.233333333333,3350.0,2653.4491627347747,2502.75,2284.25,4787.0,85,0.4722222222222222
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,life-satisfaction statement,Sou bastante satisfeito com a minha vida,180,2514.7722222222224,2021.0,1646.5297342303088,1310.75,1480.0,2790.75,55,0.3055555555555556
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou digitando minhas respostas com um teclado,180,2507.016666666667,2041.5,1596.5365218630166,1191.75,1583.5,2775.25,7,0.03888888888888889
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou digitando minhas respostas com uma lapiseira,180,2501.811111111111,2126.5,1531.328677062599,1284.5,1602.25,2886.75,4,0.022222222222222223
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou fazendo um teste de matemática,180,1935.1277777777777,1701.0,878.5684269243518,994.5,1319.75,2314.25,5,0.027777777777777776
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou fazendo um teste de psicologia,180,1849.05,1610.5,1117.2542124063193,850.5,1251.25,2101.75,6,0.03333333333333333
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou lendo uma frase em irlandês,180,1871.35,1533.0,1072.4069230750135,840.5,1248.25,2088.75,8,0.044444444444444446
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou lendo uma frase em português,180,1855.911111111111,1568.5,964.7481929775806,918.0,1265.75,2183.75,3,0.016666666666666666
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou na frente de um computador,180,1750.3722222222223,1414.5,1170.2424951898245,839.5,1155.75,1995.25,9,0.05
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou na frente de uma geladeira,180,1961.7666666666667,1512.5,1313.6947006365092,864.0,1174.0,2038.0,3,0.016666666666666666
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou participando de um experimento,180,1895.5055555555555,1494.5,1215.8274856365513,914.0,1220.5,2134.5,4,0.022222222222222223
+Life-satisfaction IAT,Congruent,"EU ou VERDADEIRO,NÃO-EU ou FALSO",EU/VERDADEIRO vs NAO-EU/FALSO,logical-anchor,Estou participando de uma festa,180,1799.9944444444445,1549.0,1039.62937367402,781.75,1199.5,1981.25,8,0.044444444444444446
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,Consegui o que eu queria na minha vida,180,3145.738888888889,2586.5,1977.1759369439137,1830.5,1855.25,3685.75,86,0.4777777777777778
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,Minha vida está bem perto do meu ideal,180,3513.4777777777776,2670.5,3287.8791851003684,2142.0,1810.25,3952.25,97,0.5388888888888889
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,Minha vida está em condições ótimas,180,3233.55,2521.0,2887.397125353076,1824.5,1725.0,3549.5,86,0.4777777777777778
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,Minha vida não está em condições ótimas,180,3863.961111111111,3109.5,2834.6487596628217,2024.25,2205.5,4229.75,93,0.5166666666666667
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,Minha vida não está perto do meu ideal,180,4533.211111111111,3259.5,7394.63205727274,2685.5,2146.0,4831.5,81,0.45
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,Mudaria toda a minha vida se eu pudesse,180,3231.688888888889,2684.5,1826.6073270547656,2085.0,1980.25,4065.25,89,0.49444444444444446
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,Não consegui coisas que queria na vida,180,3705.616666666667,2845.0,3031.105787262368,2402.75,1970.75,4373.5,88,0.4888888888888889
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,Não estou nada satisfeito com minha vida,180,3337.9666666666667,2586.0,2329.8447112996496,2212.75,1825.75,4038.5,88,0.4888888888888889
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,"Se pudesse, eu não mudaria a minha vida",180,4284.583333333333,3260.0,3720.8327548634597,2454.75,2256.5,4711.25,81,0.45
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,life-satisfaction statement,Sou bastante satisfeito com a minha vida,180,3247.5833333333335,2769.5,2380.168140802582,2193.0,1699.25,3892.25,89,0.49444444444444446
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou digitando minhas respostas com um teclado,180,2982.0222222222224,2627.5,1865.8465329226879,1424.0,1924.0,3348.0,133,0.7388888888888889
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou digitando minhas respostas com uma lapiseira,180,2945.711111111111,2348.0,2327.2739669394937,1430.5,1712.5,3143.0,133,0.7388888888888889
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou fazendo um teste de matemática,180,2247.1944444444443,1952.5,1320.2676302975171,1168.0,1471.25,2639.25,140,0.7777777777777778
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou fazendo um teste de psicologia,180,2450.972222222222,2013.0,1624.2180875338536,1304.5,1453.5,2758.0,139,0.7722222222222223
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou lendo uma frase em irlandês,180,2555.1222222222223,2014.0,1699.152705891724,1280.25,1536.25,2816.5,136,0.7555555555555555
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou lendo uma frase em português,180,2497.1444444444446,2229.0,1543.9268085606996,1355.5,1490.75,2846.25,142,0.7888888888888889
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou na frente de um computador,180,2209.911111111111,1857.5,1407.5999593939714,1337.25,1320.0,2657.25,142,0.7888888888888889
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou na frente de uma geladeira,180,2273.266666666667,1944.5,1346.4422584378665,1307.5,1407.75,2715.25,138,0.7666666666666667
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou participando de um experimento,180,2716.1277777777777,2140.0,2103.74446169632,1396.5,1508.0,2904.5,137,0.7611111111111111
+Life-satisfaction IAT,Incongruent,"EU ou FALSO,NÃO-EU ou VERDADEIRO",EU/FALSO vs NAO-EU/VERDADEIRO,logical-anchor,Estou participando de uma festa,180,2584.7166666666667,1900.0,2528.1600001409815,1126.0,1427.0,2553.0,133,0.7388888888888889
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Abuse,93147,983.8053292108173,788.0,641.8430841758633,461.0,638.0,1099.0,7296,0.07832780443814616
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Angry,92735,1013.7743462554591,814.0,666.6661267905016,525.0,634.0,1159.0,8279,0.08927589367552705
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Annoy,92771,1005.3227625012127,802.0,663.0045238676674,485.0,642.0,1127.0,7902,0.08517748003147535
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Awful,92545,996.4557782700308,796.0,669.9227672521172,476.0,636.0,1112.0,8068,0.0871792101139986
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Bothersome,93193,1050.2930370306783,841.0,690.3242940533776,492.0,676.0,1168.0,7651,0.08209844087002242
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Despise,92374,1033.5269231601967,828.0,683.4986517650287,511.0,655.0,1166.0,8004,0.0866477580271505
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Detest,93390,981.5259985009102,790.0,641.4834783343994,450.0,640.0,1090.0,6693,0.07166720205589464
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Dirty,92867,940.1754552209073,748.0,630.2889523822103,436.0,607.0,1043.0,5776,0.062196474528088554
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Disaster,93445,1010.3389908502328,803.0,679.9859843425477,498.0,637.0,1135.0,6972,0.07461073358660174
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Disgust,93455,977.798758760901,778.0,654.5799338089174,466.0,625.0,1091.0,6266,0.06704831202182869
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Evil,93313,928.9407906722536,747.0,605.4061998841424,430.0,604.0,1034.0,6487,0.06951871657754011
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Failure,92360,1007.5627111303595,808.0,663.9804541482466,493.0,640.0,1133.0,6446,0.06979211779991339
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Grief,92859,1027.404042688377,819.0,684.5105340427053,502.0,652.0,1154.0,7967,0.08579674560354947
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Gross,92961,977.8866191198459,779.0,649.3623574949388,477.0,623.0,1100.0,7067,0.07602112713933801
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Hate,93028,976.947230941222,783.0,638.8335270263728,479.0,624.0,1103.0,6895,0.07411747000902955
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Hatred,92869,1003.065522402524,798.0,673.0112516387888,490.0,635.0,1125.0,6786,0.0730706694375949
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Horrible,92974,999.7175554456085,801.0,662.9917919839673,484.0,637.0,1121.0,7153,0.07693548734054682
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Horrific,92718,1000.2201945684765,799.0,661.5366140621808,485.0,638.0,1123.0,7214,0.07780581979766604
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Humiliate,92911,1099.9997632142588,882.0,728.3925827915531,543.0,695.0,1238.0,9873,0.10626298285455973
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Hurtful,92603,1015.1842704879972,812.0,668.9248363953884,497.0,645.0,1142.0,7014,0.07574268652203492
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Nasty,93417,938.8979521928557,752.0,619.9875912825806,430.0,610.0,1040.0,5843,0.06254750206065277
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Negative,92909,1004.240256595163,812.0,652.5549923404957,494.0,640.0,1134.0,6323,0.06805583958497025
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Pain,93277,980.1491364430674,783.0,644.61300084812,470.0,629.0,1099.0,6842,0.0733514156758901
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Poison,92358,933.1291279585959,747.0,608.8686616265322,415.0,613.0,1028.0,5750,0.06225773620043743
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Rotten,93278,930.0244323420313,744.0,608.2591759245554,406.0,613.0,1019.0,5832,0.06252278136323677
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Sadness,92282,1031.8262066275113,822.0,680.9187294119608,516.0,650.0,1166.0,7560,0.08192280184651395
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Scorn,92772,957.2053744664338,772.0,604.5356449930814,428.0,633.0,1061.0,6740,0.0726512309748631
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Selfish,93194,1149.223952185763,916.0,763.2393106967364,603.0,705.0,1308.0,11839,0.12703607528381655
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Sickening,92986,1024.216075538253,813.0,687.3217572467292,486.0,652.0,1138.0,7072,0.07605445981115437
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Tragic,93092,1036.958406737421,832.0,683.5561114520301,506.0,659.0,1165.0,8093,0.08693550466205474
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Ugly,92435,960.3171201384757,762.0,649.7647647332874,462.0,611.0,1073.0,6174,0.06679288148428625
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Bad,Yucky,92835,913.8748747778317,735.0,602.3285946226129,393.0,607.0,1000.0,5964,0.06424301179512037
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Gay people,05_gay.jpg,396335,1013.5123594938625,828.0,680.6885322853235,357.0,697.0,1054.0,30144,0.07605687108128224
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Gay people,07_lesbian.jpg,396217,1109.9388188795533,904.0,732.3420894563069,422.0,750.0,1172.0,33574,0.08473639445051576
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Gay people,Gay,396517,956.4739166290474,765.0,670.5341724282957,417.0,621.0,1038.0,32035,0.08079098752386404
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Gay people,Gay Men,198304,945.5952023156366,742.0,684.417251402914,392.0,614.0,1006.0,11667,0.05883391157011457
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Gay people,Gay People,594834,994.1156356227116,793.0,689.1857160043811,430.0,646.0,1076.0,44136,0.074198852116725
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Gay people,Gay Women,198604,1033.6005619222171,803.0,735.7405234633891,465.0,656.0,1121.0,14689,0.0739612495216612
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Gay people,Homosexual,594466,1196.3513287555554,962.0,817.7784216780766,559.0,758.0,1317.0,85583,0.14396618141323472
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Gay people/Bad,Gay people,Lesbians,198494,1013.6698943041099,790.0,724.2082878285181,446.0,649.0,1095.0,17258,0.08694469354237408
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Adore,92462,988.9979775475331,798.0,634.6216124944917,451.0,648.0,1099.0,7151,0.07733988016698752
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Appealing,93270,1045.2210678674815,837.0,689.9187263917057,498.0,666.0,1164.0,6455,0.06920767663771846
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Attractive,93111,1012.6094553812117,806.0,677.5322733120505,473.0,649.0,1122.0,5837,0.06268861896016582
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Beautiful,92870,975.0441477333908,781.0,640.5383058734426,456.0,629.0,1085.0,6684,0.07197157316679229
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Celebrate,92673,1002.6747164762121,803.0,657.5293511199754,471.0,646.0,1117.0,5824,0.06284462572701865
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Cheer,93352,991.9350201388294,797.0,647.6606898896305,473.0,639.0,1112.0,7015,0.07514568514868455
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Cheerful,92810,998.8272168947311,795.0,668.3512012112528,477.0,636.0,1113.0,6540,0.07046654455338865
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Cherish,92935,1019.5204712971432,814.0,673.2405874386388,484.0,654.0,1138.0,6989,0.07520309894011944
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Delight,92788,1047.6578760184507,839.0,690.6059693129049,509.0,665.0,1174.0,8263,0.08905246368064836
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Delightful,92348,1037.6769827175467,826.0,694.9439695390317,500.0,657.0,1157.0,7566,0.08192922423874908
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Enjoy,92613,991.7176746245127,811.0,630.2873927663657,460.0,648.0,1108.0,7095,0.07660911535097664
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Excellent,92821,982.2979929110869,789.0,653.8288785363181,462.0,631.0,1093.0,6075,0.06544855151312742
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Excitement,92500,1011.1094486486486,805.0,680.0283802387663,486.0,642.0,1128.0,5880,0.06356756756756757
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Fabulous,93001,1037.7291319448177,826.0,704.8779227148365,513.0,649.0,1162.0,8482,0.09120332039440436
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Fantastic,92996,1010.7310637016645,807.0,673.0774175538822,484.0,643.0,1127.0,6420,0.06903522732160523
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Friend,92892,1046.4846811350817,834.0,700.1697830291075,523.0,656.0,1179.0,6755,0.07271885630624812
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Friendship,92969,1037.140885671568,819.0,697.3521958894664,518.0,648.0,1166.0,6192,0.06660284610999366
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Glad,92505,1022.2803848440625,831.0,646.5865638409734,479.0,666.0,1145.0,8453,0.0913788443867899
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Glorious,92891,1012.0300782637715,815.0,654.6956004340512,473.0,654.0,1127.0,7235,0.07788698582209257
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Happy,93133,965.4192498899423,778.0,634.5525117061809,456.0,623.0,1079.0,6575,0.07059796205426648
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Joyful,92753,993.7521805224629,801.0,641.5686741189285,478.0,639.0,1117.0,7751,0.08356603020926547
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Joyous,93217,993.3677011703874,797.0,654.4616757085113,466.0,641.0,1107.0,7737,0.08299988199577331
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Laughing,93001,1002.0569671293857,805.0,651.2480704546005,476.0,646.0,1122.0,6429,0.06912828894312964
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Love,93165,972.4039929157946,786.0,631.2998682581288,465.0,627.0,1092.0,7913,0.08493532979123061
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Lovely,93811,999.5238191683278,804.0,659.9158857830093,477.0,640.0,1117.0,7630,0.08133374550958843
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Magnificent,92783,1010.4948859166011,805.0,664.7213817467359,469.0,651.0,1120.0,6399,0.06896737548904433
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Pleasing,92273,1030.198714683602,827.0,676.1793764857568,483.0,664.0,1147.0,6943,0.0752441125789776
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Pleasure,93729,1022.1724973060632,823.0,672.6688276632708,485.0,656.0,1141.0,7129,0.07605970404037171
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Smiling,93653,981.7645670720639,794.0,636.5596149803613,462.0,636.0,1098.0,6013,0.06420509754092234
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Spectacular,92702,1037.1345925654248,826.0,688.5778705257883,487.0,663.0,1150.0,6078,0.06556492848050743
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Terrific,92702,1177.7480744752002,940.0,800.4011805205295,619.0,719.0,1338.0,15674,0.16907941576233523
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Good,Triumph,93678,1040.273233843592,832.0,675.1382056941887,491.0,671.0,1162.0,8984,0.09590298682721664
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Straight people,06_hetero.jpg,743929,1105.2321673170422,897.0,720.6419517363962,431.0,744.0,1175.0,52980,0.0712164736150896
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Straight people,Heterosexual,744120,1195.7405337848734,946.0,816.5904013947802,560.0,755.0,1315.0,80426,0.10808202978014299
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Straight people,Straight,743640,989.0110335646281,811.0,632.2635547667944,438.0,653.0,1091.0,38460,0.05171857350330805
+Sexuality,Congruent,"Straight people/Good,Gay people/Bad",Straight people/Good,Straight people,Straight People,743839,994.8451896176457,813.0,642.5794394296161,429.0,659.0,1088.0,31801,0.042752531125687145
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Gay people,05_gay.jpg,396336,1087.4616032861006,883.0,723.1855018572039,421.0,731.0,1152.0,30032,0.07577409067054217
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Gay people,07_lesbian.jpg,396562,1151.0396154951811,935.0,759.9719500902885,475.0,763.0,1238.0,26126,0.06588124933806064
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Gay people,Gay,396245,975.9767971835606,791.0,649.4009781843312,422.0,641.0,1063.0,22791,0.057517445015079056
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Gay people,Gay Men,197985,983.779119630275,779.0,685.2016041065331,421.0,638.0,1059.0,8510,0.042983054271788265
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Gay people,Gay People,594835,992.3981087192246,803.0,659.788696245844,424.0,654.0,1078.0,26657,0.04481410811401481
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Gay people,Gay Women,198391,1001.507356684527,783.0,712.8374751697727,440.0,640.0,1080.0,6571,0.033121462163102154
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Gay people,Homosexual,594182,1276.2040536401305,1014.0,885.2830245594516,641.0,783.0,1424.0,66440,0.11181759124308714
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Gay people,Lesbians,198475,1025.9339765713567,798.0,732.8919819307729,474.0,644.0,1118.0,10505,0.052928580425746316
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Adore,92348,1107.5142071295534,899.0,736.6032918377238,580.25,681.0,1261.25,9943,0.10766881794949539
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Appealing,92880,1181.3676787252368,953.0,801.1221551799894,631.0,716.0,1347.0,10199,0.1098083548664944
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Attractive,92744,1161.807631760545,940.0,792.6015451770027,624.0,704.0,1328.0,10047,0.10833045803502113
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Beautiful,92965,1093.0829021674824,886.0,738.0473400733975,588.0,665.0,1253.0,9677,0.10409293820254935
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Celebrate,92617,1118.9343964930845,906.0,745.2151788686846,594.0,685.0,1279.0,9187,0.09919345260589309
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Cheer,93192,1111.8267018628208,902.0,754.5235504827837,596.0,675.0,1271.0,10293,0.11044939479783672
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Cheerful,92995,1119.1582988332707,904.0,763.6344145280401,610.0,673.0,1283.0,9889,0.1063390504865853
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Cherish,92888,1145.7839441047283,928.0,776.6360007464042,613.0,695.0,1308.0,10642,0.11456808199121522
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Delight,92831,1164.778974695953,943.0,791.2322621685473,624.0,706.0,1330.0,11489,0.12376253622173627
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Delightful,92012,1154.4177281224188,929.0,792.3784817955379,624.0,695.0,1319.0,10701,0.11630004781984958
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Enjoy,92674,1114.7211084014934,916.0,736.9023929872279,582.0,692.0,1274.0,10286,0.11099121652243348
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Excellent,92551,1123.70108372681,920.0,753.8192587569248,600.0,686.0,1286.0,10769,0.11635746777452431
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Excitement,92580,1143.5581335061568,926.0,776.3838101149587,619.0,691.0,1310.0,9686,0.10462302873190754
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Fabulous,93191,1103.0263544762906,883.0,754.4878598995779,590.0,667.0,1257.0,8846,0.09492332950606819
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Fantastic,92624,1142.326254534462,926.0,782.4488519719604,610.0,690.0,1300.0,10352,0.11176368975643462
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Friend,92807,1210.9252319329362,980.0,825.9534426693855,670.0,723.0,1393.0,11781,0.12694085575441508
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Friendship,92701,1185.210127183094,956.0,812.6094556955319,659.0,704.0,1363.0,10803,0.11653595969838514
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Glad,92288,1122.1283915568654,915.0,754.4106121022137,588.25,691.0,1279.25,9968,0.10800970873786407
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Glorious,92997,1117.7094529931073,902.0,756.6680648061149,601.0,680.0,1281.0,9479,0.10192801918341451
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Happy,93077,1089.5291103065204,890.0,729.1430665985781,583.0,668.0,1251.0,10230,0.10990900007520656
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Joyful,92811,1114.8855415845105,904.0,757.7072229557405,605.0,673.0,1278.0,10645,0.11469545635754383
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Joyous,93287,1097.1810220073537,890.0,740.7947040146445,585.0,669.0,1254.0,10221,0.10956510553453322
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Laughing,93036,1115.1638398039468,906.0,744.3625850029505,595.0,682.0,1277.0,9541,0.10255170041704287
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Love,93076,1065.6332996690876,870.0,713.3308312352488,569.0,652.0,1221.0,9723,0.10446301946796166
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Lovely,93813,1099.5356080713761,892.0,741.0793714176447,590.0,669.0,1259.0,9887,0.10539051091000182
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Magnificent,92491,1139.4502275897114,918.0,781.3415929061305,605.0,690.0,1295.0,10109,0.1092971208009428
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Pleasing,92122,1150.7978333080046,932.0,775.8294288752588,607.0,704.0,1311.0,10284,0.11163457154642756
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Pleasure,93211,1137.284054457092,920.0,773.9515966538142,600.0,695.0,1295.0,10122,0.10859233352286747
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Smiling,93416,1118.8939046844223,914.5,747.0696532765548,591.0,687.0,1278.0,10140,0.10854671576603579
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Spectacular,92675,1172.0101537631508,951.0,790.7775528087889,618.0,714.0,1332.0,10595,0.11432425141623954
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Terrific,92936,1300.2228307652579,1046.0,891.2642939003704,723.0,772.0,1495.0,17993,0.19360635275888782
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Gay people/Good,Good,Triumph,93306,1173.9874177437678,958.0,777.3268506175141,616.0,723.0,1339.0,13244,0.1419415686022335
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Abuse,92988,1052.858809738891,852.0,681.0294369045106,523.0,668.0,1191.0,7283,0.07832193401299092
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Angry,92498,1076.7586542411727,869.0,717.5245905480901,566.0,663.0,1229.0,7661,0.08282341239810591
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Annoy,92866,1080.7673852647902,868.0,716.6378124214328,553.0,673.0,1226.0,8350,0.08991450046303276
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Awful,92339,1070.6625694451966,862.0,718.5061054050175,542.0,669.0,1211.0,8326,0.0901677514376374
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Bothersome,93276,1130.386594622411,909.0,746.8402685310441,578.0,703.0,1281.0,8246,0.0884043055019512
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Despise,92072,1112.7128768789644,896.0,747.2513816231732,573.5,688.75,1262.25,8272,0.08984273177513251
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Detest,93194,1056.6531858274138,858.0,680.5622964306068,530.0,669.0,1199.0,7513,0.08061677790415692
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Dirty,92757,1038.8805588796533,834.0,702.0634525900593,532.0,646.0,1178.0,7176,0.07736343348749959
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Disaster,93272,1083.5842267775968,868.0,726.7503321278042,565.0,667.0,1232.0,7116,0.07629299253795352
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Disgust,93064,1070.0067695349437,860.0,720.5124579001763,552.0,661.0,1213.0,7492,0.08050373936215938
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Evil,92999,1013.7878149227411,823.0,663.5453838098178,509.5,641.0,1150.5,7479,0.08042021957225347
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Failure,92192,1084.390630423464,878.0,718.9350759021557,554.0,676.0,1230.0,7110,0.07712165914612981
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Grief,92841,1109.5653321269697,889.0,739.0745509464664,575.0,687.0,1262.0,8900,0.09586281922857358
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Gross,93088,1081.7853429013408,871.0,725.989253543551,562.0,670.0,1232.0,9001,0.09669345135785494
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Hate,93405,1059.634730474814,860.0,699.5908455680875,547.0,661.0,1208.0,7739,0.08285423692521814
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Hatred,92689,1080.958096429997,870.0,726.2675112807837,562.0,667.0,1229.0,7202,0.07770069803320782
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Horrible,93087,1079.3126215260993,870.0,721.0593072135414,552.0,672.0,1224.0,7895,0.08481313180143307
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Horrific,92522,1080.2501783359633,867.0,722.657221000847,552.0,671.0,1223.0,7719,0.08342880612178726
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Humiliate,92804,1185.7926921253395,953.5,794.4862788608,615.0,730.0,1345.0,10219,0.11011378819878453
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Hurtful,92846,1094.1866423970876,880.0,725.0346023239225,563.0,678.0,1241.0,7421,0.07992805290481012
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Nasty,92996,1032.5967138371543,831.0,690.485706996758,519.0,648.0,1167.0,7275,0.07822917114714611
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Negative,92739,1103.2298277962884,899.0,719.0811561961152,579.0,685.0,1264.0,7533,0.0812279623459386
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Pain,92978,1051.8584396308804,848.0,694.6812256247568,541.0,656.0,1197.0,7175,0.07716879261760846
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Poison,92767,1020.242877316287,825.0,671.120726055228,504.0,647.0,1151.0,7037,0.07585671628919767
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Rotten,92946,1017.2671766401996,817.0,674.2612240114488,499.0,645.0,1144.0,6944,0.07471004669377919
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Sadness,92320,1127.6453856152514,905.0,756.1604318332194,600.0,688.0,1288.0,8482,0.09187608318890815
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Scorn,92923,1029.563175962894,832.0,666.4413246436801,503.0,658.0,1161.0,7548,0.08122854406336429
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Selfish,93141,1192.560870078698,955.0,798.4322155146314,647.0,721.0,1368.0,9487,0.10185632535618042
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Sickening,92708,1103.939282478319,885.0,746.3034890198228,564.0,684.0,1248.0,7732,0.08340164818570134
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Tragic,93107,1108.2603456238521,891.0,732.7316623077768,569.0,688.0,1257.0,8004,0.08596560946008355
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Ugly,92550,1060.603317125878,855.0,711.5265635435668,547.0,657.0,1204.0,7776,0.08401944894651539
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Bad,Yucky,92632,1005.2276427152603,817.0,653.0992056731401,487.0,644.0,1131.0,7277,0.07855816564470161
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Straight people,06_hetero.jpg,742636,1225.2428699928364,966.0,852.8367581801311,553.0,777.0,1330.0,66441,0.08946644116363871
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Straight people,Heterosexual,742608,1329.1804289746408,1032.0,938.3135922656749,683.0,801.0,1484.0,98961,0.13326142460086612
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Straight people,Straight,742440,1226.6258566348795,1005.0,818.6214735773648,586.0,779.0,1365.0,131870,0.1776170464953397
+Sexuality,Incongruent,"Gay people/Good,Straight people/Bad",Straight people/Bad,Straight people,Straight People,742121,1172.7652768214348,952.0,786.5456824857106,545.0,750.0,1295.0,88027,0.11861542794234363

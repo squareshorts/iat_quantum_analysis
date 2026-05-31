@@ -1,0 +1,48 @@
+{
+  "title": "Angular profiling of contextual structure in implicit-association latency data",
+  "creators": [
+    {
+      "name": "Matos, Felipe de Oliveira",
+      "affiliation": "Department of Physiological Sciences, Universidade Estadual de Maringa",
+      "orcid": "0000-0002-4926-4694"
+    },
+    {
+      "name": "Andrade de Lima, Marlos",
+      "affiliation": "Department of Developmental Psychology and Personality, Universidade Federal do Rio Grande do Sul",
+      "orcid": "0000-0002-8901-2272"
+    },
+    {
+      "name": "Zanon, Cristian",
+      "affiliation": "Department of Developmental Psychology and Personality, Universidade Federal do Rio Grande do Sul",
+      "orcid": "0000-0003-3822-5275"
+    },
+    {
+      "name": "Pereira, Antonio",
+      "affiliation": "Signal Processing Laboratory, Universidade Federal do Para",
+      "orcid": "0000-0002-0808-1058"
+    }
+  ],
+  "description": "Repository, analysis code, processed outputs, figures, tables, documentation, and synthetic review data for Behavior Research Methods manuscript BR-Org-26-540, \"Angular profiling of contextual structure in implicit-association latency data.\"",
+  "license": "MIT",
+  "keywords": [
+    "Implicit Association Test",
+    "response latency",
+    "angular profiling",
+    "behavioral methods",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/squareshorts/iat_quantum_analysis",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.5281/zenodo.19711302",
+      "relation": "isIdenticalTo",
+      "scheme": "doi",
+      "resource_type": "software"
+    }
+  ]
+}

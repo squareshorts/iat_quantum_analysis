@@ -1,0 +1,2 @@
+domain,year,raw_rows,participants,n_curves,bins,theta_mean,theta_sd,theta_map,hdi_low,hdi_high
+Age,2019,17907400,156005,156122,6,18.476419785317983,0.5218882823600506,18.5,17.5,19.25
